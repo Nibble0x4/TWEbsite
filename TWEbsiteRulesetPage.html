@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> TWEbsite Ruleset Page </title>
+	<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body class="std">
+
+	<h1 class="page-header"> Ruleset Page </h1>
+
+	<p>
+		
+	<div id="page-select-box" class="option-box"> 
+		<h2> Pages: </h2>
+		<p class="option"> <u><a href="index.html" style="color:#aafff0">Intro Page</a></u></p>
+		<p style="font-style:underline; color:#ee0000; cursor:pointer" onclick="alert('You are already on this page!')">	<u>Ruleset Page</u><b style="color:#044440">(you are here)</b> </p>
+			<p class="suboption">	<a href="#specialActions" >Special Actions</a></p>
+			<p class="suboption">	<a href="#combatManeuvers" >Combat Maneuvers</a></p>
+			<p class="suboption">	<a href="#statusEffects" >Status Effects</a></p>
+			<p class="suboption">	<a href="#skills" >Skills</a></p>
+		<p style="font-style:underline; color:#eeee00; cursor:pointer">	<u>Classes Page</u> </p>
+		<p style="font-style:underline; color:#00dd00; cursor:pointer"> <a href="TWEbsiteRacesPage.html" style="font-style:underline; color:#00dd00;"><u>Races Page </u></a> </p>
+		<p style="font-style:underline; color:#0000dd; cursor:pointer">	<u>Lore Page </u> </p>
+
+	</div>
+	
+	<p class="text"> <b class="subheader"> How the game is played </b>
+	<br>Ultimately, TWE is a game of risk and reward. When any character tries a task that may be difficult, they must rely on chance. 
+	They do this by rolling a twenty-sided die (d20) and adding modifiers to the result of that die. The modifiers represent how skilled 
+	the person is in that task, and the die gives the risk. On this page, you will see how to interact with the world around your character. 
+	You can try anything, assuming the GM allows it, but this page should help you understand how to go about trying to do the things you 
+	imagine.
+	</p>
+
+	</p>
+
+	<hr>
+	
+
+	<p class="body-text"> <b class="header"> Combat </b>
+	<br> When combat inevitably breaks out, it is up to the players to decide what their characters will do, and it is up to the rule system to provide clear guidelines for what they CAN do.
+		
+		<br><br><b class="subheader"> Initiative </b>
+		<br> In combat, each character gets a chance to act on their own "turn". At the start of combat, the "turn order" is 
+		determined by rolling "initiative." Each character rolls a d20 and adds their Initiative modifier. The turn order is 
+		set in order from highest result to lowest result and each character takes their turn in the determined order. Once everyone 
+		has taken a turn, the turn order returns to the first character and we say that the first "round" has passed. Each round, 
+		in the game world, takes only about 6 seconds. During a fight, if a character has not yet had a chance to act (in other words, 
+		their turn has not yet come up), then they are considered <b>flat-footed</b> and are easier to attack.
+		
+		<br><br><b class="subheader"> Damage and HP </b>
+		<br> Though it may not be realistic, each character relies on a number to determine if they live or die. This number is called 
+		your Hit Points (hp), and represents how close you are to death. Each character has a "max hp" that determines how much hp they 
+		can have. The tougher the character, the higher their max hp can be. Hp can be lost and regained by being attacked or healed, 
+		but your max hp should remain relatively stable until it increases when your level increases. When you are damaged, you subtract 
+		the damage from your current hp. When you are healed, you add the healing amount to your current hp. Your current hp cannot 
+		exceed your max hp unless an effect says otherwise. 
+		<br> If your current hp drops to 0, you fall <b>unconscious</b>.
+		<br> If your current hp drops to below 0, you begin <b>dying</b>.
+		<br> If your current hp drops to a negative number equal to your max hp, you are <b> dead</b>.
+		<br><b class="subheader2"> Nonlethal Damage </b>
+		<br> Not all damage will kill you. For example, while a sword slice is intended to kill you, a punch to your chest may 
+		just hurt a lot. Attacks like punches and kicks tend to deal nonlethal damage. This damage is special, as it is NOT 
+		subtracted from your current hp. Instead, keep track of how much nonlethal damage you have taken separately. This can 
+		be a difficult concept for some, so think of it like this:
+		<br> Lethal damage reduces your hp, trying to bring your current hp closer to 0. It tears down over time.
+		<br> Nonlethal damage simply adds to itself, piling up and trying to equal your current hp. It builds over time.
+		<br> This distinction is important, as there are some dangerous effects that can come from accruing too much nonlethal damage: 
+		<br> If your nonlethal damage is equal to your current hp, you are <b>staggered</b>.
+		<br> If your nonlethal damage exceeds your current hp, you are knocked <b>unconscious</b>.
+		
+		
+		<br><br><b class="subheader"> 3-Action System </b>
+		<br>Because each round takes only 6 seconds, we must be selective with how the characters can act during their turns. In TWE, each character is given 3 actions to use during their turn.
+		They may choose to spend these actions in whatever order they want, and even to spend less than 3 if they would like, but in the end a character's chances at success
+		during each round will rely on how they chose to spend their 3 actions.
+		<br><br>In addition to the 3 actions that characters receive each round on their turn, there are a few other kinds of actions that characters can take, if an ability allows them to do so.
+		<br><b>A- Swift Actions:</b> Each round on their turn, a character has 1 swift action available to them. A swift action can only be used to accomplish very quick tasks, and abilities will list whether they can 
+		be used as a swift action or not. 
+		<br><b>B- Immediate Actions:</b> Each round, characters have an indeterminate number of immediate actions. Immediate actions can be taken by a character even when it is not currently their turn. Abilities will
+		list whether they can be used as an immediate action or not. 
+		<br><b>C- Attacks of Opportunity:</b> These actions are attacks that you can take under certain conditions, as specified in the "Special Actions" list later on this page. Each character has 1 attack 
+		of opportunity that they can spend each round. These attacks are never taken during your turn.
+		<br><b>D- Free actions:</b> Each round, characters have an indeterminate number of free actions. Free actions must be used on your turn.
+		
+		<section id="specialActions" class="body-text">
+		<br><br><br><b class="header"> Special Actions </b>
+		<br>Following is a list of commonly taken actions in combat. Unless otherwise noted, attempting one of the following actions on your turn takes 1 action.
+		<br><br><b class="subheader1"> Attack (1 action)</b>
+		<br>When you take an attack action, you use a weapon of some kind to attempt to harm a target. You must make an "Attack Roll" and compare the result to the target's Armor Class (AC). If your Attack Roll 
+		is greater than or equal to the target's AC, then you harm them and get to roll to see how much damage you deal to them. 
+		
+		<br><b class="subheader2"> Melee </b>
+		<br>If you are using a melee weapon against a target in range, then you make a <b style="color:brown">Melee Attack Roll by rolling 1d20 + your Base Attack Bonus + your strength modifier.</b>
+		<br>For Damage, you roll a die corresponding to your weapon and add your Strength modifier. The result is your total damage dealt.
+		<br> If you are using both hands to wield a weapon that is not a light weapon, then you add 1.5x your strength modifier to Attack Rolls and Damage instead.
+		<br> If you are using a dagger, then you may choose to add your dexterity modifier to Attack Rolls and Damage instead.
+		<br> If you are wielding a melee weapon, you are said to be "threatening" any creatures within range of your weapon.
+		
+		<br><b class="subheader2"> Ranged </b>
+		<br>If you are using a Ranged weapon against a target in range, then you make a <b style="color:brown">Ranged Attack Roll by rolling 1d20 + your Base Attack Bonus + your dexterity modifier + your strength penalty. </b>
+		<br>For Damage, you roll a die corresponding to your weapon and add your dexterity modifier. The result is your total damage dealt.
+		<br>The strength penalty is only added if you are using a bow, and if your strength modifier is less than 0.
+		<br>If you are attacking a target that is beyond the reach of your weapon, then you take a -4 penalty on your Attack Roll. If they are beyond double your weapon's range, then you take a -8 penalty. 
+		You cannot attack a target from triple your weapon's range.
+		<br> If you are wielding a ranged weapon, you are not "threatening" any creatures.
+		
+		<br><b class="subheader1"> Criticals </b>
+		<br>If your attack roll d20 rolls a natural 1, then you automatically miss and suffer some penalty or 
+		mishap related to the situation. If you roll a natural 20, then you automatically land a critical hit. On a critical hit, you get to multiply the total damage dealt by your attack by 2. If your weapon has a 
+		critical multiplier of x3 or x4, then you get to triple or quadruple your damage instead.
+		<br>If your attack roll result is greater than or equal to the target's "Crit Guard," then you land a "soft crit." With a soft crit, you get to multiply the number of dice that you are rolling for damage 
+		by your weapon's critical modifier. A soft crit does not count as a critical hit for the purposes of conditions that trigger on a critical hit.
+		<br> Your <b style="color:brown">Crit Guard is calculated by adding your AC + ((1/2 your CMD) rounded up).</b>
+		
+		<br><b class="subheader1"> Multiple Attacks </b>
+		<br>When you take an attack action during your turn and it is not your first Attack action during that turn, then you take a penalty on your Attack roll.
+		<br> If it is your second Attack, you take a -5 penalty.
+		<br> If it is your third Attack, you take a -10 penalty.
+		
+		<br><br><b class="subheader1"> Coup De Grace (3 actions)</b> 
+		<br> (Meaning "Mercy Strike") This is an action that you can take against an opponent who is <b>Helpless</b>. If you take this action against an adjacent helpless foe, 
+		then you prepare yourself to kill them in a single strike. This preparation allows you to use any weapon or available 
+		substitute to prepare to kill them. If, at the start of your next turn, they remain helpless and are within 1 Move action of you, then you 
+		may move to their side and execute the coup de grace. You automatically critically hit them with your weapon, and deal 
+		damage accordingly. If the damage does not kill the target, then they must make a fortitude save (DC = 10 + damage dealt by hit) or die.
+		
+		
+		<br><br><b class="subheader1"> Defend (1 action)</b>
+		<br> When you take a defend action, you first decide whether you will be defending yourself or an ally that you can threaten. 
+		<br>If you choose to defend yourself, then you gain the following bonuses:
+		<br>+2 deflection bonus to your AC.
+		<br>+2 additional bonus to your Crit Guard
+		<br>+1 bonus to saves
+		<br>If you instead choose to defend an ally in range, then that ally gains the following bonuses:
+		<br>+1 deflection bonus to their AC.
+		<br>+1 additional bonus to their Crit Guard
+		<br>+1 bonus to saves
+		
+		<br><br><b class="subheader1"> Move (1 action/ 1 swift action) </b>
+		<br> When you choose to move, you may move a number of feet equal to your speed for that medium. (e.g. if your land speed is 30 feet, you can move across 30 feet land as one action)
+		<br> You may instead choose to move only 5 feet, but do so carefully in order to avoid the possibility of provoking "attacks of opportunity" from enemies. 
+		Doing this once costs a swift action, so it doesn't count against your 3 actions this turn. If you want to do this more than once, you must spend 
+		1 action each time.
+		<br> If you are in a prone position, you may use a move action to stand upright. Doing this provokes an Attack of Opportunity
+		<br> You may choose to perform an acrobatic maneuver of some kind in conjunction with your move. 
+		<br><b class="subheader2"> Charge </b>
+		<br> The Charge action is a variant of the Move action. When you charge, you must move in a straight line and you must move more than your maximum movement speed
+		and not more than double your movement speed.
+		When you reach your destination, you may then make a melee attack roll against an enemy within reach. If you do this, then you
+		gain a +2 bonus on the attack roll and suffer a -2 penalty to your AC for 1 round. Charges can be confusing, so here is an example:
+		<br> If you are a human with a sword and a movement speed of 30 feet and you are 40 feet away from an enemy on an open plane with nothing
+		blocking you from that enemy, then you can choose to make a charge action. When you arrive, you may choose to attack the enemy.
+		If you do, then you gain a +2 bonus on that attack roll and suffer a -2 penalty to your AC for 1 round.
+		<br> If you are the same human from above standing on the same plane, but the enemy is only 30 feet away, you cannot make a charge
+		 action. The enemy is too close.
+		<br> If you are the same human from above standing on the same plane, but the enemy is 70 feet away, then you can charge 60 feet towards them.
+		You cannot make an attack against them, since they are still too far away for you to reach with your sword.
+		<br><b class="subheader2"> Run </b>
+		<br> This is another potentially confusing action. Once per hour, you may spend an action to Run. Running allows
+		you to move up to triple your movement speed. This movement is not limited to a straight line like Charge is, nor does
+		it allow you to attack as a part of the action.
+		
+		<br><br><b class="subheader1"> Attacks of Opportunity (1 Attack of Opportunity)</b>
+		<br> Certain actions leave you open to attack in a fight. If you perform these actions while an enemy threatens you with their weapon, then they may spend their Attack of Opportunity (AoO)
+		to make an Attack action during your turn. There are several ways to "provoke" an AoO. Be careful to avoid it when possible. Here are some common ways to provoke an AoO:
+		<br>A-Moving out of a space that is threatened by an enemy. (unless you move only 5 feet, see Move Special Action)
+		<br>B-Getting up while in a space that is threatened by an enemy.
+		<br>C-Casting a spell while in a space that is threatened by an enemy. (Unless you cast defensively, see Cast a Spell Special Action)
+		<br>D-Using an item while in a space that is threatened by an enemy. (There may be some items that do not provoke attacks of opportunity, ask the GM to be sure)
+		<br>E-If you move with an acrobatic maneuver and you are in a space that is threatened by an enemy, then you must make an 
+		acrobatics skill check. If your result is greater than or equal to the CMD of the enemy that is threatening you, then you do not provoke an attack of opportunity.
+		If it is not and the enemy strikes you with their attack of opportunity, you must stop your movement in the space where they struck you and you cannot take another move action this turn.
+		
+		<br><br><b class="subheader1"> Full-Attack (2 actions)</b>
+		<br>When you take a Full-Attack action, you may make an Attack action. Then, subtract 5 from your Base Attack Bonus. If the result is still greater than 0, then you may make another attack roll. 
+		You can continue to do this, subtracting 5 from your Base Attack Bonus, until it is no longer greater than 0. 
+		<br> If you have taken a Full-Attack this turn, you cannot make an Attack with your remaining action(s). If you have already taken an Attack this turn, then you cannot take a Full-Attack.
+		<br> If you have taken a Full-Attack this turn and choose to take a Move action, you can move only half of the distance you otherwise could. If you have already moved more than half of your
+		movement speed this turn, then you cannot take a Full-Attack.
+		
+		<br><br><b class="subheader1"> Use an Item (1 or more actions)</b>
+		<br>When you wish to use an item that you have in your hands, you may spend a single action to do so. If the item is especially difficult
+		or complex, then it may take more than 1 action. If the item is as complicated as, for example, a ballista, then a whole 
+		round or more may need to be spent operating it. However, most items are a single action to use. Here are some examples:
+		<br>-    Drinking a potion
+		<br>- 	 Using a wand
+		<br>- 	 Throwing an item to an ally to catch (assuming they can catch at the moment)
+		<br>-	 Lighting a torch
+		<br> There are many other possibilities for items to use, but those are simply some common options
+		<br> If you wish to use an item on a creature that is unresponsive or in some way incapable of acting, then it will likely take 2 actions for you to use the item. 
+		One example of this is trying to administer a healing potion to an unconscious ally. 
+		
+		<br><br><b class="subheader1"> Retrieve an Item (1 or less actions)</b>
+		<br> Retrieving an item is, in most cases, a single action. Examples of this are:
+		<br>-	 Picking up an item from the ground
+		<br>-	 Sheathing a weapon
+		<br>-	 Pulling a weapon from a place that it is stuck (Like an axe stuck in a tree trunk. May require a strength check)
+		<br>- 	 Retrieving an item from deep within your bag
+		<br> However, sometimes retrieving an item may be faster. In these cases, it takes a free action. Here are some examples:
+		<br>- 	 Retrieving an item from a belt or other easy-access location on your body
+		<br>- 	 Picking up an item from a table or other convenient location within reach
+		<br>- 	 Catching an item thrown to you (This can be done even when it is not your turn)
+		
+		<br><br><b class="subheader1"> Use a skill (1 or less actions)</b>
+		<br> There are a multitude of skills available for use by characters. There are two ways a skill can be "used." 
+		<br> The first way is when a player says "I would like to use ____ skill to try to accomplish ____ thing." When this is done, the skill
+		is simply a means to an end. For example, a player who says "I want to use acrobatics to jump over the enemy!" will spend 
+		1 action to use the Move action. The player will have to roll an acrobatics check to determine if they succeed. In such cases,
+		the skill does not make the desired action take any longer than it normally would, it just makes it harder.
+		<br> Here is a list of skills that typically take 1 action to perform in combat:
+		<br> - Acrobatics
+		<br> - Climb
+		<br> - Escape Artist
+		<br> - Fly
+		<br> - Handle Animal
+		<br> - Heal
+		<br> - Intimidate
+		<br> - Perform
+		<br> - Ride
+		<br> - Sleight of Hand
+		<br> - Spellcraft
+		<br> - Stealth
+		<br> - Survival
+		<br> - Swim
+		<br> - Use Magic Device
+		<br> Here is a list of skills that typically take 1 free action to perform in combat
+		<br> - Appraise
+		<br> - Diplomacy
+		<br> - Any Knowledge
+		<br> - Perception
+		<br> - Sense Motive
+		<br> The second way is when the GM calls for a roll to be made. For example, if the GM asks a player to "roll stealth," then 
+		the stealth check takes no actions. 
+		
+		<br><br><b class="subheader1"> Speak (1 Immediate action)</b>
+		<br> At any point in battle, regardless of whose turn it is, characters may speak. This includes calling to allies,
+		shouting in fear or encouragement, taunting foes, attempting to strike up banter with an enemy, or relaying basic information.
+		When players use the Speak action, they are encouraged to be concise and quick with their words. After all, each turn is only
+		6 seconds. However, it is ultimately up to the GM to determine how strict they want to be with the enforcement of this rule.
+		
+		<section id="combatManeuvers" class="body-text">
+		<br><br><b class="header"> Combat Maneuver (1 action)</b>
+		<br> A combat maneuver is an action taken in combat that is not a direct attack, but is intended to hamper a foe or 
+		alter the flow of battle. Combat maneuvers are attempted by making CMB checks. These checks are made by rolling 
+		a d20 and adding your CMB (Combat Maneuver Bonus) to the result. Remember that performing a combat maneuver is an action that 
+		provokes an Attack of Opportunity from foes that threaten you, though this can be avoided by taking the correct feats.
+		<br> While each combat manuever takes only a single action, attempting the same combat maneuver more than once 
+		in a round results in a -4 penalty on the check. This penalty increases by 4 for every additional time you attempt it.
+		<br> If a natural 20 is rolled on a CMB check, then you must reroll the d20 and add your CMB+20 to the new roll.
+		<br> If a natural 1 is rolled on a CMB check, then the check result is a critical fail.
+		<br><b style="color:brown">The formula for CMB is Base Attack Bonus + Strength Modifier + Size Modifier</b>.
+		<br> Once you have rolled your Combat Maneuver Check, you then compare the result to your target's CMD (Combat Maneuver Defense).
+		<br><b style="color:brown">The formula for CMD is Base Attack Bonus + Strength Modifier + Dexterity Modifier + Size Modifier + 10</b>.
+		<br><br> There are many different kinds of combat maneuvers, so they will each be listed and described below.
+		<br><b class="subheader2"> Trip </b>
+		<br> This combat maneuver is simple. You attempt to knock the opponent down by sweeping their legs out from under them.
+		If your CMB check beats the target's CMD, then they fall prone. 
+		<br> You cannot trip a creature who is more than one size category larger than you, unless your tool for doing so is sized appropriately.
+		<br> Performing a trip provokes an Attack of Opportunity from your target unless you possess the Improved Trip Feat.
+		<br><b class="subheader2"> Bullrush </b>
+		<br> This combat maneuver is essentially a shove, usually done with a running start. If your CMB check beats your target's CMD, 
+		then you push your target 5 feet. For every additional 5 that you beat their CMD, you can push them an additional 5 feet. For example:
+		<br> If you try to bullrush a goblin and roll a 23 on your CMB check against the goblin's 14 CMD, then you can push the goblin up to
+		15 feet. You may choose to move with the goblin, but you don't have to. If you push the goblin into another goblin, then you
+		must roll a CMB check against the new goblin's CMD. If you succeed, you can continue to push both goblins for the remaining distance.
+		<br> You can choose to perform a bullrush as a part of a Charge action, instead of making an attack.
+		<br> You cannot bullrush a creature who is than one size category larger than you.
+		<br> Performing a bullrush provokes an Attack of Opportunity unless you possess the Improved Bullrush Feat.
+		<br> Creatures moved by your bullrush do not provoke attacks of opportunity unless you possess the Greater Bullrush Feat.
+		<br><b class="subheader2"> Drag </b>
+		<br> This combat maneuver is essentially a pull. If your CMB check beats your target's CMD, 
+		then you pull your target 5 feet. For every additional 5 that you beat their CMD, you can pull them an additional 5 feet. For example:
+		<br> If you try to drag a goblin and roll a 23 on your CMB check against the goblin's 14 CMD, then you can pull the goblin up to
+		15 feet.
+		<br> You cannot drag a creature who is than one size category larger than you.
+		<br> Performing a drag provokes an Attack of Opportunity from your target unless you possess the Improved Drag Feat.
+		<br> Creatures moved by your drag do not provoke attacks of opportunity unless you possess the Greater Drag Feat.
+		<br><b class="subheader2"> Overrun </b>
+		<br> An overrun attempt is essentially when you try to push your way past a creature. Unlike bullrush, 
+		you are not trying to push the creature anywhere. You are simply trying to move through its space. If your CMB check beats 
+		the target's CMD, then you successfully move through their space. If your check beats their CMD by 5 or more, then you 
+		move through their square and knock them prone.
+		<br> You cannot overrun a creature more than 1 size category larger than you.
+		<br> Performing an overrun provokes an Attack of Opportunity unless from your target you possess the Improved Overrun Feat.
+		<br><b class="subheader2"> Reposition </b>
+		<br> A reposition combat maneuver is an attempt to forcefully move an enemy to a different position relative to you. 
+		If your CMB check beats the enemy's CMD, then you may move them to any other space that you can reach. For every 5 that you
+		beat the CMD, you may move them again. 
+		<br> You cannot reposition a foe that is more than 1 size category larger than you.
+		<br> Performing a reposition provokes an Attack of Opportunity from your target unless you possess the Improved Reposition Feat.
+		<br> The enemy does not provoke Attacks of Opportunity due to being moved unless you possess the Greater Reposition Feat
+		<br><b class="subheader2"> Dirty Trick </b>
+		<br> A dirty trick is a combat maneuver that encompasses underhanded tactics. They are used to give hampering effects
+		to a target for 1 round. These effects can be removed by the enemy if they spend 1 action on their turn. The possible effects are:
+		<br>- Blinded: Done by an action like throwing sand in their face.
+		<br>- Dazzled: Done by an action like lighting a torch in their face.
+		<br>- Deafened: Done by an action like clapping them on the ears.
+		<br>- Entangled: Done by an action like pulling down their pants.
+		<br>- Shaken: Done by an action like taking advantage of their phobias.
+		<br>- Sickened: Done by an action like kicking a dude between his legs.
+		<br> These effects only last up to 1 round, plus 1 round for every 5 that your CMB check beats the target's CMD.
+		<br> Performing a dirty trick provokes an attack of opportunity from your target unless you possess the Improved Dirty Trick feat.
+		<br> If you possess the Greater Dirty Trick Feat, the effect lasts for 1d4 rounds plus 1 round for every 5 that your CMB check beats the target's CMD.
+		<br><b class="subheader2"> Steal </b>
+		<br> This combat maneuver can be used to take an item from an enemy in combat. If you beat the target's CMD with your CMB check, then you may steal an item from them.
+		You cannot steal an item that is:
+		<br>- worn closely (like armor, clothing, backpacks, or rings)
+		<br>- hidden in a backpack (assuming the backpack is closed)
+		<br>- held in hand (like a sword, staff, or tome)
+		<br> If the item is attached to the target (like a sheathed weapon, cloak, or money pouch) then the target receives a +5 bonus to their CMD.
+		<br> Performing a steal combart maneuver provokes an Attack of Opportunity from your target unless you possess the Improved Steal Feat.
+		<br> The target is aware that you have stolen something from them unless you have the Greater Steal Feat.
+		<br> Using a whip, you can attempt to steal from a distance, taking a -4 penalty to your CMB for the attempt.
+		<br> You must have one hand free to perform a steal.
+		<br><b class="subheader2"> Disarm </b>
+		<br> You attempt to disarm an enemy of an item that they are currently holding in their hand. If your CMB check beats their
+		CMD, then you choose one item they are holding (even if it is in two hands) for them to drop in their space.
+		<br> If your CMB check beats their CMD by 10 or more, then they drop the items they are holding in both of their hands.
+		<br> If your CMB check loses to their CMD by 10 or more, then you drop the item you were using to disarm them.
+		<br> If you are attempting to disarm with your bare hands, you take a -4 penalty to your CMB on the attempt.
+		<br> If you successfully disarm them with your bare hands, then you may pick up their item(s) from the ground as a free action.
+		<br> Performing a disarm provokes an Attack of Opportunity from your target unless you possess the Improved Disarm Feat.
+		<br><b class="subheader2"> Sunder </b>
+		<br> A sunder attempt is when you choose to try to break an item worn or carried by the target instead of harming them directly.
+		If your CMB check beats your target's CMD, then you may roll damage as if you had rolled an attack against the creature. 
+		This damage is dealt to the item instead of the creature. If the item is reduced to less than half its hp, then it gains the Broken condition. 
+		If you reduce the item to 0 hp, you may choose to destroy it. If you do not or cannot destroy it, then it remains broken at 1 hp.
+		<br> Performing a sunder provokes an Attack of Opportunity from your target creature unless you possess the Improved Sunder Feat.
+		<br><b class="subheader2"> Feint </b>
+		<br> Feint is a special combat maneuver. Instead of rolling a CMB check, you <b style="color:brown">instead roll a Bluff check</b>. If your Bluff check
+		beats a <b style="color:brown">DC = 10 + The Enemy's Base Attack Bonus + Wisdom Modifier</b>, then you succeed. Alternatively, if the target is trained in 
+		Sense Motive, then the <b style="color:brown">DC = 10 + Sense Motive Modifier if that is higher</b>.
+		<br> If you are successful, then the target is considered flat-footed against you for your next attack.
+		<br> If you fail, then you provoke an Attack of Opportunity, during which you are flat-footed. 
+		<br> If you have the Improved Feint Feat, then you are not considered flat-footed during the attack of opportunity from failure.
+		<br> If you have the Greater Feint Feat, then you do not provoke an Attack of Opportunity when you fail.
+		<br><b class="subheader2"> Grapple </b>
+		<br> Grapple is a very complicated combat maneuver. When you attempt to grapple a foe, you must first a roll a CMB check
+		against them. If you succeed, then you and the target both become grappled and you have the upper hand. Each round on 
+		your turn, you must spend 1 action to roll another CMB check against their CMD. If you are successful, then you keep the upper hand.
+		If you fail, then the grapple is released. While you have the upper hand, you may spend two actions on your turn to:
+		<br><b> - Move:</b> You may move yourself and your grappled foe up to half of your speed. When you arrive, you pick an adjacent space 
+		to place them. If you attempt to place them in a dangerous location, then they receive a free opportunity to escape with a +4 bonus.
+		Both of you remain grappled.
+		<br><b> - Pummel:</b> You may inflict damage to them equal to the damage of a natural attack (like a claw), an unarmed strike, or a 
+		light or one-handed melee weapon that you have in your hand.
+		<br><b> - Pin:</b> You may pin your opponent down. If you do this, you also lose your dexterity bonus to AC.
+		In order to do this, you must roll another CMB check against their CMD.
+		<br><b> - Tie Up:</b> If you have a rope or chain handy, you can tie up an opponent that you have Pinned. If you do this, you no longer
+		have to grapple them yourself. In order to do this, you must roll another CMB check against their CMD.
+		<br><b> - Release the Grapple:</b> You may do this as a free action, instead of 2 actions.
+		<br> If you do not have the upper hand on your turn, then you may spend an action to:
+		<br><b> - Escape the Grapple:</b> Roll a CMB check or an Escape Artist check against their CMD. If you succeed, you escape from the grapple.
+		<br><b> - Reverse the Grapple:</b> Roll a CMB check against their CMD. If you succeed, then you now have the upper hand.
+		<br><b> - Take any action that</b> does not require both hands.
+		<br> If you are pinned, then your options are very limited.
+		<br> If you attempt to grapple an opponent while using only one free hand, then you take a -4 penalty.
+		<br> If you do not have the Improved Grapple Feat, then attempting a grapple provokes an Attack of Opportunity.
+		<br> If multiple people try to grapple a single target, then only the first one rolls a CMB check. They add +2 to their check
+		for every ally who is helping them.
+	</section>
+		
+		<br><br><b class="subheader1"> Delay (0 actions)</b>
+		<br> This is not exactly an action, as it takes no actions to perform, but it is a choice that you can make during 
+		your turn. If you choose to delay, you essentially shift your turn in the initiative order to a later position. You select 
+		a point in time, an event, or another character's turn and tell the gm that you would like to wait until that point before
+		you take your turn. If you do this, your official initiative position changes. Here is an example:
+		<br><br> - You are playing Wendy the Wizard. You and your ally, Felix the Fighter, are fighting an orc together. 
+		The battle begins and the initiative order is <b>Felix, Wendy, Orc</b>. So Felix gets to move first, but he doesn't want to 
+		attack the orc while it is on its feet. Felix knows that Wendy has a spell that can knock the orc over, so he uses the 
+		Speak action to say "Wendy, knock that thing down!" and then chooses to Delay until after your turn ends. It is now your turn 
+		and you knock the orc over and finish your turn. It is now Felix's turn, and he attacks the orc. The initiative order has now changed. 
+		For each round after this, the order will be <b>Wendy, Felix, Orc</b>. The orc takes its turn and the round ends. It will be 
+		Wendy's turn at the start of the next round.
+		
+		<br><br><b class="subheader1"> Ready (1,2,2.5 actions)</b>
+		<br> The Ready action is used when there is something you want to do, but you do not want to do it right away. When you 
+		choose to Ready, you must declare what you wish to do and when you wish to do it. The thing you wish to do must be 1,2, or 2.5 actions. 
+		If it is 3 actions or more, then you must Delay instead. When this has been done, you may use any remaining actions however you wish.
+		The actions that you have readied will occur when the condition you stated is met. If the condition is not met before your next turn, 
+		the readied actions are lost. Here is an example:
+		<br><br> - You are playing Clarence the Cleric and you are fighting an orc alongside Felix the Fighter. It is your turn, and 
+		you think that the orc is going to strike Felix very hard this round. You have a healing spell, but using it on Felix 
+		right now would be pointless. Thus, you decide to Ready two actions to cast the healing spell after the orc hits Felix. 
+		You have 1 action left, so you use it to step away so that the orc doesn't choose to come after you. The orc is next, and 
+		uses its first action to attack Felix. It misses, so you do nothing. With its second action, it strikes Felix and deals heavy damage. 
+		It wants to hit Felix again with its third action but you cast your readied spell before he can. You heal Felix, and the 
+		orc then takes its third action.
+		
+		
+		<br><br><b class="subheader1"> Casting a Spell (1,2,2.5 actions)</b>
+		<br> Magic. Some characters have the ability to cast magical spells on their turns. While these spells vary widely in 
+		difficulty, power, and effect, they all follow the same basic rules when it comes to determining how many actions 
+		they take. <b>Casting a spell provokes an Attack of Opportunity.</b>
+		<br> All spells have <b>components</b> when they are cast. There are several kinds of components:
+		<br><b>- Somatic(S):</b> These are physical motions necessary to cast the spell. These are almost always a form of hand motion.
+		<br><b>- Verbal(V):</b> These are sounds or words that must be uttered by the caster in order to produce the spell.
+		<br><b>- Material(M)/Focus(F)/Divine Focus(DF):</b> These are physical objects that must be in hand when the spell is cast. 
+		<br><br> These components are important to consider when casting a spell. For example, if your wizard is tied up, 
+		they cannot cast any spells with somatic components until they are free to move their hands again. However, there is 
+		more to components than such restrictions. <b style="color:brown"> The number of components required for a spell
+		determines the number of actions required to cast that spell</b>. They work like this:
+		<br><b>- 1 Component:</b> These spells take only a single action to cast.
+		<br><b>- 2 Components:</b> These spells take 2 actions to cast.
+		<br><b>- 3 Components:</b> These spells take 2 actions to cast, but you are limited on your third action. You cannot use
+		 your hands when performing your third action. If you have already used your hands for an action this turn, then you 
+		cannot cast this spell. This is commonly referred to as <b> "2.5 actions"</b>.
+		<br> The above rules apply to all spells that are cast using an "action" or "standard action." However, if the spell 
+		casting time is listed as something else, then it is easier to determine how long it takes. Here are some examples:
+		<br><b>- Immediate action: </b> These spells take an immediate action to cast, so they can be cast at any time. 
+		<br><b>- Swift action: </b> These spells can be cast with a swift action, and thus dont take any of your 3 actions that turn.
+		<br><b>- Full-Round action: </b> These spells take 3 actions to cast.
+		<br><b>- Some length of time: </b> Some spells will have a time like "10 minutes" for their casting time. These mean exactly what 
+		they say, and are not often a good fit for casting in combat. If you do want to cast them in combat, you can consider each round
+		to be 6 seconds. Thus, a 10 minute spell would take 100 rounds of combat to successfully cast. 
+		<br><br> It is important to note here that if you are attacked or otherwise interrupted at any point during the casting of
+		your spell, you are at risk of losing your focus and wasting the spell. When this occurs, you must perform a <b> Concentration check</b>.
+		<br> There are several instances when you might have to make such checks, so it is important to understand what they are. 
+		Simply put, they are a test to see if you can successfully focus on the complexities of correctly casting a spell despite 
+		distracting or painful circumstances. <b style="color:brown">The formula for a concentration check is 1d20 + your 
+		caster level + your casting stat modifier</b>.
+		<br><b>Caster Level</b> is your total levels in the classes that can cast the spell you are casting. (Example: If you are 
+		a level 6 wizard, level 4 cleric, and level 5 sorcerer who is trying to cast a spell that both wizards and sorcerers can
+		 cast, then your caster level for that spell is 11, even though your total character level is 15.)
+		<br><b>Casting Stat Modifier</b> is determined by the class you are using to cast a spell. Different classes derive their 
+		magical power from different sources, so whichever stat your class lists as its casting stat is used here. (Usually int, wis, or cha).
+		<br><br> Concentration checks are compared against specific DCs (difficulty classes) in order to determine if you successfully cast 
+		the spell. If you are damaged in the middle of casting the spell, it is often very difficult to focus on the spell. 
+		<br><b style="color:brown"> The DC for a Concentration check when attacked is 10 + the damage taken</b>.
+		<br> If you wish to avoid provoking an Attack of Opportunity from nearby enemies, you may wish to step out of their range first. 
+		However, if you cannot or do not wish to do this, then there is another option for you. You can choose to <b>Cast a spell defensively</b>.
+		When you cast a spell defensively, you do so while protecting yourself from Attacks of Opportunity. You must
+		succeed at a concentration check. If you fail, you lose the spell but do not provoke any Attacks of Opportunity.
+		<br><b style="color:brown"> The DC for a Concentration check to cast a spell defensively is 15 + double the level of the spell + 
+		1 for every enemy that threatens you - 1 for every ally that threatens you</b>.
+		
+		<br><br><b class="subheader1"> Using a Spell-Like Ability (? actions)</b>
+		<br> Sometimes characters have access to abilities that are magical in nature, but are not spells. These are very 
+		similar to spells, but follow different rules. 
+		<br> Using a spell-like ability does not provoke an Attack of Opportunity.
+		<br> Spell-like abilities do not typically require concentration checks unless the ability mentions one.
+		<br> Spell-like abilities each take different numbers of actions to use. The ability will tell you how long it takes. 
+		If it does not, then it is up to your GM to decide.
+		</section>
+		
+		<section id="statusEffects" class="body-text">
+		<br><br><br><b class="header"> Status Effects </b>
+		<br> Adventurers experience many different kinds of ordeals during their travels. While many threats can simply cause 
+		harm in the conventional sense, dealing hp damage, there are other ways to harm and hamper creatures. Some attacks or 
+		spells may inflict special effects on creatures called status effects. The most common of these effects will be listed 
+		and explained here. They are organized topically, with similar effects placed near each other.
+		<br><b style="color:#044440; font-size:22px"> Deafened:</b> The creature cannot hear. They suffer the following effects:
+		<br> -4 penalty to perception
+		<br> -4 penalty to initiative
+		<br> 20% chance to lose a spell that has verbal components.
+		<br> Creatures who have been deaf for a long period of time may learn to mitigate these penalties.
+		<br><b style="color:#044440; font-size:22px"> Blinded:</b> The creature cannot see. Unless they are capable of blindsense
+		or some other method of accurately locating creatures, they cannot determine where anything is. All creatures are considered
+		to have <b>full concealment</b> from this creature. (This means that all attacks the blinded creatrue makes have a 50% chance
+		of missing, regardless of attack roll results). In addition, they suffer:
+		<br> -2 penalty to AC
+		<br> Lose their dexterity bonus to AC
+		<br> -4 penalty on strength or dexterity related checks
+		<br> Must succeed at an acrobatics check against a DC of 10 in order to avoid falling prone when they move more than half of their speed. 
+		<br> -8 penalty to perception
+		<br> They do not threaten any spaces
+		<br> Creatures who have been blind for a long period of time may learn to mitigate these penalties.
+		<br><b style="color:#044440; font-size:22px"> Dazzled:</b> The creature has had their sight impaired by a bright flash of 
+		light or similar effect. They suffer:
+		<br> -1 to attack rolls
+		<br> -1 to perception
+		<br><b style="color:#044440; font-size:22px"> Dazed:</b> The creature can hardly focus. They suffer:
+		<br> -2 actions this turn 
+		<br> They do not threaten any spaces
+		<br> Dazed typically lasts only 1 round. 
+		<br><b style="color:#044440; font-size:22px"> Stunned:</b> The creature has become jarred in such a manner that they 
+		can no longer think or move like they usually could. They suffer:
+		<br> -2 actions
+		<br> Drop all held items
+		<br> -2 penalty to AC
+		<br> Lose their dexterity bonus to AC
+		<br> -4 penalty to CMD
+		<br> They do not threaten any spaces
+		<br><b style="color:#044440; font-size:22px"> Slowed:</b> The creature feels sluggish, like they are moving through molasses. 
+		They suffer:
+		<br> -1 action
+		<br> -1 to attack rolls
+		<br> -1 to AC
+		<br> When making a full-attack action, they lose their attack with the lowest bonus
+		<br> They cannot Run or Charge
+		<br><b style="color:#044440; font-size:22px"> Staggered:</b> The creature has been struck in such a way that they are 
+		off-put or winded, similar to being punched in the gut and having the "wind knocked out of you." They suffer:
+		<br> -1 action
+		<br> They may only take a single move action this turn and cannot Run or Charge
+		<br> They do not threaten any spaces
+		<br><b style="color:#044440; font-size:22px"> Fascinated:</b> The creature is magically or mystically entranced by someone 
+		or something. They do nothing but sit quietly and observe the thing that fascinates them. However, anything that may seem 
+		even a little bit threatening grants them the opportunity to attempt another save to resist the effect (The DC is the one 
+		that the spell or magic ability imposed). If anything blatantly aggressive or dangerous should occur, the creature automatically 
+		overcomes its fascination and can react in time as normal. 
+		<br><b style="color:#044440; font-size:22px"> Confused:</b> The creature is not thinking clearly, and is unsure of 
+		what to do and how to do it. They are volatile, not even they know what they will do next. They suffer:
+		<br> They can not longer tell friend from foe
+		<br> Anyone trying to target the them with a beneficial spell must succeed on a touch attack
+		<br> If they are attacked, they then try to attack whatever attacked them
+		<br> Each time they act, they must roll a d100. They have a 25% chance of acting normally. They have a 25% chance of doing nothing at all.
+		They have a 25% chance to deal damage to themselves with the item they are holding. They have a 25% chance to attack the nearest creature,
+		including creatures such as animal companions, but not familiars.
+		<br> If they are kept from doing the action they roll, they do nothing but babble incoherently.
+		<br> They will make attacks of opportunity against any creature who has hurt them.
+		<br><b style="color:#044440; font-size:22px"> Antagonized:</b> The creature has been antagonized by one or more creatures. They
+		are unable to act in any way towards those creatures other than a hostile way. They can still choose their actions, but they
+		cannot choose to act in a non-hostile manner towards the creatures that it is antagonized against.
+		<br><b style="color:#044440; font-size:22px"> Nauseated:</b> The creature feels incredibly sick to their stomach. They suffer:
+		<br> -4 penalty to attack rolls
+		<br> They must make a concentration check with a -4 penalty to cast spells
+		<br> They cannot concentrate on spells for more than 1 round
+		<br> They cannot Run
+		<br> -6 penalty to their crit guard
+		<br><b style="color:#044440; font-size:22px"> Sickened X:</b> The creature feels unwell. They can experience multiple stages 
+		of sickened feelings. They suffer:
+		<br> -X penalty on attack rolls
+		<br> -X penalty on damage rolls
+		<br> -X penalty on skill checks
+		<br> -X penalty on saving throws
+		<br> -X penalty on ability checks
+		<br> When a creature who is sickened X is affected by an effect that would make them sickened Y, they become sickened X + Y
+		<br><b style="color:#044440; font-size:22px"> Bleed:</b> The creature is bleeding profusely. The creature takes damage each round 
+		equal to the damage of the specific bleed effect. They take this damage each round on their turn until the bleeding is stopped 
+		by a heal check (DC 15) or until the creature is healed by an effect that cures hp damage.
+		<br><b style="color:#044440; font-size:22px"> Shaken X:</b> The creature is scared of something, and suffers as a result. 
+		They suffer:
+		<br> -X penalty on attack rolls
+		<br> -X penalty on saving throws
+		<br> -X penalty on skill checks
+		<br> -X penalty on ability checks
+		<br> Anytime an effect would make the creature Shaken Y, they become Shaken X + Y.
+		<br><b style="color:#044440; font-size:22px"> Negative Level X:</b> These are brought on by magical deteriorating effects 
+		such as necromancy. They represent a deterioation of a creature's being. Negative levels are gained 1 at a time, but do 
+		not disppear quickly. Each morning, the creature gets to roll the save that they failed in order to gain the negative level. 
+		If they make it, they remove 1 negative level. Creatures with X negative levels suffer:
+		<br> -X penalty to ability checks
+		<br> -X penalty attack rolls
+		<br> -X penalty to CMB
+		<br> -X penalty to CMD
+		<br> -X penalty to saving throws
+		<br> -X penalty to skill checks
+		<br> Reduce their current and maximum hp by 5 multiplied by X
+		<br> Reduce their effective level for all effects that care by X
+		<br> If X becomes greater than their level, they die
+		<br><b style="color:#044440; font-size:22px"> Fatigued:</b> The creature is very tired, and becomes weaker. They suffer:
+		<br> -2 penalty to strength and dexterity
+		<br> They cannot Run or Charge
+		<br> If they would become fatigued while already fatigued, they become exhausted. Fatigue can only be removed by resting for 8 hours.
+		<br><b style="color:#044440; font-size:22px"> Exhausted:</b> The creature is VERY tired, they feel very weak. 
+		Any penalties from fatigue are remvoed. They suffer:
+		<br> -6 penalty to strength and dexterity
+		<br> Their move speed is cut in half, and they cannot take more than 1 Move action per turn
+		<br> They cannot Run or Charge
+		<br><b style="color:#044440; font-size:22px"> Entangled:</b> The creature is hampered by vines or ropes, limiting their 
+		movement. They suffer:
+		<br> -2 penalty on attack rolls
+		<br> -4 penalty to dexterity
+		<br> If they try to cast a spell, they must succeed at a concentration check (DC 15 + spell level)
+		<br> Their movement speed is cut in half and they can only take 1 Move action per turn
+		<br> They cannot Run or Charge
+		<br><b style="color:#044440; font-size:22px"> Grappled:</b> The creature is being grappled by someone or something else.
+		They suffer:
+		<br> -2 penalty to attack rolls
+		<br> -2 penalty to CMB
+		<br> -4 penalty to dexterity
+		<br> They cannot move from their place
+		<br> They can only cast spells without somatic components
+		<br> They must succeed at a concentration check (DC 10 + grappler's CMB + spell level)
+		<br><b style="color:#044440; font-size:22px"> Pinned:</b> The creature was grappled, but is now even more restricted. 
+		They suffer: 
+		<br> They cannot move from their place
+		<br> They are denied their dexterity bonus to AC
+		<br> They take an additional -4 penalty to AC
+		<br> They cannot handle items or make attacks with weapons
+		<br> They cannot cast spells with somatic or material components
+		<br> To cast a spell, they must succeed at a concentration check (DC 10 + grappler's CMB + spell level)
+		<br><b style="color:#044440; font-size:22px"> Paralyzed:</b> The creature cannot even move their muscles correctly.
+		They suffer:
+		<br> Their dexterity and strength are considered to be 0
+		<br> They are helpless and can only take mental actions
+		<br><b style="color:#044440; font-size:22px"> Helpless:</b> The creature is incapable of doing anything whatsoever 
+		to protect themselves. Creatures like this can be the target of a coup de grace. They suffer:
+		<br> Their dexterity is treated as 0
+		<br> Enemies get a +4 bonus to melee attack rolls against them
+		<br> They cannot take any physical actions except to try to escape from whatever is holding them
+		<br><b style="color:#044440; font-size:22px"> Petrified:</b> The creature is now made of stone. Any part that is 
+		removed from them is removed from their real body. They can die this way, but they do not die until they return to flesh. 
+		If the stone limb is grafted back to their body, it will be attached when they turn back to flesh. When they return to flesh,
+		all stone parts of them return as well even if they are not attached to them.
+		<br><b style="color:#044440; font-size:22px"> Prone:</b> The creature has fallen. They gain:
+		<br> -4 penalty to melee attack rolls
+		<br> -4 penalty to AC against melee attacks
+		<br> +4 bonus to AC against ranged attacks
+		<br> The inability to attack using a ranged weapon (except for crossbow)
+		<br> They are considered flat-foooted
+		<br><b style="color:#044440; font-size:22px"> Flat-Footed:</b> The creature is off their guard, unprepared to react.
+		They suffer:
+		<br> They lose their dexterity bonus to AC and CMD
+		<br> They do not threaten any spaces
+		<br> They cannot take immediate actions
+		<br><b style="color:#044440; font-size:22px"> Asleep:</b> The creature is taking a nap. You know what sleep is. 
+		They can be woken as an action by an ally, or by taking damage. They suffer:
+		<br> -10 perception
+		<br> They cannot make perception checks to perceive things visually
+		<br> They are helpless
+		<br><b style="color:#044440; font-size:22px"> Drowsy:</b> The creature is inattentive, only half awake. If they 
+`		are mild, X is equal to 2. If they are moderate, X is 4, if it is extreme then X is 8.		They suffer:
+		<br> -X on ability checks
+		<br> -X on skill checks
+		<br> -X on initiative
+		<br> -X on concentration checks
+		<br> -X on reflex saves
+		<br> -X on will saves
+		<br> a 25% spell failure chance to all spells they cast (50% if severe drowsiness)
+		<br> They must make a DC 10 wisdom check or else fall asleep (every 30 minutes if mild, 1d10 minutes if moderate, or every minute if extreme)
+		<br><b style="color:#044440; font-size:22px"> Unconscious:</b> The creature is knocked out and helpless. They cannot 
+		take any actions. 
+		<br><b style="color:#044440; font-size:22px"> Dying:</b> The creature is not dead, but they are not far away. Each round 
+		that they are dying on their turn, they take damage. 
+		<br> The first round, they take 1 damage.
+		<br> Each round after that, they take double the damage that they took the previous round.
+		<br> If their hp reaches a negative number equal to their max hp, then they become dead.
+		<br> If they are restored to 0 hp, then they are no longer dying. 
+		<br> If they are healed with a heal check equal to 15 + the most recent damage they took from dying, they are stabilized and stop dying.
+		<br> If battle ends and allies are available to provide aid, then they will stop dying without need for a roll, but it will take time
+		<br> If they are restored to 0 hp, they stabilize and are no longer dying
+		<br> If they are restored to 1 hp or more, they wake up and are disabled.
+		<br><b style="color:#044440; font-size:22px"> Stable:</b> The creature is unconscious, but they are no longer dying.
+		When they awake, they become disabled. If they are damaged, they begin dying.
+		<br><b style="color:#044440; font-size:22px"> Disabled:</b> The creature is not dead, nor is it dying, but they are close.
+		They don't currently have the energy that they would normally have. This status effect only lasts 1 round. They suffer:
+		<br> They have only 2 actions
+		<br> They cannot make actions that require strenuous effort
+		<br><b style="color:#044440; font-size:22px"> Dead:</b> The creature has perished. They are dead forever. They cannot 
+		be revived. Their souls depart from their bodies. Goodbye y'all.
+		<br><b style="color:#044440; font-size:22px"> Broken:</b> This effect is for items. The item becomes broken when it 
+		is reduced to half of its maximum hp. It becomes less effective at its job. It suffers:
+		<br> If it is a weapon: -4 to attack rolls, has its crit range reduced to only 20. Its crit multiplier becomes x2 if it wasn't already
+		<br> If it is armor, its AC bonus is halved and its check penalty is doubled
+		<br> If it is a wand, each use takes up twice as many charges
+		<br> If it is a tool, using it takes a -4 penalty 
+		<br><b style="color:#044440; font-size:22px"> Sinking:</b> This effect is for ships. They gain this condition when it has 0 hp.
+		It can no longer move and will go under the water in 10 rounds. Each attack that deals 25 or more damage to the ship reduces 
+		that time by 1 round. 
+		<br><b style="color:#044440; font-size:22px"> Incorporeal:</b> The creature is not fully physical, like a ghost. It gains:
+		<br> It cannot be harmed by nonmagical physical attacks
+		<br> It takes half damage from magical damage
+		<br> It takes full damage from force effects and other incorporeal attacks
+		</section>
+
+		<section id="skills" class="body-text">
+		<br><br><br><b class="header"> Skills </b>
+		<br> There are many different things for characters to do aside from just combat. Some people never become very competent in 
+		battle, instead choosing to hone their skills in different areas. A blacksmith, an acrobat, a thief, a politician, a merchant, 
+		a swindler, a spy, a wilderness survivalist, a doctor, the list of possibilities for people who avoid combat is extensive. 
+		<br> Skills are an attempt to quantify and track an individual's abilities in a wide variety of these areas. Each time you 
+		wish to attempt to use a skill, a skill check is made against an appropriate DC (Difficulty Class). The effects of failing or 
+		succeeding this check varies based on the situation at hand and the skill attempted, but skill checks are always made by rolling: 
+		<br><b style="color:brown">1d20 + Skill Modifier</b>
+		<br> A character has a <b>Skill Modifier</b> that represents how effective they are at each different skill. The skill modifier is 
+		calculated: <br><b style="color:brown">Base Stat Mod + Skill Ranks + Misc Bonus</b>
+		<br> <b>The Base Stat Mod</b> mentioned above is dependant on your character and the skill in question. Each skill is based on 
+		a different core statistic. For example, at its core, acrobatics is a test of your dexterity. Sure, being taught and trained 
+		in acrobatics makes a lot of difference, but someone with more dexterity will naturally be better at acrobatics than someone 
+		with low dexterity. Thus, the Base Stat Mod for acrobatics is the character's dexterity modifier. 
+		<br> <b>Skill Ranks</b> are points that you can put into specific skills when you achieve a level-up or at rare other opportunities. 
+		They represent your training and general level of technical expertise in that skill. 
+		The number of skill ranks that you can put into skills each level depends on your class and your intelligence modifier. Rogues 
+		and bards get many skills while fighters and wizards get few. The amount of intelligence you have directly increases how many skill 
+		ranks you get. When you are putting skill ranks into skills, you must be careful not to put more ranks into a skill than you have 
+		<b>Hit Dice (HD)</b>. As a player, you get 1 HD each level, so its often easier to remember that you cannot put skill ranks 
+		into a skill if doing so would mean you have more skill ranks in that skill than your character's level. 
+		<br> <b>Misc Bonus</b> is a term used for any other bonuses that you may have toward a specific skill. You may be extra good at 
+		a particular skill because of experience, training, racial bonuses, or class affinity for the skill. 
+		<br><br> Listed below are each of the different skills in TWE. They are each summarized and an example of how they might be used 
+		is given.
+		
+		<br><b style="color:#044440; font-size:22px"> Acrobatics:</b>
+		<br> Rolling, flipping, tumbling, acrobatics is a fun and useful skill for characters who like to move around. It is used 
+		when trying to roll past attacks, fall from heights without taking damage, and similar feats. This skill is based on dexterity.
+		<br><b style="color:#044440; font-size:22px"> Athletics:</b>
+		<br> While many attribute skills like climbing and leaping to dexterity, they do not come without great physical strength. 
+		Athletics is used for such things as jumping, swimming, climbing, and other feats of fitness. This skill is based on strength.
+		<br> Two different aspects to this skill are written on sheets as "Climb" and "Swim" separately. Combining them into 
+		the single skill of Athletics functionally means that whenever you would put a rank in either Climb or Swim, you automatically gain a 
+		rank in the other.
+		<br><b style="color:#044440; font-size:22px"> Appraise:</b>
+		<br> This skill is not the most used, but it can be pivotal for those who want to make the most of their money. Appraisal 
+		is a measure of your ability to identify the worth of things. If a merchant tries to sell you a trinket or service at a "great deal," 
+		in an attempt to actually rip you off, you will be happy you chose to invest in the appraise skill. This skill is based on 
+		intelligence.
+		<br><b style="color:#044440; font-size:22px"> Bluff:</b>
+		<br> This skill is a measure of your ability to lie and deceive.
+		<br> With these skill checks, the player must first make a reasonable 
+		argument. The skill check roll is simply used to help determine the efficacy of their words when the response of the 
+		other people may be in question. If you stab a man in the leg and then try to roll bluff to convince him that he did it
+		himself, then he is not likely to listen to you at all, and no roll can be made. This skill is based on charisma. 
+		<br><b style="color:#044440; font-size:22px"> Diplomacy:</b>
+		<br> This skill is a measure of your ability to converse socially. With it, you attempt to pursuade people one way or another.
+		This can be used to help 
+		keep the peace in situations that might become hostile, convince people to do things they 
+		may not want to do, or befriend people who do not even know you. With these skill checks, the player must first say their
+		piece. The skill check roll is simply used to help determine the efficacy of their words when the response of the 
+		other people may be in question. If you stab a man in the leg and then try to roll diplomacy to calm him down, he may not 
+		even listen to your words in the first place. This skill is based on charisma. 
+		<br><b style="color:#044440; font-size:22px"> Sense Motive:</b>
+		<br> This skill is often seen as the foil to bluff. It is used to try to ascertain the intent behind another creature's actions. 
+		While this is useful as an attempt to discover a liar, there is more to it than that. One such other way it can be used is to 
+		"read the room" during a political meeting to try to determine which way the members of the council are leaning or how they 
+		feel about your statements. This skill is based on wisdom.
+		<br><b style="color:#044440; font-size:22px"> Craft*:</b>
+		<br> This skill is typically followed by a type of object. The skill is your ability to, when supplied the necessary materials 
+		and tools, create the object. If you wish to craft multiple things well, then you would need to keep a separate Skill Modifier 
+		for each Craft skill. This can be used by characters who have a history of blacksmithing or fletching to help with equipment 
+		upkeep, or it can be used to create things like boats and traps for more specialized situations. If your class is Artisan, then 
+		this will be your favorite skill. This skill is based on intelligence. You cannot use this skill or put ranks into it unless you have been trained in it.
+		<br><b style="color:#044440; font-size:22px"> Disable Device*:</b>
+		<br> This skill is pretty self-explanatory. It is a measure of your ability to use tools to disable devices. It can be used to 
+		bypass locks with lockpicks, dismantle traps with suitable equipment, or even deactivate electrical mechanisms. This skill 
+		is based on dexterity. You cannot use this skill or put ranks into it unless you have been trained in it.
+		<br><b style="color:#044440; font-size:22px"> Sleight of Hand:</b>
+		<br> This skill is a measure of your ability to hide things with your hands. This is the skill that street magicians 
+		and illusionists master. They pull a coin from your ear, a hidden knife from their cloak, or your coin pouch from your 
+		belt with the same skill. This skill is based on dexterity.
+		<br><b style="color:#044440; font-size:22px"> Stealth:</b>
+		<br> This skill is the measure of your ability to hide yourself, reducing the effect you have on your surroundings. Sneaking down hallways 
+		quietly, remaining motionless behind cover, slinking in the shadows, and blending into a crowd all require stealth.
+		This skill is based on dexterity.
+		<br><b style="color:#044440; font-size:22px"> Escape Artist:</b>
+		<br> This skill is the measure of your ability to slip out of things that keep you restricted. Whether you be handcuffed to the wall 
+		of a jail cell, tied up with rope in the brig of a pirate's ship, or in the process of being crushed by a sumo wrestler's mighty embrace, 
+		escape artists find a way to slip free and live another day. 
+		This skill is based on dexterity.
+		<br><b style="color:#044440; font-size:22px"> Intimidate:</b>
+		<br> This skill is a measure of how much you can assert yourself over others. Usually done in fear, intimidation is 
+		often used to try to control people by encouraging or discouraging them from doing specific things. Most of the time 
+		when intimidation is rolled, the roller is trying to scare someone so that they gain the <b>shaken</b> condition. In most 
+		cases, a success means that the target becomes shaken 1. This skill is based on charisma.
+		<br><b style="color:#044440; font-size:22px"> Handle Animal*:</b>
+		<br> This skill is a measure of how well you can interact with animals and make them do what you want. When you try and calm 
+		your frightened horse, approach the wary stray dog, teach your own dog new tricks,
+		or even discourage the hunting lion from attacking you, you are trying to handle animals. 
+		This skill is based on charisma. You cannot use this skill or put ranks into it unless you have been trained in it.
+		<br><b style="color:#044440; font-size:22px"> Perception:</b>
+		<br> This skill is rolled more often than any other skill in TWE. It is a measure of your ability to notice things that 
+		are not already obvious. While you mustn't roll perception to see that your opponent has a sword strapped to his belt, 
+		the knife hidden up his sleave or his camouflaged ally in the bushes remain will unknown to you unless you succeed at a 
+		perception check. This skill is based on wisdom.
+		<br><b style="color:#044440; font-size:22px"> Disguise:</b>
+		<br> This skill is a measure of your ability to make someone or something seem like someone or something else. This can be 
+		done the conventioanl way, by wearing the noblewoman's dress, wig, and makeup so you look like her, or it can be done in 
+		more subtle ways. A mimic impersonating a voice or a painter attempting to hide a door with his mural both use 
+		this skill to accomplish their tasks. This skill is based on charisma.
+		<br><b style="color:#044440; font-size:22px"> Perform:</b>
+		<br> This skill is a measure of your ability to entertain others with your display. This skill can take many 
+		forms (much like the craft skill), but is often a talent such as dancing or singing. This skill is based on charisma.
+		<br><b style="color:#044440; font-size:22px"> Linguistics*:</b>
+		<br> This skill represents your knowledge and experience in the ways of language. This skill operates slightly differently 
+		than most other skills because it is not often used as a check in the same way as other skills are. While you may roll a 
+		linguistics check to see if you can identify some basic meaning from a text that you cannot read, your primary use for this 
+		is learning languages. When you begin play, the number of languages you know is determined. However, you can pick up additional 
+		languages that you study or hear as you travel. For every 4 you have in linguistics, you can learn to understand a new 
+		language. This skill is based on intelligence. You cannot use or put ranks into this skill unless you have been trained in it.
+		<br><b style="color:#044440; font-size:22px"> Knowledges*:</b>
+		<br> This skill is rolled whenever you need to check your character's knowledge on a topic. Some characters may know many things 
+		in the context of their own world that their player does not. When this is relevant, the player may roll a knowledge check depending on 
+		what category of knowledge the desired information falls under. These checks are made for free, and are often encouraged, as players 
+		will need all the info they can get if they wish to defeat their foes. This skill is based on Intelligence.
+		You cannot use or put ranks into this skill unless you have been trained in it. The categories of knowledge are thus:
+		<br><b style="color:#044440; font-size:18px"> Arcana:</b> This involves magical knowledge, the aether, and other such occult things, usually 
+		found by people who have studied or been immersed in the supernatural.
+		<br><b style="color:#044440; font-size:18px"> Dungeoneering:</b> This involves details involving adventuring dungeons, caves, and other 
+		such places, it usually is found by people with a history of adventuring.
+		<br><b style="color:#044440; font-size:18px"> Engineering:</b> This involves machinery, mechanisms, and the laws of physics, usually found 
+		by those who studied such things.
+		<br><b style="color:#044440; font-size:18px"> Geography:</b> This involves the surrounding land, paths, and other landmarks, usually 
+		found by those who have studied maps.
+		<br><b style="color:#044440; font-size:18px"> History:</b> This involves the past, legends, myths, and facts, usually found by those 
+		who have heard or sought it out.
+		<br><b style="color:#044440; font-size:18px"> Local:</b> This involves events, people, and issues specific to a community, typically 
+		found by speaking to or reading the local populace.
+		<br><b style="color:#044440; font-size:18px"> Nature:</b> This involves the way the natural world works. This includes animals, plants, 
+		and other such normal things. Monsters are not classified here. This is usually found by those who spend much time outdoors for its own sake.
+		<br><b style="color:#044440; font-size:18px"> Nobility:</b> This involves the people in power, politics, and power struggles. It is usually 
+		found by those who have had to deal with such things in the past.
+		<br><b style="color:#044440; font-size:18px"> Planes:</b> This involves the more fantastical parts of the world. Monsters, elementals, 
+		and other such things inherent to the world are classified here. It is much like a mix between arcana and nature. It is usually found by 
+		people who seek out trouble.
+		<br><b style="color:#044440; font-size:18px"> Religion:</b> This involves the different religious deities, practices, sects, and other such 
+		things. Usually found by those who have been taught or studied it.
+		<br><b style="color:#044440; font-size:22px"> Spellcraft*:</b>
+		<br> This skill is only used by those who dabble in magic. It is the result of a person becoming so familiar with magic that they begin to understand 
+		not only how to use it, but how it really works. Players will use this skill to attempt to do things with their magic that they perhaps 
+		cannot normally do. Modifying the effects of spells or other magical abilities or even creating entirely new spells (If you are a 
+		wizard or similar type caster). This skill allows mages to do with spells what fighters can do with their blades: so much more than just its 
+		obvious use.
+		This skill is based on Intelligence.
+		You cannot use or put ranks into this skill unless you have been trained in it.
+		<br><b style="color:#044440; font-size:22px"> Use Magic Device*:</b>
+		<br> This skill is used by creatures who attempt to harness the power of a magical object. Whether it be wielding a wand, activating a 
+		magical grenade, or commanding the psychic powers of a stubborn sentient tiara, this skill enables its user to do supernatural things 
+		it could otherwise only dream of. 
+		This skill is based on charisma.
+		You cannot use or put ranks into this skill unless you have been trained in it.
+		<br><b style="color:#044440; font-size:22px"> Heal:</b>
+		<br> This skill is a measure of your ability to administer first aid, and to doctor wounds. While this skill is not used to restore HP, 
+		it can be used to stop bleeding, stabilize a dying person, remove poison, and treat illnesses. This skill is based on Wisdom.
+		<br><b style="color:#044440; font-size:22px"> Survival:</b>
+		<br> This skill is used to do things that an expert outdoorsman would be able to do. Tracking creatures, foraging for resources, telling direction, 
+		and other such skills all fall into this category, giving it the reputation of "the Boy Scout" skill.
+		This skill is based on wisdom.
+		<br><b style="color:#044440; font-size:22px"> Ride:</b>
+		<br> This skill is used to ride creatures or objects. Whether it be to expertly weather the storm of a bucking bronco's rage, navigate your war 
+		dog through the battlefield of caltrops, or cling for dear life to the back of a cart as it careens down a mountainside, your ability to 
+		keep on riding is dependent on this skill. This skill is based on dexterity.
+		<br><b style="color:#044440; font-size:22px"> Fly:</b>
+		<br> This skill has a slightly misleading name. It is not your ability to grow wings or otherwise defy gravity. Instead, it is best thought of as your aviation skill. 
+		This skill is rolled when you ride atop a majestic pegasus, attempt to guide your hot air balloon, or control your fall with a broken glider. 
+		This skill is also often used by those with the ability to actually fly, such as mages or winged creatures, when they attempt to perform 
+		complicated maneuvers or other daring feats.
+		This skill is based on dexterity.
+		</section>
+	</p>
+</body>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("page-select-box");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+</html>
