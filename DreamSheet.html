@@ -10,50 +10,58 @@
 </head>
 <body class="std">
 
+		<div class="posStatBox">
+			<div class="boxChild">
+				Ambition <input id="ambition" type="number" value="0">
+			</div>
+			<div class="boxChild">
+				Creativity <input id="creativity" type="number" value="0">
+			</div>
+			<div class="boxChild">
+				Ire <input id="ire" type="number" value="0">
+			</div>
+			<div class="boxChild">
+				Curiosity <input id="curiosity" type="number" value="0">
+			</div>
+		</div>
+
+
+	
+
+
+		<div class="negStatBox">
+			<div class="boxChild">
+				Defiance <input id="defiance" type="number" value="0">
+			</div>
+			<div class="boxChild">
+				Severity <input id="severity" type="number" value="0">
+			</div>
+			<div class="boxChild">
+				Perseverance <input id="perseverance" type="number" value="0">
+			</div>
+			<div class="boxChild">
+				Reservation <input id="reservation" type="number" value="0">
+			</div>
+		</div>
+
+
 	<div class="posStatBox">
 		<div class="boxChild">
-			Ambition <input id="ambition" type="number">
-		</div>
-		<div class="boxChild">
-			Creativity <input id="creativity" type="number">
-		</div>
-		<div class="boxChild">
-			Ire <input id="ire" type="number">
-		</div>
-		<div class="boxChild">
-			Curiosity <input id="curiosity" type="number">
+			Dream Pool <input id="dreamPool" type="number" value="0"> out of <div id="dreamPoolMax" class="notEditable" max="10" min="0" step="1"> </div> 
+			<button onclick="loseDreamPoint()"> Lose 1 Dream Point! </button>
 		</div>
 	</div>
 
 	<div class="negStatBox">
 		<div class="boxChild">
-			Defiance <input id="defiance" type="number">
-		</div>
-		<div class="boxChild">
-			Severity <input id="severity" type="number">
-		</div>
-		<div class="boxChild">
-			Perseverance <input id="perseverance" type="number">
-		</div>
-		<div class="boxChild">
-			Reservation <input id="reservation" type="number">
+			Sleep Pool <input id="sleepPool" type="number" value="0"> out of <div id="sleepPoolMax" class="notEditable" max="10" min="0" step="1"> </div>
+			<button onclick="loseSleepPoint()"> Lose 1 Sleep Point! </button>
 		</div>
 	</div>
 
-	<div class="posStatBox">
-		<div class="boxChild">
-			Dream Pool <input id="dreamPool" type="number"> out of <div id="dreamPoolMax" class="notEditable" max="10" min="0" step="1"> </div> 
-		</div>
-	</div>
-
-	<div class="negStatBox">
-		<div class="boxChild">
-			Sleep Pool <input id="sleepPool" type="number"> out of <div id="sleepPoolMax" class="notEditable" max="10" min="0" step="1"> </div>
-		</div>
-	</div>
-
-	<div>
-		Active or Counteractive Value? <input id="actValue" type="number">
+	<div class="neutralBox">
+		Active or Counteractive Value? (Positive is Positive, Negative is Negation) <input id="actValue" type="number" value="0">
+		<button onclick="calculatePools()"> Calculate Pools! </button>
 	</div>
 
 	<script src="js/DreamScript.js"></script>
