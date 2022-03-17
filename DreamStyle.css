@@ -1,0 +1,67 @@
+.std {
+	background-color: lavender;
+
+}
+
+div.posStatBox {
+	background-color: lightblue;
+	position: relative;
+	width: 30%;
+	Height: 50%;
+	border-style: double;
+	border-color: darkblue;
+	display: inline-block;
+}
+
+div.negStatBox {
+	background-color: lightpink;
+	position: relative;
+	width: 30%;
+	Height: 50%;
+	border-style: double;
+	border-color: hotpink;
+	display: inline-block;
+	margin-left: 30%;
+}
+
+div.negStatBox > div 
+div.posStatBox > div {
+	align-content: center;
+	margin-top: 10%;
+	background-color: black;
+	font-size: 10em;
+}
+
+div.negStatBox > div > input
+div.posStatBox > div > input {
+	align-content: center;
+	align-self: right;
+	margin-left: 10%;
+}
+
+div.boxChild {
+	position: relative;
+	align-content: center;
+	font-size: 1.5em;
+	margin-top: 10%;
+	margin-left: 10%;
+}
+
+input {
+	border-radius: 40%;
+	border: 2px solid #044440;
+	padding:  20px;
+	width: 40px;
+	height: 10px;
+}
+
+div.notEditable {
+	background-color: grey;
+	border-radius: 40%;
+	border: 2px solid black;
+	padding: 20px;
+	width: 40px;
+	height: 10px;
+	position: relative;
+	display: inline-block;
+}
