@@ -27,6 +27,110 @@ table {
 	font-size: 1.5em;
 }
 
+.fireHeader {
+	color: darkred;
+	background-color: lightpink;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.fireSubHeader {
+	color: darkred;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.forceHeader {
+	color: darkgray;
+	background-color: lightgrey;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.forceSubHeader {
+	color: darkgray;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.earthHeader {
+	color: darkgreen;
+	background-color: sandybrown;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.earthSubHeader {
+	color: darkgreen;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.acidHeader {
+	color: purple;
+	background-color: lightpink;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.acidSubHeader {
+	color: purple;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.windHeader {
+	color: yellowgreen;
+	background-color: forestgreen;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.windSubHeader {
+	color: yellowgreen;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.electricHeader {
+	color: darkorange;
+	background-color: lightyellow;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.electricSubHeader {
+	color: darkorange;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.waterHeader {
+	color: darkblue;
+	background-color: lightblue;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.waterSubHeader {
+	color: darkblue;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.iceHeader {
+	color: slateblue;
+	background-color: deepskyblue;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.iceSubHeader {
+	color: slateblue;
+	font-size: 24px;
+	font-weight: bold;
+}
+
 .tableDiv {
 	text-align: center;
 	margin: auto;

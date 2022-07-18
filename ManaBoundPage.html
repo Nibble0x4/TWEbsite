@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> TWEbsite ManaBound Page </title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="images/TWEbsiteFavicon.png">
+
+
+</head>
+<body class="std">
+
+	<h1 class="page-header"> ManaBound Page </h1>
+		
+	<div id="page-select-box" class="option-box"> 
+		<h2> Pages: </h2>
+		<p class="option"> <u><a href="index.html" style="color:#aafff0">Intro Page</a></u></p>
+		<p style="font-style:underline; color:#ee0000; cursor:pointer">	<u><a href="TWEbsiteRulesetPage.html" style="font-style:underline; color:#ee0000;">Ruleset Page</a></u> </p>
+		<p style="font-style:underline; color:#eeee00; cursor:pointer">	<u><a href="TWEbsiteClassPage.html" style="font-style:underline; color:#eeee00; cursor:pointer">Classes Page</a></u> </p>
+			<p style="text-indent: 30px; cursor:pointer" >	<a href="CoreClassPage.html" style="font-style:underline; color:#aafff0;">Core Classes</a></p>
+			<p style="text-indent: 30px; cursor:pointer">	<a href="UniqueClassPage.html" style="font-style:underline; color:#aafff0;">Unique Classes</a></p>
+		<p style="font-style:underline; color:#00dd00; cursor:pointer" > <a href="TWEbsiteRacesPage.html" style="font-style:underline; color:#00dd00;"><u>Races Page </u></a> </p>
+		<p style="font-style:underline; color:#0000dd; cursor:pointer">	<u>Lore Page </u> </p>
+		<p style="font-style:underline; color:#440044; cursor:pointer">	<u><a href="TWEbsiteResourcesPage.html" style="font-style:underline; color:#440044;">Resources Page</a> </u> </p>
+
+	</div>
+	
+	<p class="text"> <b style="color:#044440; background:lightgrey; font-size:24px"> The ManaBound </b>
+	<br> In TWE, there exists a type of warrior that dedicates their life to the pursuit of raw, destructive power. These people embrace magic as the ultimate source of power, but refuse to spend their days locked in a tower, studying spells while their bodies waste away. Instead, these people become students of Mana. In the Tri-Villages of Taria, an entire village known as Werta is devoted to the mastery of this special brand of magic. Students of Mana learn to call upon the power of the world around them without losing the chance to train their bodies physically. They become bound to Mana, and they wield it alongside their bodies to inflict maximum destruction.
+
+	<br><br><b>Role</b>: The Manabound are a combat-centric class. They are decently effective fist fighters with the toughness to go toe-to-toe with melee warriors, but their main draw is the mana they can use to cast their special elemental spells, called Tacs. They regenerate a little mana each round, so they can feel free to throw out attacks without worrying about spell slots or any such silliness.
+	 
+	
+	<hr>
+
+
+
+	<div class="tableDiv">
+		<b class="header"> Class Advancement Table </b>
+		<br>
+		<br>
+		<hr>
+		<br>
+		<table>
+
+			<colgroup>
+				<col span="1" style="background-color:darkgray;">
+				<col span="4" style="background-color: lightblue;">
+				<col span="1" style="background-color: lightgrey;">
+				<col span="2" style="background-color: lightpink;">
+			</colgroup>
+			<tr>
+				<th>Level</th>
+				<th>BAB</th>
+				<th>Fort</th>
+				<th>Ref</th>
+				<th>Will</th>
+				<th>Special</th>
+				<th>Max Mana Bonus</th>
+				<th>Unarmed Damage</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>+0</td>
+				<td>+2</td>
+				<td>+0</td>
+				<td>+2</td>
+				<td>ManaFist Destiny, Bound to Mana, Tacs</td>
+				<td>0</td>
+				<td>1d6</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>+1</td>
+				<td>+3</td>
+				<td>+0</td>
+				<td>+3</td>
+				<td>Elemental Attunement, New Tac</td>
+				<td>0</td>
+				<td>1d6</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>+2</td>
+				<td>+3</td>
+				<td>+1</td>
+				<td>+3</td>
+				<td>Bonus Feat</td>
+				<td>0</td>
+				<td>1d6</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>+3</td>
+				<td>+4</td>
+				<td>+1</td>
+				<td>+4</td>
+				<td>New Tac</td>
+				<td>0</td>
+				<td>1d8</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>+3</td>
+				<td>+4</td>
+				<td>+1</td>
+				<td>+4</td>
+				<td>Attunement Resistance(Scale)</td>
+				<td>0</td>
+				<td>1d8</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>+4</td>
+				<td>+5</td>
+				<td>+2</td>
+				<td>+5</td>
+				<td>New Tac</td>
+				<td>1</td>
+				<td>1d8</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>+5</td>
+				<td>+5</td>
+				<td>+2</td>
+				<td>+5</td>
+				<td>Bonus Rank</td>
+				<td>1</td>
+				<td>1d8</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>+6</td>
+				<td>+6</td>
+				<td>+2</td>
+				<td>+6</td>
+				<td>New Tac</td>
+				<td>1</td>
+				<td>1d10</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>+6</td>
+				<td>+6</td>
+				<td>+3</td>
+				<td>+6</td>
+				<td>Bonus Feat</td>
+				<td>1</td>
+				<td>1d10</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>+7</td>
+				<td>+7</td>
+				<td>+3</td>
+				<td>+7</td>
+				<td>New Tac</td>
+				<td>1</td>
+				<td>1d10</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>+8</td>
+				<td>+7</td>
+				<td>+3</td>
+				<td>+7</td>
+				<td>Attunement Resistance(Half)</td>
+				<td>1</td>
+				<td>1d10</td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td>+9</td>
+				<td>+8</td>
+				<td>+4</td>
+				<td>+8</td>
+				<td>New Tac</td>
+				<td>2</td>
+				<td>2d6</td>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td>+9</td>
+				<td>+8</td>
+				<td>+4</td>
+				<td>+8</td>
+				<td>Bonus Rank</td>
+				<td>2</td>
+				<td>2d6</td>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td>+10</td>
+				<td>+9</td>
+				<td>+4</td>
+				<td>+9</td>
+				<td>New Tac</td>
+				<td>2</td>
+				<td>2d6</td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>+11</td>
+				<td>+9</td>
+				<td>+5</td>
+				<td>+9</td>
+				<td>Bonus Feat</td>
+				<td>2</td>
+				<td>2d6</td>
+			</tr>
+			<tr>
+				<td>16</td>
+				<td>+12</td>
+				<td>+10</td>
+				<td>+5</td>
+				<td>+10</td>
+				<td>New Tac</td>
+				<td>2</td>
+				<td>2d8</td>
+			</tr>
+			<tr>
+				<td>17</td>
+				<td>+12</td>
+				<td>+10</td>
+				<td>+5</td>
+				<td>+10</td>
+				<td>Attunement Immunity</td>
+				<td>2</td>
+				<td>2d8</td>
+			</tr>
+			<tr>
+				<td>18</td>
+				<td>+13</td>
+				<td>+11</td>
+				<td>+6</td>
+				<td>+11</td>
+				<td>New Tac</td>
+				<td>3</td>
+				<td>2d8</td>
+			</tr>
+			<tr>
+				<td>19</td>
+				<td>+14</td>
+				<td>+11</td>
+				<td>+6</td>
+				<td>+11</td>
+				<td>Bonus Rank</td>
+				<td>3</td>
+				<td>2d8</td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td>+15</td>
+				<td>+12</td>
+				<td>+6</td>
+				<td>+12</td>
+				<td>New Tac, Ultimate Tacs</td>
+				<td>3</td>
+				<td>2d10</td>
+			</tr>
+
+		</table>
+	</div>
+
+	<p class="body-text">
+	<b>Alignment</b>: Any
+	<br><b> Hit Die</b>: d8
+	<br><b>Starting Wealth</b>: 2d6 × 10 gp (average 105 gp.) [In TWE, this number is of the appropriate currency for your province-of-origin] In addition, each character begins play with an outfit worth 10 gp or less.
+	<br><br><b>Class Skills</b>: The Manabound’s class skills are: Acrobatics (dex), Climb (str), Escape Artist (dex), Fly (dex), Intimidate (cha), Knowledge (Arcana), Knowledge (Planes), Knowledge (Geography), (Sense Motive (wis), Spellcraft (int), Swim (str)
+	<br><b>Skill ranks per level</b>: 2 + int modifier
+
+	<hr>
+	
+	<p class="body-text"> <b class="header"> Class Features </b>
+	<br> 
+	<br><br> 
+
+		<hr><p class="body-text"><br><b class="classFeatureHeader">Weapon and Armor Proficiency </b>
+		<br> A Manabound is proficient with no weapons and with light armor, though they still do take the arcane Tac failure chance for wearing armor. See weapon lists <a href="https://www.d20pfsrd.com/equipment/weapons#simple-martial-and-exotic-weapons">HERE</a>. See Armor lists <a href="https://www.d20pfsrd.com/equipment/armor">HERE</a>.
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader"> Bound to Mana </b>
+		<br> A Manabound performs a ritual at level 1 that Tacs them irreversibly to Mana, a combination of aether and human energy. This ritual gives them the ability to harness mana, but locks them out of ever forming a connection with another kind of magic. Manabound cannot take levels in other magical classes, unless they give up all magic abilities from that class. Similarly, anyone who becomes Manabound loses all magical abilities and spells they have gained from other classes or even their race.
+		<br><br>
+		In return, the power of mana fills them, providing an overflowing fountain of renewing magical energy that they can wield at will.
+
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader"> ManaFist Destiny </b>
+		<br> The Manabound are Tac-casters, wielders of magic, but they are not the kind to shy away from danger. To the contrary, Manabound are trained specifically in the use of their bodies as weapons, eschewing other kinds of weapons and relying on their own strength. As a result, Manabound are never truly unarmed even if they run out of mana.
+		<br><br>
+		At first level, the Manabound gains the Improved Unarmed Strike feat. In addition, they are considered to have proficiency with no other weapons and their Manabound Base Attack Bonus is considered to be ½ of their Manabound level when wielding any such weapons.
+		<br><br>
+		In addition, the Manabound learns the basic Tac from each element. See the “Tac List” section to find them.
+
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader"> Mana Pool </b>
+		<br> The Manabound gains a pool of mana at first level. This pool contains a number of points equal to their charisma modifier. 
+		<br><br> This pool is the source of their magic, and refills automatically. Every 6 seconds, the Manabound gains 1 point of mana in their pool. In addition, they can spend a single action on their turn to regain 1 point of mana.
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader"> Tacs </b>
+		<br> Manabound have a rather restricted Tac list, the result of wielding such unrestricted magic. They gain a small number of Tacs as they grow stronger, so their choices of Tac matter greatly. 
+		<br><br>
+		At every even level, a Manabound mage learns 1 new Tac and each known Tac gains 1 rank. A new Tac learned can be used at will, provided the mage has enough mana to cast it. New Tacs learned are learned at Tac rank equal to your mage rank.
+		<br><br>
+		A Tac rank is essentially a power boost to a learned Tac that shows how much more skilled a mage has become at wielding their magic. Each Tac has a listed “Rankup Effect” (see the “Tac List” section for examples) that takes effect every time a Tac receives a rankup. 
+		<br><br>
+		Not every Tac in the Manabound list utilizes a DC, but here is the calculation for DCs.
+		<br><b> Tac DC = 8 + charisma modifier</b>
+		<br><br><i>Detached:</i> This paragraph contains rules that apply ONLY to Detached mages. When a Detached mage learns a new Tac, they are not restricted to choosing Tacs from any particular elements. In addition, the new Tacs they learn are learned at Tac rank 1.
+		<br><br> See the “Tac List” for reference on the Manabound Tacs.
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader"> Elemental Attunement </b>
+		<div class="classFeature">
+			<br> Each Manabound wields the power of the elements, but that doesn’t mean they don’t have favorites. As they grow in power and experience, the Manabound has a choice to attune themselves to different elements. When they do so, they become stronger in the use of their chosen element but unable to use any others. 
+			<br><br> 
+			When a Manabound mage chooses an attunement, they lose all of the basic Tacs from elements not included within their attunements. The basic Tacs of their remaining elements are boosted one rank. From that point on, mages can only select Tacs from within their attunement. 
+
+			<br><br><b class="fireSubHeader">Passion- Fire/Force</b>
+			<br> Fire is rampant and destructive, with little restraint. Fire Tacs focus on destroying their target and anything else that happens to be nearby with ferocity and burning power. 
+			<br>
+			Force is an oft-overlooked element, but is the truest weapon that mana can produce. Force Tacs focus on striking their target regardless of protection, even if that comes at the cost of power. 
+			<br>
+			Mages choosing this attunement tend to be fierce and confident, taking down hordes and individuals without breaking a sweat.
+			<br><br> You can find a Tac List with the Passion Tacs <a href="ManaBoundTacListPassion.html">HERE</a>.
+
+			<br><br><b class="waterSubHeader">Serenity- Water/Ice</b>
+			<br> Water is beautiful but deceptively strong, and water Tacs focus on pushing and pulling friends and foes around the battle, keeping enemies constantly off-balance. 
+			<br>
+			Ice is similar to water in its beauty, but is far more severe in its methods. Ice Tacs focus on wearing down opponents, slowing them, weakening them, and stealing their will to fight. 
+			<br>
+			Mages choosing this attunement tend to be patient and calm, but severe, always in control.
+
+			<br><br><b class="earthSubHeader">Patience- Earth/Acid</b>
+			<br> Earth is strong and unyielding, giving way to nothing. Earth Tacs are powerful when they strike, crushing their targets under unforgiving stone attacks. 
+			<br>
+			Acid is the bane of earth, causing all defenses to crumble under its touch. Acid Tacs focus on breaking down the resistance of its targets before it allows them to finally die.  
+			<br>
+			Mages choosing this attunement tend to be firm and unyielding, planning out the best time to strike.
+			<br><br> You can find a Tac List with the Patience Tacs <a href="ManaBoundTacListPatience.html">HERE</a>.
+
+			<br><br><b class="windSubHeader">Decision- Wind/Electricity</b>
+			<br> Wind is swift and evasive, moving wherever it wishes with little thought or worry of being stopped. Wind Tacs emphasize speed and movement, especially when attacking.  
+			<br>
+			Lightning is the perfect complement of wind, arcing through the air to strike down its foes. Lightning Tacs focus on dealing high damage to creatures below them and even occasionally arcing between targets. 
+			<br>
+			Mages choosing this attunement tend to be quick in mind and body, surprising their foes and keeping them on their toes.
+
+			<br><br><b class="classFeatureSubheader">Detached</b>
+			<br> Any mage who chooses this option eschews the power offered by the individual elements, instead choosing not to give up any of their basic Tacs. 
+			<br>
+			These mages gain no Exclusive Tacs from their attunement, as they have not attuned to anything, but instead have different rules governing Tac selection (see the “Tacs” section). 
+			<br>
+			Mages choosing to remain detached tend to be individualistic and clever, using creative tactics to solve problems in ways that no attuned mage ever could.
+
+		</div>
+
+		
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader"> Tac List </b>
+			<br> All Tacs are classified based on their element. Some Tacs are listed as derivatives of other Tacs. In this case, the source Tac must be known before any of the following Tacs can be known.
+
+			<br><br><hr><p class="body-text"><br><b class="fireHeader"> Fire Tacs </b>
+			<br> 
+		<div class="classFeature">
+			<br><br><b class="fireSubHeader">Fire Punch- [ 1 Mana ] [ BASIC ]</b>
+			<br> Strike your foes with flame balled in your fist.
+			<br>
+			If the attack hits, it deals 1d6 + 1 fire damage. If the attack is a crit or soft crit, then the target and any chosen creatures within 20 feet of the target are Inflamed 2. Creatures set aflame this way take 1d4 + 2 damage now and at the start of their turn until they dowse themselves
+			<br>
+			<i><b>Rankup Effect</b></i>: add +1 fire damage, and increase Inflamed by 2.
+
+			<br><br><br><b class="fireSubHeader">Explode- [ 2 Mana ]</b>
+			<br> Release an explosion of flame in all directions, searing all creatures within range, unless you restrain it.
+			<br>
+			All creatures within a 10-foot radius burst must make a reflex save or else take 2d6 + 1 fire damage. If you would like to exclude certain creatures within the range, then the damage is halved. Any creature who makes the save halves the damage.
+			<br>
+			<i><b>Rankup Effect</b></i>: add +1 to the DC and 1d6 + 1 to the damage
+
+			<br><br><br><b class="fireSubHeader">Fire Blast- [ 3 Mana ]</b>
+			<br> Strike your foe and unleash a blast of flame that strikes at those nearby.
+			<br>
+			This Tac is cast as a part of an unarmed strike. Regardless of whether the attack hits your initial target, compare the attack roll to the AC of the target and every other creature in a 20 foot cone. Anyone hit is dealt 1d6 + 1 fire damage. If any of these creatures are crit or soft crit by this Tac, then all creatures hit by the attack are Inflamed 2, taking damage now and at the start of their turn until they dowse themselves.
+			<br>
+			<i><b>Rankup Effect</b></i>: add +1 fire damage, and increase Inflamed by 2.
+
+			<br><br><br><b class="fireSubHeader">Fire Jet- [ 2 Mana ]</b>
+			<br> Strike and eject flame forcefully from the point of contact, burning your foe and launching yourself backward.
+			<br>
+			This Tac is cast as a part of an unarmed strike, though there need not be a target. If you strike a foe, then you deal 1d6 + 1 fire damage. Regardless, you are launched in the opposite direction 15 feet. This Tac can be used to reduce fall damage.
+			<br>
+			<i><b>Rankup Effect</b></i>: add +1 fire damage
+
+			<br><br><br><b class="fireSubHeader">Fireball- [ 5 Mana ]</b>
+			<br> Conjure a great 20 ft-radius orb of flame and hurl it through the air at your enemies.
+			<br>
+			Hurl the fireball at any spot within 45 feet. The moment it strikes something, it detonates and all creatures within 20 feet of it must make reflex save to halve 2d6 + 2 fire damage.
+			<br>
+			<i><b>Rankup Effect</b></i>: add +1 to the DC and 1d6 + 2 fire damage
+
+			<br><br><br><b class="fireSubHeader">Burn- [ 2 Mana ]</b>
+			<br> Take a deep breath and imbue your strikes with flame.
+			<br>
+			For 1 turn, anyone struck by your fists is Inflamed 2, taking the burn damage now and at the start of their next turn. This Tac takes an action to cast, but can be sustained in the next turn and any consecutive turns as a free action by spending the appropriate Mana cost.
+			<br>
+			<i><b>Rankup Effect</b></i>: increase Inflamed by 2.
+
+			<br><br><br><b class="fireSubHeader">Firefoot- [ 1 Mana ]</b>
+			<br> Wreathe your feet in fire and run forth, scorching the ground behind you. 
+			<br>
+			This Tac is cast as a part of a move action. Wherever you step for the duration of the move, the surface beneath you is set aflame for 1 round. Any creatures who step into this flame take 1d6 + 1 points of fire damage and are Inflamed 2, taking damage then and at the start of their turn until they dowse themselves. The fire can be bypassed by leaping over it with an acrobatics check with DC 14. You cannot run through another player’s space using this Tac unless you succeed on an Overrun maneuver.
+			<br>
+			<i><b>Rankup Effect</b></i>: increase Inflamed by 2 and the acrobatics DC by 1
+
+			<br><br><br><b class="fireSubHeader">Fire Shield- [ 2 Mana ]</b>
+			<br> Cast flame over a creature you can reach, wrapping them in warmth and protection.
+			<br>
+			For 1 round, the creature halves damage from fire and cold attacks made against them, and deals 2 fire damage whenever they make contact with another creature. This Tac takes an action to cast, but can be maintained each round 
+			<br>
+			<i><b>Rankup Effect</b></i>: Increase fire damage by 1
+
+			<br><br><br><b class="fireSubHeader">Bonfire- [ 6 Mana ]</b>
+			<br> Summon forth flame from beneath you, billowing up and around you to consume all adjacent foes.
+			<br>
+			All creatures adjacent to you must make a reflex save to halve 1d6 + 1 fire damage. This fire damage is multiplied by the number of adjacent creatures (so if you are surrounded by 8 creatures it becomes 8d6 + 8). 
+			<br>
+			<i><b>Rankup Effect</b></i>: Increase DC by 1 and damage (before multiplier) by 1d6+1
+
+			<br><br><br><b class="fireSubHeader">Heat Aura- [ 2 Mana ] [ EXCLUSIVE ]</b>
+			<br> Focus and extend the scorching heat of your flame in all directions, intensifying the heat of your surroundings for 1 round.
+			<br>
+			All creatures within 20 feet of you are weakened, giving them weakness to fire (or removing resistance, if it is there), halving the power of ice effects, and melting ice structures. This Tac can be cast as an action, or cast as a part of another fire Tac. This Tac can only be cast once per round.
+			<br>
+			<i><b>Rankup Effect</b></i>: This Tac cannot be ranked up
+
+		</div>
+
+
+		<br><br><hr><p class="body-text"><br><b class="waterHeader"> Water Tacs </b>
+			<br> 
+		<div class="classFeature">
+			<br><br><b class="waterSubHeader">Water Slap [ 1 Mana ] [ BASIC ]</b>
+			<br> Smack a target with the force of a small wave.
+			<br>
+			This Tac is cast as part of an unarmed strike. If the attack hits, it deals 1d6 + 1 bludgeoning damage and the target is pushed 5 feet. If they are obstructed, they instead take an additional 1 bludgeoning damage.
+			<br>
+			<i><b>Rankup Effect</b></i>: add +1 bludgeoning damage to the initial strike and the additional damage for being pushed into an obstruction.
+
+			<br><br><br><b class="waterSubHeader">Wave Kick- [ 2 Mana ]</b>
+			<br> Kick forward, sending a wave pushing forward, bulrushing creatures caught.
+			<br>
+			This Tac is cast as a part of an unarmed strike. The wave moves 20 feet in the direction you kick, moving along the ground until it hits an obstruction or a lack of ground.  Make a CMB check against the CMD of every creature the wave meets. If it is higher, then the wave pushes those creatures until the end of its movement. Any creature slammed into a wall or another creature takes 1d6 + 1 bludgeoning damage for each such slam. 
+			<br>
+			<i><b>Rankup Effect</b></i>: Add 1 to the CMB and 1 to the damage, and 5 foot to the distance.
+
+			<br><br><br><b class="waterSubHeader">Dam The River- [ 1 Mana ]</b>
+			<br> Calm your breathing and focus on the water around you, priming it to move at a moment’s notice.
+			<br>
+			For 1 turn, any water Tac you cast pushes 10 extra feet and deals an additional 2 damage on hit and on each collision. This Tac takes an action to cast initially, but can be maintained as a free action each turn by spending the Mana cost.
+			<br>
+			<i><b>Rankup Effect</b></i>: increase the damage by 2
+
+			<br><br><br><b class="waterSubHeader">Geyser Stomp- [ 3 Mana ]</b>
+			<br> Stomp the earth, sending water below, then summon it back out with a mighty geyser.
+			<br>
+			Pick a space within reach for the geyser to come from. Any creature in this space must succeed at a reflex save to halve 1d6 + 2 bludgeoning damage. If they fail the save, they are launched up to 15 feet upward and fall back in their own square or any adjacent square of your choice, taking the appropriate fall damage. If there is a prone creature adjacent to you, you may choose to cast this as part of an unarmed strike against them. If you do, they get no save and this Tac’s damage is multiplied on a critical hit. If you use this Tac on yourself, you take no damage and may reduce the height of the geyser as you desire.
+			<br>
+			<i><b>Rankup Effect</b></i>: increase the DC by 1, the distance by 5 feet, and the damage by 2
+
+			<br><br><br><b class="waterSubHeader">Hydro Cannon- [ 4 Mana ]</b>
+			<br> Summon forth a tube of water, pressurizing it until it breaks loose and fires at your opponents.
+			<br>
+			This Tac is cast as a part of an unarmed strike. If it hits, then they take 2d6 + 2 bludgeoning damage and you must make a CMB check to bulrush. If that is successful, they are launched 10 feet backwards. If they strike a creature or solid surface, Both creatures take that same damage again. 
+			<br>
+			<i><b>Rankup Effect</b></i>: increase the distance by 10 feet and the damage by 2
+
+			<br><br><br><b class="waterSubHeader">Rough Tide- [ 1 Mana ]</b>
+			<br> Raise your arms and let the waters follow suit.
+			<br>
+			If you are on dry ground, the area within 30 feet of you becomes waterlogged and is considered difficult terrain for 1 round. If a body of water is within the area, it becomes violent and attempts to drown anyone small enough in its area. The Swim DC to avoid being held under the water is 14. This Tac takes an action to cast, but can be maintained as a free action next turn by spending the Mana cost. 
+			<br>
+			<i><b>Rankup Effect</b></i>: increase the DC by 1
+
+			<br><br><br><b class="waterSubHeader">Ocean Mist- [ 1 Mana ]</b>
+			<br> Summon forth water from all around you, forming a mist in the area and drenching everything.
+			<br>
+			For 1 round, the area within 10 feet of you is covered in a wet mist. The mist does not obscure vision, but clings to creatures within its area. This enables invisible creatures to be seen and fires to be dowsed. Any creatures made of fire in the area take 1d6 + 1 damage. 
+			<br>
+			<i><b>Rankup Effect</b></i>: increase the radius by 5 feet, and the damage by 1d6+1.
+
+			<br><br><br><b class="waterSubHeader">Prehensile Cohesion- [ 1 Mana ]</b>
+			<br> Focus water around your arms, using surface tension to form tubes of coagulated water that can flail about on your command.
+			<br>
+			This Tac takes an action to cast, and grants + 5 foot reach to unarmed attacks. In addition, All water Tacs cast as a part of an unarmed strike while you are under the effects of Prehensile Cohesion are treated as if they are 1 rank higher. This Tac can be maintained next round as a free action by spending the mana cost.
+			<br>
+			<i><b>Rankup Effect</b></i>: increase the reach bonus by 5 feet.
+
+			<br><br><br><b class="waterSubHeader">Cyclone Push- [ 3 Mana ]</b>
+			<br> Pull water around you in a ring, then expand it outward rapidly, slamming foes away.
+			<br>
+			This Tac takes an action to cast. All creatures within your reach must make a fortitude save or be pushed 10 feet. If they are pushed into an obstruction or a creature, they and the obstruction take damage equal to your unarmed strike + 2.
+			<br>
+			<i><b>Rankup Effect</b></i>: Increase the collision damage by 2, the push distance by 5, and the DC by 1
+
+			<br><br><br><b class="waterSubHeader">Ride the Waves- [ 0 Mana ]</b>
+			<br> Level your breathing and cause the water to do the same.
+			<br>
+			For 1 round, you and any creatures within 20 feet that you choose may stand upon the surface of any water as if it was solid ground. This Tac can be cast as an action or as a part of casting another water Tac an action to cast. This Tac affects creature’s interactions with all water, including your other water Tacs. This Tac can only be cast once per round.
+			<br>
+			<i><b>Rankup Effect</b></i>: This Tac cannot be ranked up
+
+
+		</div>
+
+
+				<br><br><hr><p class="body-text"><br><b class="earthHeader"> Earth Tacs </b>
+			<br> 
+		<div class="classFeature">
+			<br><br><b class="earthSubHeader">Earth Headbutt [ 1 Mana ] [ BASIC ]</b>
+			<br> Encase your head in a shell of stone and slam your target, breaking the shell.
+			<br>
+			This Tac is cast as part of an unarmed strike. If the attack hits, it deals 1d6 + 1 bludgeoning damage and you gain +1 natural armor bonus for 1 round.
+			<br>
+			<i><b>Rankup Effect</b></i>: add +1 bludgeoning damage and +¼ to the ac boost
+
+			<br><br><br><b class="earthSubHeader">Earth Rumble [ 4 Mana ]</b>
+			<br> Strike the ground with as much force as you can muster, causing the very earth to ripple and shake outward from you.
+			<br>
+			All creatures within a 5 foot radius must make a Reflex or Fortitude save against this Tac’s DC or else take 1d10 + 2 damage and fall prone. Any creature who is already prone receives no save. If you are falling, you may cast this as you approach the ground. If you do, the radius and damage increases based on how far you fell. For every 10 feet you fell, increase the DC by 1, the radius by 5 feet, and the damage by 1d10. You take no fall damage when you use this Tac successfully.
+			<br>
+			<i><b>Rankup Effect</b></i>: add +1 to the DC and +2 Bludgeoning damage
+
+			<br><br><br><b class="earthSubHeader">Earth Grip [ 3 Mana ]</b>
+			<br> Force the earth to mold itself around a helpless body, sealing it in a shell of hardened stone.
+			<br>
+			The shell prevents the body from moving, and protects it from attacks. The shell has 10 HP and 8 + your charisma AC. You may choose to allow for small breathing holes in the shell if you wish. This Tac is cast as an action and lasts for 1 round, but can be maintained as a free action next turn by paying the mana cost.
+			<br>
+			<i><b>Rankup Effect</b></i>: add +1 to the AC and your charisma modifier to the HP.
+
+			<br><br><br><b class="earthSubHeader">Earth Armor [ 2 Mana ]</b>
+			<br> Coat your body in dirt, hardened to stone where it can.
+			<br>
+			For 1 round, you gain DR/Adamantine 1 and Energy Reduction 1. This lasts for 1 round, but can be maintained as a free action next turn by paying the mana cost.
+			<br>
+			<i><b>Rankup Effect</b></i>: Increase the DR/Adamantine and Energy Reduction by 1.
+
+			<br><br><br><b class="earthSubHeader">Create Rock [ 1 Mana ]</b>
+			<br> Pull minerals from the earth and form them into a hard rock in your hands.
+			<br>
+			This is a very simple Tac. You can cast this Tac as an action. For 1 round, this rock is infused with your unarmed strength. The rock can be thrown or slung as any other stone, but is treated as a weapon with a x3 crit modifier and a base damage equal to your unarmed strike damage + your strength modifier. You do not have to be the one to throw the rock in order for it to deal this damage.
+			<br>
+			<i><b>Rankup Effect</b></i>: Increase the bludgeoning damage of the rock by +1.
+
+			<br><br><br><b class="earthSubHeader">Rock Smash [ 2 Mana ]</b>
+			<br> Take a chunk of stone in your hand and bring it down upon your opponent’s head.
+			<br>
+			This Tac can be cast as a part of an unarmed strike. This adds 1d4 + 2 to the strike. If you have a rock you formed using the Create Rock Tac, you may use its damage instead of 1d4. If the attack is a soft crit, then the crit multiplier is increased by 1. If the attack is a crit, then the crit multiplier is increased by 2. 
+			<br>
+			<i><b>Rankup Effect</b></i>: Increase the damage by 2.
+
+			<br><br><br><b class="earthSubHeader">Earth Rush [ 2 Mana ]</b>
+			<br> Gather the earth to yourself, reinforcing your movements with its strength. 
+			<br>
+			This Tac is cast as part of a Charge Action. For the duration of the charge, you have armor with 10 HP. If an object or creature is in the way of your charge, your armor takes 5 points of damage. If the obstruction is a creature, you may make an Overrun maneuver against them. If you are successful, they take the 5 damage instead. While your armor holds, your charge cannot be stopped by anyone but you. 
+			<br>
+			<i><b>Rankup Effect</b></i>: Increase Armor HP by 4 and damage by 2
+
+			<br><br><br><b class="earthSubHeader">Earth Bend [ 2 Mana ] [ EXCLUSIVE ]</b>
+			<br> With a single shift of your body, you can shift the very earth beneath you.
+			<br>
+			As long as you are in contact with the earth, you may use this Tac to cause a 5 foot cube section of the earth within 30 feet to shift 5 feet in any direction, but not into an occupied space, with the surrounding earth reforming to support it. This Tac can be cast as an action, or as a part of casting any other Earth Tac. This Tac can only be cast once per round.
+			<br>
+			<i><b>Rankup Effect</b></i>: This Tac cannot be ranked up.
+
+
+		</div>
+
+
+		<br><br><hr><p class="body-text"><br><b class="windHeader"> Wind Tacs </b>
+			<br> 
+		<div class="classFeature">
+			<br><br><b class="windSubHeader">Wind Kick [ 1 Mana ] [ BASIC ]</b>
+			<br> Wrap your foot with wind and jump kick your foe.
+			<br>
+			This Tac is cast as part of an unarmed strike. If the attack hits, it deals 1d6 + 1 bludgeoning damage and you may immediately move 5 feet in any direction as a free action that does not provoke an attack of opportunity.
+			<br>
+			<i><b>Rankup Effect</b></i>: add +1 bludgeoning damage and 5 feet to the free movement.
+
+			<br><br><br><b class="windSubHeader">Wind Sprint [ 1 Mana ]</b>
+			<br> Call the winds to your side as you move, defying gravity.
+			<br>
+			This Tac is cast as a part of a move action, and it increases your movement speed by 30 feet. If you strike a foe with an unarmed strike this turn after using this Tac, add +1 bludgeoning damage to the first hit.
+			<br>
+			<i><b>Rankup Effect</b></i>: add 5 feet and 1 bludgeoning damage.
+
+			<br><br><br><b class="windSubHeader">Tempest Strike [ 4 Mana ]</b>
+			<br> Bear down on your foe with the force of all the winds that have propelled you, striking them with all the force you can muster.
+			<br>
+			This Tac is cast as a part of an unarmed strike. This Tac deals an additional 1d6 bludgeoning damage + 1 bludgeoning damage per 10 feet you have traveled this turn. You cannot use this Tac in conjunction with the Run action.
+			<br>
+			<i><b>Rankup Effect</b></i>: 1 bludgeoning damage per 10 feet you have traveled this turn.
+
+			<br><br><br><b class="windSubHeader">Tornado Whirl [ 2 Mana ]</b>
+			<br> Spin the wind and yourself along with it, tossing your limbs through the air like a ragdoll.
+			<br>
+			Increase your reach by 5 feet and make an unarmed attack against every creature in range.
+			<br>
+			<i><b>Rankup Effect</b></i>: Increase your reach by 5 more feet.
+
+			<br><br><br><b class="windSubHeader">Shoot the Breeze [ 2 Mana ]</b>
+			<br> Use the winds to close the distance between yourself and anyone foolish enough to throw something at you.
+			<br>
+			As an attack of opportunity, when they are missed by a ranged attack, you may cast this Tac to move up to your movement speed. This movement speed does not provoke attacks of opportunity. If your movement ends within reach of a creature, you may make an unarmed attack with +2 bludgeoning damage. 
+			<br>
+			<i><b>Rankup Effect</b></i>: Increase the bludgeoning damage by +2.
+
+			<br><br><br><b class="windSubHeader">Wind Shear [ 2 Mana ]</b>
+			<br> Command the wind to crash down on a single creature within 30 feet of you that you choose. 
+			<br>
+			That creature must make a fortitude save to halve 1d8 + 1 damage. If they fail the save, then they cannot take attacks of opportunity for this round.
+			<br>
+			<i><b>Rankup Effect</b></i>:  Increase the DC by 1 and the damage by 1.
+
+			<br><br><br><b class="windSubHeader">Updraft [ 2 Mana ]</b>
+			<br> Gather wind low, then rush it upward at a foe within reach, attempting to blow them into the sky.
+			<br>
+			This Tac can be cast as an action that provokes an attack of opportunity. If the target fails a fortitude save, then they are launched upward up to 10 feet.
+			<br>
+			<i><b>Rankup Effect</b></i>:   Increase the DC by 1 and the launch distance by 5 feet.
+
+			<br><br><br><b class="windSubHeader">Winds of Fortune [ 2 Mana ]</b>
+			<br> When you would be struck by a physical attack, you may cast this Tac as an immediate action.
+			<br>
+			If you do, you increase your ac by 1 and summon a gust of wind to move you up to your movement speed. This movement provokes attacks of opportunity.
+			<br>
+			<i><b>Rankup Effect</b></i>:   Increase the AC bonus by 1.
+
+			<br><br><br><b class="windSubHeader">Windy Veil [ 0 Mana ]</b>
+			<br> Wrap yourself with the winds, creating an invisible shield protecting you from the dangers that fly in the air.
+			<br>
+			This Tac tcan be cast as an action or as a part of another Wind Tac. While this veil is active, the winds give you cover offering a 50% chance to deflect light projectiles from you. (This is useful against arrows, daggers, stones, bullets, and other similar physical projectiles. Heavy projectiles such as cannonballs are unlikely to be impacted.) In addition, the winds cushion you so that you are not subjected to fall damage.
+			<br>
+			<i><b>Rankup Effect</b></i>:   This Tac cannot be ranked up.
+
+
+		</div>
+
+
+
+			
+	</p>
+
+
+</body>
+</html>
