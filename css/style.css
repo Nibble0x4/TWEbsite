@@ -19,6 +19,50 @@ body {
 	font-size: 100%;
 }
 
+table {
+	border-style: ridge;
+	border-color: black;
+	border-radius: 2px;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.tableDiv {
+	text-align: center;
+	margin: auto;
+	width: 60%;
+}
+
+.classFeatureHeader {
+	color:  #044440;
+	background: lightgrey;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.classFeatureSubheader {
+	color:  #044440;
+	background: lightgrey;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.classFeatureSubheader1 {
+	color:  #044440;
+	background: lightgrey;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+div.classFeature {
+	text-align: left;
+	font-size: 20px;
+	margin: 16px 12px;
+	position: relative;
+	left: 15%;
+	width: 80%;
+}
+
 .subheader {
 	color:  #044440;
 	background: lightgrey;
