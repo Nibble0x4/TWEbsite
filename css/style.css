@@ -277,6 +277,9 @@ p.suboption > a {
 		left: 20%;
 		width: 75%;
 	}
+	table {
+		width: 25%;
+	}
 }
 
 @media (max-width: 900px) {
@@ -287,5 +290,10 @@ p.suboption > a {
 		left: 42%;
 		width: 55%;
 		font-size: 12px;
+	}
+	table {
+		width: 100%;
+		left: 5%;
+		font-size: 0.75em;
 	}
 }
