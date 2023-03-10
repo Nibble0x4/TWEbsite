@@ -1,0 +1,476 @@
+.std {
+	background-image: url("images/DreamBackground.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: lavender;
+
+}
+
+div.headerBox {
+	border-style: double;
+	border-color: lightblue;
+	display: inline-block;
+	position: relative;
+	width: 90%;
+	height: 50%;
+	margin-left: 5%;
+}
+
+div.posStatBox {
+	background-color: lightblue;
+	position: relative;
+	width: 30%;
+	Height: 50%;
+	border-style: double;
+	border-color: darkblue;
+	display: inline-block;
+}
+
+div.negStatBox {
+	background-color: lightpink;
+	position: relative;
+	width: 30%;
+	Height: 50%;
+	border-style: double;
+	border-color: hotpink;
+	display: inline-block;
+	margin-left: 30%;
+}
+
+div.neutralBox {
+	background-color:  mediumpurple;
+	position: relative;
+	width: 70%;
+	Height: 40%;
+	border-style: double;
+	border-color: purple;
+	display: inline-block;
+	margin-left: 15%;
+}
+
+div.negStatBox > div 
+div.posStatBox > div 
+div.headerBox > div{
+	align-content: center;
+	margin-top: 10%;
+	background-color: black;
+	font-size: 10em;
+}
+
+div.negStatBox > div > input
+div.posStatBox > div > input {
+	align-content: center;
+	align-self: right;
+	margin-left: 10%;
+}
+
+div.boxChild {
+	position: relative;
+	align-content: center;
+	font-size: 1.5em;
+	margin-top: 10%;
+	margin-left: 10%;
+}
+
+input {
+	border-radius: 40%;
+	border: 2px solid #044440;
+	padding:  20px;
+	width: 40px;
+	height: 10px;
+}
+
+div.notEditable {
+	background-color: grey;
+	border-radius: 40%;
+	border: 2px solid black;
+	padding: 20px;
+	width: 40px;
+	height: 10px;
+	position: relative;
+	display: inline-block;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 767px){
+	section.col_sm_1 {
+		width: 8%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_sm_2 {
+		width: 16%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_sm_3 {
+		width: 24%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_sm_4 {
+		width: 32%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_sm_5 {
+		width: 40%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_sm_6 {
+		width: 48%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_sm_7 {
+		width: 56%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_sm_8 {
+		width: 64%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_sm_9 {
+		width: 72%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_sm_10 {
+		width: 80%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_sm_11 {
+		width: 88%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_sm_12 {
+		width: 96%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+	section.col_md_1 {
+		width: 8%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_md_2 {
+		width: 16%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_md_3 {
+		width: 24%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_md_4 {
+		width: 32%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_md_5 {
+		width: 40%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_md_6 {
+		width: 46%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_md_7 {
+		width: 56%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_md_8 {
+		width: 64%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_md_9 {
+		width: 72%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_md_10 {
+		width: 80%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_md_11 {
+		width: 88%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_md_12 {
+		width: 96%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+}
+
+@media (min-width: 992px){
+	section.col_lg_1 {
+		width: 8%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_lg_2 {
+		width: 16%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_lg_3 {
+		width: 24%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_lg_4 {
+		width: 30%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_lg_5 {
+		width: 40%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_lg_6 {
+		width: 48%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_lg_7 {
+		width: 56%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_lg_8 {
+		width: 64%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_lg_9 {
+		width: 72%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_lg_10 {
+		width: 80%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_lg_11 {
+		width: 88%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+	section.col_lg_12 {
+		width: 96%;
+		background-color: #044440;
+		border-style: inset;
+		border-color: black;
+		border-width: 1px;
+		color: lightgrey;
+		position: relative;
+		display: inline-block;
+	}
+}
+
+section {
+	margin: 1%;
+	margin-top: 25px;
+	margin-bottom:  0px;
+	
+}
