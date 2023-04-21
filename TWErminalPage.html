@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><head>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> TWErminal </title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+	<link rel="icon" type="image/x-icon" href="images/TWEbsiteFavicon.png">
+
+
+</head>
+
+<body>
+
+
+
+	<script>
+	$('body').terminal({
+	    hello: function(name) {
+	        this.echo('Hello, ' + name +
+	                  '. Welcome to this terminal.');
+	    },
+	    mara: function() {
+	    	this.echo('\n\n ------------------------<==============>--<==============>------------------------\n\n');
+	    	this.echo("Mara Ostren, one of two women currently serving as chieftains of the the Kun'Achi tribe. Rules on the island of Chet'Tun. ")
+	    	this.echo("\nRelated Terms: chet'tun, deyli, kun'achi, elethwyn, sybil, sorcha, eli, elin, dab")
+	    	this.echo('\n\n ------------------------<==============>--<==============>------------------------\n\n');
+	    },
+	    picture: function() {
+	    	this.echo('\n\n ------------------------<==============>--<==============>------------------------\n\n');
+	    	this.echo($('<img src="images/TWEbsiteFavicon.png">'));
+	    	this.echo('\n\n ------------------------<==============>--<==============>------------------------\n\n');
+	    },
+	    guidelines: function() {
+	    	this.echo("\n\n ------------------------<==============>--<==============>------------------------\n\nIn order to operate TWErminal, please abide by the following guidelines:\n\n TWErminal welcomes all your prompts, and will do his best to inform you about whatever you prompt him with. \n\n TWErminal is eager to serve, but easier to be confused. Please use only a single word at a time when prompting him. \n\n Please refrain from using any capital letters in your prompts. \n\n If you ever want to see these guidelines again, please prompt TWErminal with 'guidelines'\n\n ------------------------<==============>--<==============>------------------------\n\n\n\n");
+	    },
+
+	}, {
+	    greetings: "TWErminal greets you. \n\n ------------------------<==============>--<==============>------------------------\n\nIn order to operate TWErminal, please abide by the following guidelines:\n\n TWErminal welcomes all your prompts, and will do his best to inform you about whatever you prompt him with. \n\n TWErminal is eager to serve, but easier to be confused. Please use only a single word at a time when prompting him. \n\n Please refrain from using any capital letters in your prompts. \n\n If you ever want to see these guidelines again, please prompt TWErminal with 'guidelines'\n\n ------------------------<==============>--<==============>------------------------\n\n\n\n",
+	    prompt: '??> '
+	});
+	</script>
+
+
+
+</body>
+</html>
