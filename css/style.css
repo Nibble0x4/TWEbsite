@@ -272,7 +272,7 @@ div.tableDiv > a{
 	position: relative;
 	left: 35%;
 	width: 20%;
-	overflow:  scroll;
+	overflow:  auto;
 }
 .body-text {
 	text-align: left;
