@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> TWEbsite Wild Dancer Page </title>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="icon" type="image/x-icon" href="images/TWEbsiteFavicon.png">
+
+
+</head>
+<body class="std">
+
+	<h1 class="page-header"> Wild Dancer Page </h1>
+		
+	<div id="page-select-box" class="option-box"> 
+		<h2> Pages: </h2>
+		<p class="option"> <u><a href="../../index.html" style="color:#aafff0">Intro Page</a></u></p>
+		<p style="font-style:underline; color:#ee0000; cursor:pointer">	<u><a href="../../TWEbsiteRulesetPage.html" style="font-style:underline; color:#ee0000;">Ruleset Page</a></u> </p>
+		<p style="font-style:underline; color:#eeee00; cursor:pointer">	<u><a href="../../TWEbsiteClassPage.html" style="font-style:underline; color:#eeee00; cursor:pointer">Classes Page</a></u> </p>
+			<p style="text-indent: 30px; cursor:pointer" >	<a href="../CoreClassPage.html" style="font-style:underline; color:#aafff0;">Core Classes</a></p>
+			<p style="text-indent: 30px; cursor:pointer">	<a href="../UniqueClassPage.html" style="font-style:underline; color:#aafff0;">Unique Classes</a></p>
+		<p style="font-style:underline; color:#00dd00; cursor:pointer" > <a href="../../TWEbsiteRacesPage.html" style="font-style:underline; color:#00dd00;"><u>Races Page </u></a> </p>
+		<p style="font-style:underline; color:#0000dd; cursor:pointer">	<u><a href="../../TWEbsiteLorePage.html" style="font-style:underline; color:#0000dd;">Lore Page</a> </u> </p> 
+		<p style="font-style:underline; color:#440044; cursor:pointer">	<u><a href="../../TWEbsiteResourcesPage.html" style="font-style:underline; color:#440044;">Resources Page</a> </u> </p>
+
+	</div>
+
+	<a target="_blank" href="images/WildDancerImage.jpg">
+		<img src="images/WildDancerImage.jpg" class="class-picture">
+	</a>
+
+	
+	<p class="class-description"> <b class="subheader"> The Wild Dancer </b>
+	<br> The world of the fae is a strange one, full of wonder for both child and adult. Despite the dangers it poses, humans have been fascinated with the way the fae meld into the world around them, living in perfect harmony with it. For ages people have crept out into the woods at night and waited, listening, watching, hoping to catch a glimpse of the nature spirits that come out to dance in the moonlight when they think none can see them. It is by watching their joyous and solemn dance that we, as a people, have learned much about the world of the fae. There are some, though, that take it further. They are not merely content to watch the dance, they wish to partake. These people study carefully the ways of nature that they might harness that same power, that same unity. These people step from our world into the world of the fae in a way that nature itself understands and appreciates. Through practice they attain grace. Through grace they attain unity with nature, and through that unity they attain a power quite unlike anything the civilized world can understand. From there, they take it even further and meld the wild beauty of the fae with the human cultures they hail from, creating an art altogether unseen in TWE, either by fae or human. These people, in the circles they are spoken of, are known simply as Wild Dancers. 
+
+	<br><br><b>Role</b>: The Wild Dancer works alongside her partner, an animal with whom she shares a deep bond, to engage in fierce melee combat with her foes. She uses dexterity and charisma to strike and dodge, but her real power comes from her Dance. Dancing costs her movement, but allows her to chain together unique combinations of powerful steps that allow her to attack her enemies, defend and support her allies, and even cast some spells in the midst of it all. Every Wild Dancer is different, but they have the potential for powerful melee combat, healing, support, or even striking fear into the hearts of her foes.
+	 
+	
+
+	<hr>
+
+
+
+	<div class="tableDiv">
+		<b id="class-table" class="header"> Class Advancement Table </b>
+		<br>
+		<br>
+		<hr>
+		<br>
+		<table>
+
+			<colgroup>
+				<col span="1" style="background-color:darkgray;">
+				<col span="4" style="background-color: lightblue;">
+				<col span="1" style="background-color: lightgrey;">
+				<col span="1" style="background-color: lightpink;">
+				<col span="4" style="background-color: palegreen;">
+			</colgroup>
+			<tr>
+				<th>Level</th>
+				<th>BAB</th>
+				<th>Fort</th>
+				<th>Ref</th>
+				<th>Will</th>
+				<th>Special_Class_Features</th>
+				<th>Dance Dice</th>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>+0</td>
+				<td>+2</td>
+				<td>+0</td>
+				<td>+2</td>
+				<td><a href="#Dance">Dance</a>, <a href="#Steps">Steps</a>, <a href="#Cultural-Styles">Cultural Styles</a>, <a href="#Regional-Styles">Regional Styles</a>, <a href="#Verve">Verve</a>, <a href="#Animal-Partner">Animal Partner</a>, <a href="#Fast-Movement">Fast Movement</a>, <a href="#Routines">Routines</a>, <a href="#Whirling-Weapon">Whirling Weapon</a>, <a href="#Regional-Footwork">Regional Footwork</a>, <a href="#Wild-Empathy">Wild Empathy</a></td>
+				<th>1d4</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>+1</td>
+				<td>+3</td>
+				<td>+0</td>
+				<td>+3</td>
+				<td><a href="#Evasion">Evasion</a>, <a href="#Evasive-Grace">Evasive Grace</a>, <a href="#Steps">Step</a></td>
+				<th>1d4</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>+2</td>
+				<td>+3</td>
+				<td>+1</td>
+				<td>+3</td>
+				<td><a href="#Partner-Tactics">Partner Tactics</a>, <a href="#Teamwork-Feat">Teamwork Feat</a></td>
+				<th>1d4</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>+3</td>
+				<td>+4</td>
+				<td>+1</td>
+				<td>+4</td>
+				<td><a href="#Spellcasting">Spells</a>, <a href="#Steps">Step</a></td>
+				<th>1d4</th>
+				<th>0</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>+3</td>
+				<td>+4</td>
+				<td>+1</td>
+				<td>+4</td>
+				<td><a href="#Beautiful-Bond">Beautiful Bond</a></td>
+				<th>1d6</th>
+				<th>1</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>+4</td>
+				<td>+5</td>
+				<td>+2</td>
+				<td>+5</td>
+				<td><a href="#Specialized-Styles">Specialized Styles</a>, <a href="#Steps">Step</a></td>
+				<th>1d6</th>
+				<th>1</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>+5</td>
+				<td>+5</td>
+				<td>+2</td>
+				<td>+5</td>
+				<td><a href="#Teamwork-Feat">Bonus Teamwork Feat</a></td>
+				<th>1d6</th>
+				<th>1</th>
+				<th>0</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>+6</td>
+				<td>+6</td>
+				<td>+2</td>
+				<td>+6</td>
+				<td><a href="#Advanced-Steps">Advanced Steps</a>, <a href="#Steps">Step</a></td>
+				<th>1d6</th>
+				<th>1</th>
+				<th>1</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>+6</td>
+				<td>+6</td>
+				<td>+3</td>
+				<td>+6</td>
+				<td><a href="#Dance-Party">Dance Party</a></td>
+				<th>1d8</th>
+				<th>2</th>
+				<th>1</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>+7</td>
+				<td>+7</td>
+				<td>+3</td>
+				<td>+7</td>
+				<td><a href="#Signature-Step">Signature Step (Basic)</a>, <a href="#Steps">Step</a></td>
+				<th>1d8</th>
+				<th>2</th>
+				<th>1</th>
+				<th>0</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>+8</td>
+				<td>+7</td>
+				<td>+3</td>
+				<td>+7</td>
+				<td><a href="#Teamwork-Feat">Bonus Teamwork Feat</a></td>
+				<th>1d8</th>
+				<th>2</th>
+				<th>1</th>
+				<th>1</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td>+9</td>
+				<td>+8</td>
+				<td>+4</td>
+				<td>+8</td>
+				<td><a href="#Double-Time">Double Time</a>, <a href="#Steps">Step</a></td>
+				<th>1d8</th>
+				<th>2</th>
+				<th>2</th>
+				<th>1</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td>+9</td>
+				<td>+8</td>
+				<td>+4</td>
+				<td>+8</td>
+				<td>-</td>
+				<th>1d10</th>
+				<th>3</th>
+				<th>2</th>
+				<th>1</th>
+				<th>0</th>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td>+10</td>
+				<td>+9</td>
+				<td>+4</td>
+				<td>+9</td>
+				<td><a href="#Master-Steps">Master Steps</a>, <a href="#Steps">Step</a></td>
+				<th>1d10</th>
+				<th>3</th>
+				<th>2</th>
+				<th>1</th>
+				<th>1</th>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td>+11</td>
+				<td>+9</td>
+				<td>+5</td>
+				<td>+9</td>
+				<td><a href="#Teamwork-Feat">Bonus Teamwork Feat</a></td>
+				<th>1d10</th>
+				<th>3</th>
+				<th>2</th>
+				<th>2</th>
+				<th>1</th>
+			</tr>
+			<tr>
+				<td>16</td>
+				<td>+12</td>
+				<td>+10</td>
+				<td>+5</td>
+				<td>+10</td>
+				<td><a href="#Improved-Evasion">Improved Evasion</a>, <a href="#Steps">Step</a></td>
+				<th>1d10</th>
+				<th>3</th>
+				<th>3</th>
+				<th>2</th>
+				<th>1</th>
+			</tr>
+			<tr>
+				<td>17</td>
+				<td>+12</td>
+				<td>+10</td>
+				<td>+5</td>
+				<td>+10</td>
+				<td><a href="#Signature-Step">Signature Step (Advanced)</a></td>
+				<th>1d12</th>
+				<th>4</th>
+				<th>3</th>
+				<th>2</th>
+				<th>1</th>
+			</tr>
+			<tr>
+				<td>18</td>
+				<td>+13</td>
+				<td>+11</td>
+				<td>+6</td>
+				<td>+11</td>
+				<td><a href="#Steps">Step</a></td>
+				<th>1d12</th>
+				<th>4</th>
+				<th>3</th>
+				<th>2</th>
+				<th>2</th>
+			</tr>
+			<tr>
+				<td>19</td>
+				<td>+14</td>
+				<td>+11</td>
+				<td>+6</td>
+				<td>+11</td>
+				<td><a href="#Teamwork-Feat">Bonus Teamwork Feat</a></td>
+				<th>1d12</th>
+				<th>4</th>
+				<th>3</th>
+				<th>3</th>
+				<th>2</th>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td>+15</td>
+				<td>+12</td>
+				<td>+6</td>
+				<td>+12</td>
+				<td><a href="#Capstone">Prima Step</a></td>
+				<th>2d8</th>
+				<th>4</th>
+				<th>4</th>
+				<th>3</th>
+				<th>3</th>
+			</tr>
+
+		</table>
+	</div>
+
+	<p class="body-text">
+	<b>Alignment</b>: Any
+	<br><b> Hit Die</b>: d8
+	<br><b>Starting Wealth</b>: 2d6 × 10 gp (average 105 gp.) [In TWE, this number is of the appropriate currency for your province-of-origin] In addition, each character begins play with an outfit worth 10 gp or less.
+	<br><br><b>Class Skills</b>: The Wild Dancer's class skills are: Acrobatics (dex), Bluff (cha), Climb (str), Craft (int), Diplomacy (cha), Escape Artist (dex), Fly (dex), Intimidate (cha), Knowledge (Nature), Knowledge (Planes), Knowledge (Geography), Perception (cha), Perform(Dance) (cha), Profession (wis), Sense Motive (wis), Sleight of Hand (dex), Spellcraft (int), Stealth (dex), Swim (str)
+	<br><b>Skill ranks per level</b>: 4 + int modifier
+
+	<hr>
+	
+	<p class="body-text"> <b class="header"> Class Features </b>
+	<br> 
+	<br><br> 
+
+		<hr><p class="body-text"><br><b class="classFeatureHeader">Weapon and Armor Proficiency </b>
+		<br> A Wild Dancer is proficient with simple weapons, as well as Chakram, Starknife, Kukri, Machete, Katar, Rapier, Blade Boot, Dueling Dagger,
+	Cutlass, Scimitar, and light flail. See weapon lists <a href="https://www.d20pfsrd.com/equipment/weapons#simple-martial-and-exotic-weapons">HERE</a>.
+		<br> They are not proficient with any armor. See Armor lists <a href="https://www.d20pfsrd.com/equipment/armor">HERE</a>.
+
+		<br><br>
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Dance-Dice"> Dance Dice </b>
+		<br> At 1st level, the Wild Dancer gains a die that she can use for various effects related to her Dance. This die begins as 1d4 and grows in size as shown on the Class Advancement table.
+		<br> When an effect or ability says a Dance Die is given, then it is a variable bonus to be rolled and added to the relevant value each time it is checked. 
+		<br> It is, in this document, often shortened and referred to as '1dd' when it is mentioned.
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Dance"> Dance </b>
+		<br> At level 1, the Wild Dancer learns how to harness the wild magics of the natural world through dance. She can, at the start of her turn, choose to Dance. 
+		<br> When she chooses to Dance on her turn, she takes a move action and must put at least 10 ft. of movement into her Dance Pool. This movement must be less than or equal to her base speed without any temporary bonuses (such as boosts from the Haste spell). Any speed that she puts into her Dance Pool is deducted from her movement speed for the rest of her turn. 
+		<br>(Example: If Diana the Dancer has a base speed of 40 ft. and chooses to put 30 feet into her Dance Pool on her turn, then she could only move up to 10 feet per move action on that turn.)
+		<br><br>
+		Each turn, at the start of her turn, she needs only 5 feet in her Dance Pool to maintain her Dance. If she is Dancing in difficult terrain, she must spend 10 ft of movement to add 5 ft to the Dance Pool.
+		<br><br> Dancing provokes an attack of opportunity from threatening creatures, but those attacks can be negated if the Dancer succeeds at a Perform (Dance) check against the CMD of her foes.
+		<br><br> In addition to maintaining her Dance, the Dance Pool can be used to perform special artistic moves called Steps. 
+
+
+
+		<br><br><p class="body-text"><br><b class="classFeatureSubheader" id="Steps"> Steps </b>
+		<br> At 1st level, the Wild Dancer learns to perform special Steps during her Dance.
+		<br> Steps are the primary focus of the Dance, allowing Wild Dancer's to give wild and varied performances that, in battle, allow them excellent fluidity and freedom in how they conduct themselves. Each Step has an effect that lasts for 1 round only, ending at the start of the Dancer's next turn or when she stops dancing for any reason.
+		<br>
+		A Wild Dancer <b>begins play knowing a number of basic Steps equal to her charisma modifier</b>, but will learn a new one of her choice at 2nd level and every even level thereafter.
+		<br><br>
+		Each turn, at the start of her Dance, the Dancer may spend movement from her Dance Pool to perform any combination of her known Steps that she desires, provided she has enough movement in her Pool and she doesn't perform the same Step multiple times in one turn. Each basic Step costs 10 ft. to perform.
+		<br><br>
+		<b>Step List: </b>
+		<br><br>
+		- Sharp Step- Make a melee attack
+		<br><br>
+		- Ferocious Step- Animal makes a melee attack
+		<br><br>
+		- Encouraging Step- grant a dance die to an ally to use on any d20 roll
+		<br><br>
+		- Assertive Step- roll Intimidate on a target within 30 feet who can see you
+		<br><br>
+		- Vivacious Step- add 1 to all dd rolled this turn
+		<br><br>
+		- Backstep- Move 5 feet, no AoO (Degage)
+		<br><br>
+		- Curtsy- Gain 1 Verve next turn (Only works in battle or with audience)
+		<br><br>
+		- Cue- Grant 1 Teamwork Feat to all allies within 20 feet
+		<br><br>
+		- Shining Sweep- Weapon gleams with light. Applies stacking Dazzle per hit
+		<br><br>
+		- Captivating Strut- Will Save to all creatures (not your Partner) within 10 feet. Flatfooted if fail
+		<br><br>
+		- Dramatic Pause- put 10 feet into next turn's Dance Pool, if you don't stop dancing
+		<br><br>
+		- Wild Wiggle- Roll on the <a href="https://www.d20pfsrd.com/magic/variant-magic-rules/primal-magic/">Primal Magic Events table</a>
+		<br><br>
+		- Alluring Sway- Will Save to target within 20 feet. If:
+						<br>- - Incompatible race: effects vary
+						<br>- - Compatible race-
+							<br>- - - Opposite Gender: Prefers not to target you this turn if reasonable. Acts as Charm Person if not aggressive.
+							<br>- - - Same Gender: Prefers to target you this turn if reasonable. Acts as Compel Hostility if not aggressive
+
+		<br><br><p class="body-text"><br><b class="classFeatureSubheader" id="Styles"> Styles </b>
+		<br> Wild Dancers have appeared all over That Which Exists, but that does not mean that they are all the same. The people of Enthan may have learned the art of Wild Dance from watching nature spirits, just like the people of Areth or Chet'Tun, but their cultural differences led to vastly different Dances intended for entirely different purposes. 
+		<br> When a Wild Dancer first learns to Dance, she learns a Cultural Style and 2 Regional Styles based on her upbringing. Whenever she begins a Dance, she always uses a Cultural Style and may choose to use a Regional Style as well.
+		<br><br> <b class="classFeatureSubheader" id="Cultural-Styles"> Cultural Styles </b>
+		<br>The Cultural Style of a Wild Dancer shapes it in a unique way. Aside from aesthetic differences, each different culture grants a benefit to the Dancer. In addition, each Cultural Style enables the Dancer to cast different types of spells from the Wild Dancer spell list.
+		<div class="classFeature"> 
+
+			<br><b class="classFeatureSubheader">Enthan Style</b>
+			<br> The proud Enthan people seek, above all, dominance through imperviousness. An Enthan dancer learns to whirl about with such grace that she needn't even hold her shield to protect herself with it.
+			<br>
+			When Dancing, she can wear a shield on her back and gain all the protective benefits of wielding a shield. This does not interfere with her movements, Evasive Grace, or her spellcasting.
+			<br> Spellcasting options (Pick 1 at level 4): 
+			<br> - Living
+			<br> - Bolstering
+
+			<br><br><b class="classFeatureSubheader">Tarian Styles</b>
+			<br> The dancers of Taria are various, considering Taria's different city-states and their determinedly differing cultures. Though they may each be Tarian, they are too little alike to develop the same dances.
+			<div class="classFeature"> 
+
+			<br><br><b class="classFeatureSubheader">Camus Style</b>
+			<br>
+			<br> The scholar dancers of Camus study the effects of their art in depth, learning to tweak and perfect their motions to optimize their alluring effects.
+			<br>
+			When Dancing, she can add her Intelligence modifier to her spell DCs, along with her Charisma.
+			<br> Spellcasting option: 
+			<br> - Bolstering
+
+			<br><br><b class="classFeatureSubheader">Motham Style</b>
+			<br>
+			<br> The strange and occult rituals of Motham have long since linked the arcane arts to every aspect of dance. Even Wild Dancers feel somewhat in tune with the arcane when they perform their purely Primal dances.
+			<br>
+			When Dancing, she can treat any wand, staff, or rod that is infused with magic as having the "finesse" quality. If she knows the spell that is embedded in the item, she may attempt to spend a use of the item to cast the spell for free when she strikes a target with the item. Doing so requires a Perform Check with DC = 15 + twice the level of the spell being cast. 
+			<br> Spellcasting option: 
+			<br> - Degrading
+
+			<br><br><b class="classFeatureSubheader">Bismuth Style</b>
+			<br>
+			<br> The business oriented minds of the dancers of Port Bismuth are more experienced in social circles than in fighting rings. They have learned to use their dancing in an exceptionally eye-catching and purse-loosing manner.
+			<br>
+			When Dancing in her downtime in an uinhabited locale, she can earn up to twice as much money from her Perform checks. In addition, during a battle against a sentient humanoid opponent, she can use Appraise in place of a Knowledge check to learn things about her opponent.
+			<br> Spellcasting option: 
+			<br> - Deceptive
+
+			<br><br><b class="classFeatureSubheader">Shinta Style</b>
+			<br>
+			<br> The peaceful and content dancers of Shinta learn to live in harmony and faith, confident they will be cared for. They dance carefree and light-hearted, even in the darkest of times.
+			<br>
+			When Dancing, she can add her Wisdom modifier to her spell DCs, along with her Charisma.
+			<br> Spellcasting option: 
+			<br> - Living
+
+			<br><br><b class="classFeatureSubheader">Morta Style</b>
+			<br>
+			<br> The warrior dancers of Morta favor the polearm over the standard blade, weaving the unwieldy haft seemlessly into their steps to create a dazzling sight indeed.
+			<br>
+			When Dancing, she can treat any weapon with the 'Reach' or 'Double' weapon qualities as also having the 'Finesse' quality, and is proficient with any such simple or martial weapons.
+			<br> Spellcasting option: 
+			<br> - Degrading
+
+			<br><br><b class="classFeatureSubheader">Werta Style</b>
+			<br>
+			<br> The brawling dancers of Werta sometimes choose to eschew their carefully balanced weapons in favor of using their hardened bodies as weapons.
+			<br>
+			When Dancing, she is proficient with Unarmed Strikes and can treat her unarmed strike as 'finesse.'
+			<br> Spellcasting option: 
+			<br> - Natural
+
+			<br><br><b class="classFeatureSubheader">Carta Style</b>
+			<br>
+			<br> The eagle-eyed dancers of Morta train extensively with ranged weaponry from a young age. They see beauty in both distant and close-ranged combat intermingled.
+			<br>
+			When Dancing, she is proficient with a longbow and can treat arrows as daggers.
+			<br> Spellcasting option: 
+			<br> - Animal
+
+		</div>
+
+			
+
+			<br><br><b class="classFeatureSubheader">Arethian Style</b>
+			<br> The eastern dancers, inspired by the terrors of the forests on either side of their homeland, move with eerie deliberation and care, eschewing the wild and whirling movements of other cultures in favor of commanding stillness.
+			<br>
+			In any round where there is at least 5 ft left unused in the Dance Pool, she gains 1 Verve at the end of her turn.
+			<br> Spellcasting options (Pick 1 at level 4): 
+			<br> - Emotional
+			<br> - Shadow
+
+			<br><br><b class="classFeatureSubheader">Grussian Style</b>
+			<br> When faced with oversized foes, the dancers of Gruss use their strength and whirling speed to wield weapons larger than is normally considered reasonable.
+			<br>
+			When Dancing, she can wield weapons sized for a creature 1 category larger than the dancer without penalties while dancing
+			<br> Spellcasting options (Pick 1 at level 4): 
+			<br> - Natural
+			<br> - Animal
+
+			<br><br><b class="classFeatureSubheader">Kun'Haman Style</b>
+			<br> After 100 years of facing the hungry blades of assassins, the Kun'Haman people have come to see light armor as a second skin, learning to move through all aspects of life clad in it.
+			<br>
+			When Dancing, she can dance with light armor made purely of natural materials and is treated as proficient with such armor. This has no effect on her Dance, Evasive Grace, or her spellcasting.
+			<br> Spellcasting options (Pick 1 at level 4): 
+			<br> - Artistic
+			<br> - Degrading
+
+			<br><br><b class="classFeatureSubheader">Harachi Style</b>
+			<br> 100 years of hunting and tracking their warlike prey, striking from the shadows, has turned bloodletting into something of an art among the Harachi people.
+			<br>
+			When Dancing, her attacks inflict 1 bleed each (stacking).
+			<br> Spellcasting options (Pick 1 at level 4): 
+			<br> - Shadow
+			<br> - Deceptive
+
+		</div>
+
+		<br><br><p class="body-text"><br> <b class="classFeatureSubheader" id="Regional-Styles"> Regional Styles </b>
+		<br> A Wild Dancer's performance is influenced by the nature they observe as well as the culture they learned in. A dancer from the harsh tundra will move differently than a performer from the warm shoreline. This is shown in the Regional Styles that a Wild Dancer can choose to employ when she begins her Dance. A single Regional Style can be used at a time, along with a single Cultural Style.
+		<div class="classFeature"> 
+
+			<br><br><b class="classFeatureSubheader">Forest Style</b>
+			<br> - In this style, the Dancer can add 1dd to CMB and CMD for herself OR for one ally who can see her.
+
+			<br><br><b class="classFeatureSubheader">Desert Style</b>
+			<br> - In this style, the Dancer can add 1dd of fire damage to her attacks, and reduces fire damage dealt to her by 1dd.
+
+			<br><br><b class="classFeatureSubheader">Jungle Style</b>
+			<br> - In this style, the Dancer can add 1dd to Fortitude, Reflex, and Will saves.
+
+			<br><br><b class="classFeatureSubheader">Island Style</b>
+			<br> - In this style, the Dancer can add 1dd to her skill checks AND to her allies who can see her.
+
+			<br><br><b class="classFeatureSubheader">Aquatic Style</b>
+			<br> - In this style, the Dancer's actions during dance can be taken in water without penalty, and she gains a 10 ft bonus to her swim speed that cannot be added to her Dance Pool. She gains 10 ft Swim speed if she doesn't have one.
+
+			<br><br><b class="classFeatureSubheader">Swamp Style</b>
+			<br> - In this style, the Dancer can add 1dd of acid damage to her attacks, and reduces acid damage dealt to her by 1dd.
+
+			<br><br><b class="classFeatureSubheader">Tundra Style</b>
+			<br> - In this style, the Dancer can add 1dd of cold damage to her attacks, and reduces cold damage dealt to her by 1dd.
+
+			<br><br><b class="classFeatureSubheader">Fae Style</b>
+			<br> - In this style, the Dancer can add 1dd to DCs for Deception spells cast by her or adjacent allies against creatures who can see her.
+
+			<br><br><b class="classFeatureSubheader">Dark Style</b>
+			<br> - In this style, the Dancer can can add 1dd to DCs for Shadow and Degrading spells cast by her or adjacent allies against creatures who can see her.
+
+			<br><br><b class="classFeatureSubheader">Planes Style</b>
+			<br> - In this style, the Dancer gains +10 ft enhancement bonus to her movement speed that cannot be added to her Dance Pool.
+
+			<br><br><b class="classFeatureSubheader">Mountain Style</b>
+			<br> - In this style, the Dancer can add 1dd of electric damage to her attacks, and reduces electric damage dealt to her by 1dd.
+
+		</div>
+
+
+
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Verve"> Verve </b>
+		<br> Dancing is difficult work, for both the mind and the body. It takes physical power, careful finesse, endurance, and most importantly of all a burning passion to be done correctly. Among Wild Dancers, this passion is referred to as Verve. Every Wild Dancer has a pool of Verve that she can expend to push her performance to greater heights.
+		<br><br>
+		At 1st level, the Wild Dancer gains pool of Verve with a maximum equal to: her Wild Dancer level + her charisma modifier.
+		<br>
+		She begins each day with full Verve, and can regenerate or lose it quickly throughout the day:
+		<br>- She regenerates 2 Verve per critical success.
+		<br>- She regenerates 1 Verve per successful save (without using Verve on the roll).
+		<br>- She regenerates 1 Verve per attack that misses her.
+		<br>- She loses 2 Verve per critical fail.
+		<br>- She loses 1 Verve per save she fails.
+		<br>- She loses 1 Verve per attack that strikes her.
+		<br><br> If she would gain Verve when she has maximum Verve, she instead heals 1 point of hp per excess Verve. If she is at full health, then she gains 1 temporary hitpoint per excess Verve. If she would lose Verve when she has no Verve to lose, she instead takes 1 point of nonlethal damage per excess Verve she could not lose. This nonlethal damage cannot be healed, and is regenerated at the end of a night's rest.
+		<br><br>
+		During a Dance, she can expend her Verve as an immediate action to:
+		<br>- Add 5 ft to her Dance Pool per Verve spent (She can spend Verve in this way up to her charisma modifier at once).
+		<br>- Add 1dd to a skill check she attempts, before the roll is made (Costs 1).
+		<br>- Add 1dd to one of her attack rolls or saves before she rolls them (Costs 2).
+		<br>- Reroll a dance die rolled by you or an ally who can see you (Costs 2).
+		<br><br>
+		During a Dance, on her turn, she can expend her Verve as a swift action to:
+		<br>- Make a melee attack at a creature within reach (Costs 4).
+		<br>- Cast a spell she knows (Costs 3*(spell level+1)).
+		<br>- Cast a spell she knows without expending a spell slot (Costs 5*(spell level+1)).
+
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Regional-Footwork"> Regional Footwork </b>
+			<br> At 1st level, a Wild Dancer learns to move more freely in regions of the world that have inspired her Dance.
+			<br><br> 
+			When Dancing in a region that matches the Regional Style she is using, the Wild Dancer treats difficult terrain as regular terrain.
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Whirling-Weapon"> Whirling Weapon </b>
+		<br> The art of dance requires a measure of dexterity that doesn't come without training. As a result of this training, Wild Dancers find themselves weaponizing finesse against their foes more naturally than most combatants. At 1st level, she gains the Weapon Finesse feat as a bonus feat.
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Fast-Movement"> Fast Movement </b>
+		<br> At 1st level, a Wild Dancer's constant movement has granted her a +10 foot bonus to her movement speed. This alters her base speed and does not count as a temporary bonus.
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Animal-Partner"> Animal Partner </b>
+		<br> At 1st level, Wild Dancers attain a deep connection to the natural world through their Dance. This manifests in the form of an animal companion who finds their way to your side.
+		<br> Your Animal Partner is an <a href="https://www.d20pfsrd.com/classes/core-classes/druid/animal-companions">animal companion</a>, per the Druid class feature, using your Wild Dancer level as your effective Druid level.
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Routines"> Routines </b>
+		<br> At 1st level, Wild Dancers learn to weave primal magic through their Dances, allowing them to perform som level of spellcasting. While 1st level and higher spells are not available to a Wild Dancer until later, a few 0-level spells known as Routines are so intrinsically tied to the art of dance that they can be cast during a Dance with little effort. 
+		<br> Routines can be found on the <a href="wildDancerSubPages/WildDancerSpellList.html">Wild Dancer Spell List</a>, and each require 1 action to cast, lasting as long as the Dance continues.
+
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Wild-Empathy"> Wild Empathy </b>
+		<br> At 1st level, a Wild Dancer can improve the attitude of an animal. This ability functions just like a Diplomacy check made to improve the attitude of a person. The dancer rolls 1d20 and adds her dancer level and her Charisma modifier to determine the wild empathy check result.
+
+		<br> The typical domestic animal has a starting attitude of indifferent, while wild animals are usually unfriendly.
+
+		<br>To use wild empathy, the dancer and the animal must be able to study each other, which means that they must be within 30 feet of one another under normal conditions. Generally, influencing an animal in this way takes 1 minute but, as with influencing people, it might take more or less time.
+
+		<br>A dancer can also use this ability to influence a magical beast with an Intelligence score of 1 or 2, but she takes a –4 penalty on the check.
+
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Evasion"> Evasion </b>
+		<br> At 2nd level, Wild Dancers become so accustomed to their flowing dance movements that they can more easily avoid dangers that others would have no hope of dodging.
+
+		<br> Whenever she succeeds on a reflex save to halve damage against her, she instead avoids the damage entirely, taking none.
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Evasive-Grace"> Evasive Grace </b>
+		<br> At 2nd Level, Wild Dancers learn to use the rhythm and flow of their dance to bewhilder the eyes and blades of their opponents alike. She may add her charisma modifier to her AC (minimum 0).
+
+		<br> This is a dodge bonus, and is not added to her AC if she is caught flat-footed or otherwise is denied her dexterity bonus to AC.
+
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Partner-Tactics"> Partner Tactics </b>
+		<br> At 3rd Level, a Wild Dancer learns to better incorporate her animal partner into her deadly dance. She gains the following benefits:
+		<br> - She can add 1 dance die to her attack rolls on attacks against creatures that her partner is threatening.
+		<br> - She can move through any space occupied by her animal partner without any movement cost, and without provoking attacks of opportunity.
+		<br><br> Her animal partner gains the same benefits from the dancer.
+
+		<br><br> In addition, her animal partner is treated as having the same Teamwork Feats as she does. This allows her to utilize Teamwork Feats in combat with her partner, even if no others in the battle share the feat.
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Teamwork-Feat"> Bonus Teamwork Feat </b>
+		<br> At 3rd Level, a Wild Dancer expands her cooperative battle prowess. She may select any feat from the <a href="https://www.d20pfsrd.com/feats/teamwork-feats/">Teamwork Feat List</a> for which she meets the pre-requisites.
+		<br><br> She may select an additional Teamwork feat at 7th level, 11th level, 15th level, and 19th level.
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Spellcasting"> Spellcasting </b>
+		<br> At 4th Level, a Wild Dancer's connection to nature produces an affinity for a very special kind of magic. She can channel the power of the world around her through her Dance, allowing her to cast spells from the <a href="wildDancerSubPages/WildDancerSpellList.html">Wild Dancer Spell List</a> during her Dance. She may only cast these spells while she is performing a Dance, and may substitute any low-cost Material or Verbal spell components with the movements that accompany her Dance. 
+		<br><br> The spells available to her are classified into one or more of 10 categories:
+		<br> - Artistic: These spells flow from the heart of the art of Dance, usually involving performance or themes of artistic expression.
+		<br> - Emotional: These spells involve the emotions of friends or foes, manipulating how people feel to produce the effect you desire.
+		<br> - Deceptive: These spells are designed to confuse, muddle, mislead, and generally keep your opponents guessing. 
+		<br> - Natural: These spells are pulled directly from nature, focusing on understanding and utilizing the world around you to your benefit without harming it.
+		<br> - Animal: These spells allow the dancer to pull inspiration from the beasts to interact better with them or even to mimic their ferocious power.
+		<br> - Shadow: These spells come from dancers walking a darker path, taking to the shadows to avoid detection, inspire fear, or to strike with umbral chill.
+		<br> - Living: These spells channel the nourishing power of nature to illuminate, regenerate, and soothe the world. 
+		<br> - Bolstering: These spells follow the traditional purpose of performance in battle: to inspire allies to greater feats of daring and heroism.
+		<br> - Degrading: These spells serve to discourage, embarrass, and leer at those who would dare oppose your dance.
+		<br> - Untyped: These spells remain unclassified, accessible by any Wild Dancer performing in any style.
+
+		<br><br> A Wild Dancer gains a number of spell slots per day according to the <a href="#class-table">Class Advancement Table</a>. She also gains <b>extra spell slots per day based on her Charisma modifier</b>, if it is high enough, according to this table: <a href="https://www.d20pfsrd.com/basics-ability-scores/ability-scores#TOC-Abilities-and-Spellcasters"> Bonus Spells.</a> 
+
+		<br><br> The spells a Wild Dancer can cast during her Dance are restricted by the Cultural Style she uses. Each style allows for the casting of Untyped spells, but otherwise only allows spells from specific categories based on the style. At 4th level, the Wild Dancer chooses 1 of the spellcasting options offered by her Cultural Style along with 2 other spell categories of her choice. She may only cast spells from one of those three categories. Wild Dancer players should pay close attention to the type of spell they choose to learn when leveling up, as <b>it is possible for a dancer to learn a spell that she cannot cast with her known Cultural Style.</b>
+
+		<br><br> A Wild Dancer cannot cast a spell if she is not Dancing. This restriction has a drawback and a boon. She cannot cast her spells if she were otherwise unable to Dance. This includes being bound, prone, or having her movement speed reduced to less than 10 feet. However, she does not need to use her voice to cast her spells. As a result, any Silence effect that would render her unable to speak has no effect on her, and she can cast any spell without making noise as long as she succeeds at a <b>Stealth check with DC = 10 + twice the level of the spell being cast</b>.
+
+		<br><br><br> Wild Dancers memorize their spells and do not need to prepare them each morning. Instead, simply spending an hour practicing her dance is enough to restore her spell slots. Whenever she casts a spell, she may choose to cast any spell she knows. 
+		<br> The number of spells she knows of any level is given on the table below:
+
+		<br><br><br>
+
+		<div class="tableDiv">
+		<b class="header"> Table: Spells Known </b>
+		<br>
+		<br>
+		<hr>
+		<br>
+		<table>
+
+			<colgroup>
+				<col span="1" style="background-color:darkgray;">
+				<col span="4" style="background-color: lightblue;">
+			</colgroup>
+			<tr>
+				<th>Level</th>
+				<th>1st</th>
+				<th>2nd</th>
+				<th>3rd</th>
+				<th>4th</th>
+			</tr>
+			<tr>
+				<th>1st</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>2nd</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>3rd</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>4th</th>
+				<th>2</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>5th</th>
+				<th>3</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>6th</th>
+				<th>4</th>
+				<th>-</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>7th</th>
+				<th>4</th>
+				<th>2</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>8th</th>
+				<th>4</th>
+				<th>3</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>9th</th>
+				<th>5</th>
+				<th>4</th>
+				<th>-</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>10th</th>
+				<th>5</th>
+				<th>4</th>
+				<th>2</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>11th</th>
+				<th>5</th>
+				<th>4</th>
+				<th>3</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>12th</th>
+				<th>6</th>
+				<th>5</th>
+				<th>4</th>
+				<th>-</th>
+			</tr>
+			<tr>
+				<th>13th</th>
+				<th>6</th>
+				<th>5</th>
+				<th>4</th>
+				<th>2</th>
+			</tr>
+			<tr>
+				<th>14th</th>
+				<th>6</th>
+				<th>5</th>
+				<th>4</th>
+				<th>3</th>
+			</tr>
+			<tr>
+				<th>15th</th>
+				<th>6</th>
+				<th>6</th>
+				<th>5</th>
+				<th>4</th>
+			</tr>
+			<tr>
+				<th>16th</th>
+				<th>6</th>
+				<th>6</th>
+				<th>5</th>
+				<th>4</th>
+			</tr>
+			<tr>
+				<th>17th</th>
+				<th>6</th>
+				<th>6</th>
+				<th>5</th>
+				<th>4</th>
+			</tr>
+			<tr>
+				<th>18th</th>
+				<th>6</th>
+				<th>6</th>
+				<th>6</th>
+				<th>5</th>
+			</tr>
+			<tr>
+				<th>19th</th>
+				<th>6</th>
+				<th>6</th>
+				<th>6</th>
+				<th>5</th>
+			</tr>
+			<tr>
+				<th>20th</th>
+				<th>6</th>
+				<th>6</th>
+				<th>6</th>
+				<th>6</th>
+			</tr>
+
+		</table>
+	</div>
+
+
+
+	<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Beautiful-Bond"> Beautiful Bond </b>
+		<br> At 5th Level, a Wild Dancer forms a wondrous bond with her partner, elevating their dance to a deadly spectacle that baffles the eyes. She gains the following benefits:
+		<br> - She can add 1 dance die to her melee damage rolls on attacks made against creatures her partner is threatening.
+		<br> - She can add 1 dance die to her AC when she is attacked while adjacent to her partner. (The die is rolled once per attack that targets her, and the bonus is added to her ac).
+		<br><br> Her animal partner gains the same benefits from the dancer.
+
+	<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Specialized-Styles"> Specialized Styles </b>
+		<br> At 6th Level, a Wild Dancer learns to use her Perform (Dance) skill in place of other skills during specific skill checks. She learns 4 Specialized Styles from the chart below, based on her Cultural Style (All Tarian cultures count as Tarian for the purposes of this table). When she Dances, she may employ a single Specialized Style alongside her Cultural and Regional styles. Styles List:
+		<div class="tableDiv">
+		<b class="header"> Table: Specialized Styles </b>
+		<br>
+		<br>
+		<hr>
+		<br>
+		<table>
+
+			<colgroup>
+				<col span="1" style="background-color:darkgray;">
+				<col span="1" style="background-color: lightblue;">
+				<col span="1" style="background-color: lightpink;">
+			</colgroup>
+			<tr>
+				<th>Style Name</th>
+				<th>Cultures that can learn it</th>
+				<th>Skill</th>
+			</tr>
+			<tr>
+				<td>Frightful</td>
+				<td>Arethian, Grussian, Kun'Haman</td>
+				<td>Intimidate</td>
+			</tr>
+			<tr>
+				<td>Agreeable</td>
+				<td>Enthan, Tarian, Kun'Haman</td>
+				<td>Diplomacy</td>
+			</tr>
+			<tr>
+				<td>Lightfooted</td>
+				<td>Grussian, Tarian, Harachi</td>
+				<td>Acrobatics</td>
+			</tr>
+			<tr>
+				<td>Winking</td>
+				<td>Enthan, Arethian, Tarian</td>
+				<td>Bluff</td>
+			</tr>
+			<tr>
+				<td>Misdirecting</td>
+				<td>Harachi, Arethian</td>
+				<td>Sleight of Hand</td>
+			</tr>
+			<tr>
+				<td>Universal</td>
+				<td>Enthan, Harachi, Kun'Haman, Grussian</td>
+				<td>Linguistics</td>
+			</tr>
+			<tr>
+				<td>Subtle</td>
+				<td>Harachi, Enthan, Grussian</td>
+				<td>Stealth</td>
+			</tr>
+			<tr>
+				<td>Attuned</td>
+				<td>Arethian, Tarian, Kun'Haman</td>
+				<td>Use Magic Device, Spellcraft</td>
+			</tr>
+
+		</table>
+	</div>
+
+
+	<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Advanced-Steps"> Advanced Steps </b>
+		<br> At 8th Level, a Wild Dancer is skilled enough to perform a new kind of Dance Step known as an Advanced Step. She may select 1 Advanced Step to learn immediately, and may choose to learn an Advanced Step in place of a Basic Step whenever she would learn a new Step.
+		<br><br> The rules for Advanced Steps are identical to those for Basic Steps, except that Advanced Steps cost 15 feet of movement instead of 10 feet.
+		<br><br> <b> Advanced Step List </b>
+		<br><br> - Inspirational Step - Grant 1 dance die to all allies within 20 feet, to use on any d20 roll.
+		<br><br> - Poised Step - Add Keen to a weapon or animal natural weapon within 10 feet.
+		<br><br> - Flame Step - Add Flaming to a weapon or animal natural weapon within 10 feet.
+		<br><br> - Chilled Step - Add Frost to a weapon or animal natural weapon within 10 feet.
+		<br><br> - Shocking Step - Add Shocking to a weapon or animal natural weapon within 10 feet.
+		<br><br> - Caustic Step - Add Corrosive to a weapon or animal natural weapon within 10 feet.
+		<br><br> - Mystical Step - The next spell cast by you or a creature you touch takes 1 action to cast this round, if it usually would take 2 actions.
+		<br><br> - Deferring Step - Lose 1 action this turn and give it to an ally within 20 feet.
+		<br><br> - Primal Prance - Roll 1d100 on the <a href="wildDancerSubPages/PrimalPranceTable.html"> Primal Prance Table </a>
+
+
+	<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Dance-Party"> Dance Party </b>
+		<br> At 9th Level, Wild Dancers learn to work together with other people, not just her Partner, using the combined power of good (and bad) backup dancers to attack the sensibilities of her foes.
+		<br><br> As an action, she can strike up a simple but powerful routine that increases in efficacy (and complexity) with each participant.
+		<br><br> For the next turn, any ally within 20 ft can spend an action to follow her lead. 
+		<br><br> At the start of the Wild Dancer's next turn, she must make a <b>Perform (dance) check DC = 10 + 5 per participant (including the dancer)</b>. If she succeeds at this check, then one of two effects take place, Dancer's choice.
+		<br>- Deal 1 Dance Die of psychic damage per participant (dancer included) to 1 creature within 90 feet who can see the routine/
+		<br>- Deal 1 Dance Die of psychic damage per participant (dancer included) to all non-participating creatures within 30 feet of the Wild Dancer (excluding her Partner and any creature that does not understand dance, like a familiar or a horse).
+		<br> A Will save on the behalf of the creatures affected halves the damage they take from a Dance Party. <b>Will DC = 1/2 the Dancer's level + her charisma modifier + the number of participants (not including the Dancer)</b>.
+
+
+	<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Signature-Step"> Signature Step </b>
+		<br> At 10th Level, a Wild Dancer becomes so accustomed to performing one of her Basic Steps that she can do it more easily than before.
+		<br><br> She may select a single Basic Step that she knows. That step now only costs her 5 feet of movement to use, and can be used twice in a turn instead of only once.
+		<br><br> At 17th level, she may select a single Advanced Step that she knows. That step only costs her 10 feet of movement to use, and can be used twice in a turn instead of only once.
+
+
+	<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Double-Time"> Double Time </b>
+		<br> At 12th Level, a Wild Dancer has learned to mix styles, gaining the effects of both at the same time. 
+		<br><br> When starting a Dance, she may select an extra Specialized style or an extra Regional style to take effect during that Dance.
+
+	<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Master-Steps"> Master Steps </b>
+		<br> At 14th Level, a Wild Dancer is nearing the pinnacle of her art. She is capable of performing a new kind of Dance Step known as an Master Step. She may select 1 Master Step to learn immediately, and may choose to learn an Master Step in place of a Basic Step whenever she would learn a new Step.
+		<br><br> The rules for Master Steps are similar to those for Basic Steps, except that Master Steps cost 20 feet of movement instead of 10 feet, and a dancer cannot perform more than 1 Master Step in a turn.
+		<br><br> <b> Master Step List </b>
+		<br><br> - Violent Finale - Spend all your remaining Verve to perform 1 melee attack on a target for every 3 Verve spent. You may not gain Verve for 1 turn. Your Partner may perform 1 melee attack for every 6 Verve spent. You then lose an amount of Verve equal to the amount you spent, resulting in nonlethal damage per the rules for losing Verve.
+		<br><br> - Dancing Blade - Add Dancing to a weapon within 10 feet.
+		<br><br> - Art of War - Any of your attacks with Finesse weapons can use your Perform (Dance) bonus instead of your BAB.
+		<br><br> - Go for the Jugular - Make a single melee attack with a -8 penalty and the Vorpal quality.
+		<br><br> - Take it Away! - End your turn. One ally of your choice within 20 feet may take a turn immediately without changing initiative.
+		<br><br> - Curtain Call - If any creatures are killed this turn, their bodies are reanimated for 1 turn to dance with you and serve your will.
+
+
+	<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Improved-Evasion"> Improved Evasion </b>
+		<br> At 16th Level, a Wild Dancer's evasive movements ascend to a level rarely seen. 
+		<br><br> When Dancing, she gains an improved form of Evasion. She still takes no damage when succeeding at a reflex save to halve damage. She now takes half damage even if she fails the reflex save.
+
+	<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="capstone"> Prima Step </b>
+		<br> This is the Capstone ability for a Wild Dancer!
+		<br><br> There is no one-size-fits-all capstone for every Wild Dancer, so work with your GM to see what masterful ability you might unlock!
+
+
+			
+	</p>
+
+
+</body>
+</html>

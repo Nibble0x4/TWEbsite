@@ -12,7 +12,7 @@ a:hover {
 }
 
 div a:hover {
-	background-color:  #202020;
+	background-color:  #red;
 }
 
 body {
@@ -134,7 +134,7 @@ table {
 .tableDiv {
 	text-align: center;
 	margin: auto;
-	width: 50%;
+	width: 30%;
 }
 
 .classFeatureHeader {
@@ -203,6 +203,17 @@ div.classFeature {
 	color: #aa0000;
 }
 
+img.class-picture {
+	height: inherit;
+	width: 20%;
+	position: relative;
+	display: inline-block;
+	left: 40%;
+}
+img.class-picture:hover {
+	border: 2px solid #444;
+}
+
 div.option-box {
 	padding: 4px;
 	text-align: left;
@@ -241,6 +252,10 @@ p.suboption > a {
 	cursor: pointer;
 }
 
+div.tableDiv > a{
+	color: #whitesmoke;
+}
+
 .std {
 	
 	font-size: 16px;
@@ -254,10 +269,10 @@ p.suboption > a {
 	display: inline-block;
 	font-size: 20px;
 	margin: 16px 12px;
-	position: absolute;
+	position: relative;
 	left: 35%;
-	width: 50%;
-	overflow:  auto;
+	width: 20%;
+	overflow:  scroll;
 }
 .body-text {
 	text-align: left;
@@ -267,6 +282,11 @@ p.suboption > a {
 	position: relative;
 	left: 10%;
 	width: 85%;
+}
+.class-description {
+	text-align: center;
+	display: inline-block;
+	font-size: 20px;
 }
 
 @media (min-width: 1400px) {
@@ -279,6 +299,10 @@ p.suboption > a {
 	}
 	table {
 		width: 25%;
+	}
+	img.class-picture {
+		width: 20%;
+		left: 60%;
 	}
 }
 
@@ -295,5 +319,9 @@ p.suboption > a {
 		width: 100%;
 		left: 5%;
 		font-size: 0.75em;
+	}
+	img.class-picture {
+		width: 40%;
+		left: 30%;
 	}
 }
