@@ -155,6 +155,12 @@ div.stat-block b {
 	width: 30%;
 }
 
+.fluxtableDiv {
+	text-align: center;
+	margin: auto;
+	width: 90%;
+}
+
 .classFeatureHeader {
 	color:  #044440;
 	background: lightgrey;
@@ -272,6 +278,16 @@ p.suboption > a {
 
 div.tableDiv > a{
 	color: #whitesmoke;
+}
+
+
+
+table.fluxTable {
+	display: inline-block;
+	width: 30%;
+	position: relative;
+	align-content: left;
+
 }
 
 .std {
