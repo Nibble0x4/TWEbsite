@@ -27,6 +27,24 @@ table {
 	font-size: 1.5em;
 }
 
+div.stat-block {
+	background-color: lightslategray;
+	border-style: solid;
+	border-color: darkblue;
+	border-radius: 2px;
+	left: 10%;
+	width: 55%;
+	font-size: 16pt;
+	color: black;
+}
+
+div.stat-block b {
+	background-color: skyblue;
+	border-radius: 1px;
+	border-color: darkblue;
+	border-style: solid;
+}
+
 .fireHeader {
 	color: darkred;
 	background-color: lightpink;
