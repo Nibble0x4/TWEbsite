@@ -1,0 +1,108 @@
+
+* {
+		box-sizing: border-box;
+		background-color: #aaaaaa;
+		background-image: url("hrm.JPG");
+}
+
+.page-header {
+	text-align: center;
+	color: darkgoldenrod;
+	background-color: black;
+	border-width: 12px;
+	border-style: ridge;
+	border-color: darkred;
+	font-size: 4em;
+	background-image: none;
+}
+
+.instruction-text {
+	text-align: center;
+	color: darkgoldenrod;
+	background-color: black;
+	border-width: 10px;
+	border-style: ridge;
+	border-color: darkred;
+	font-size: 1.5em;
+	background-image: none;
+}
+
+div.name-box1 {
+	text-align: center;
+	width: 30%;
+	background-color: black;
+	color: darkgoldenrod;
+	border-width: 8px;
+	border-color: darkred;
+	border-style: ridge;
+	background-image: none;
+	position: absolute;
+	font-size: 1.5em;
+	left: 2%;
+}
+
+div.name-box2 {
+	text-align: center;
+	width: 30%;
+	background-color: black;
+	color: darkgoldenrod;
+	border-width: 8px;
+	border-color: darkred;
+	border-style: ridge;
+	background-image: none;
+	position: absolute;
+	left: 35%;
+	font-size: 1.5em;
+}
+
+div.name-box3 {
+	text-align: center;
+	width: 30%;
+	background-color: black;
+	color: darkgoldenrod;
+	border-width: 8px;
+	border-color: darkred;
+	border-style: ridge;
+	background-image: none;
+	position: absolute;
+	left: 68%;
+	font-size: 1.5em
+}
+
+
+@media (min-width: 1400px) {
+	div.option-box {
+		width: 15%;
+	}
+	.text {
+		left: 20%;
+		width: 75%;
+	}
+	table {
+		width: 25%;
+	}
+	img.class-picture {
+		width: 20%;
+		left: 60%;
+	}
+}
+
+@media (max-width: 900px) {
+	div.option-box {
+		width: 40%;
+	}
+	.text {
+		left: 42%;
+		width: 55%;
+		font-size: 12px;
+	}
+	table {
+		width: 100%;
+		left: 5%;
+		font-size: 0.75em;
+	}
+	img.class-picture {
+		width: 40%;
+		left: 30%;
+	}
+}

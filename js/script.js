@@ -3,7 +3,24 @@
 function sayHello () {
 	var name = document.getElementById("name").value;
 
-	document.getElementById("greetingContent").innerHTML = name;
+
+	if(name == 'JERM' || name == 'jerm') {
+		document.getElementById("greetingContent").innerHTML = "zvar  ...  Bifid";
+		document.getElementById("Secret-Link").innerHTML = "Welcome, brother";
+	}
+	else if(name == 'GOOB' || name == 'goob') {
+		document.getElementById("greetingContent").innerHTML = "abbab baaaa aaaaa aaaba ababa aabaa ...   Bacon";
+		document.getElementById("Secret-Link").innerHTML = "Welcome, friend";
+	}
+	else if(name == 'CMRN' || name == 'cmrn') {
+		document.getElementById("greetingContent").innerHTML = "lsfksfpmr ...  Caesar";
+		document.getElementById("Secret-Link").innerHTML = "Welcome, friend";
+	}
+	else{
+			document.getElementById("greetingContent").innerHTML = name + "!";
+			document.getElementById("Secret-Link").innerHTML = "";
+	}
+
 }
 
 
