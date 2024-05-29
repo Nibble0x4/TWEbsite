@@ -317,6 +317,15 @@ table.fluxTable {
 	left: 10%;
 	width: 85%;
 }
+.top-text {
+	text-align: left;
+	display: inline-block;
+	font-size: 20px;
+	margin: 16px 12px;
+	position: relative;
+	left: 10%;
+	width: 55%;
+}
 .class-description {
 	text-align: center;
 	display: inline-block;
