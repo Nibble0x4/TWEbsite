@@ -161,6 +161,12 @@ div.stat-block b {
 	width: 90%;
 }
 
+.weapontableDiv {
+	text-align: center;
+	margin: auto;
+	width: 40%;
+}
+
 .classFeatureHeader {
 	color:  #044440;
 	background: lightgrey;
@@ -285,6 +291,14 @@ div.tableDiv > a{
 table.fluxTable {
 	display: inline-block;
 	width: 30%;
+	position: relative;
+	align-content: left;
+
+}
+
+table.weaponTable {
+	display: relative;
+	width: 100%;
 	position: relative;
 	align-content: left;
 
