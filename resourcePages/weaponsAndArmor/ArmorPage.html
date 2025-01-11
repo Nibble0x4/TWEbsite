@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> TWEbsite Armor Page </title>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="icon" type="image/x-icon" href="images/TWEbsiteFavicon.png">
+
+
+</head>
+<body class="std">
+
+	<h1 class="page-header"> Armor and Shields Page <button id="Picture-Button">Reroll Image</button></h1>
+		
+	<div id="page-select-box" class="option-box"> 
+		<h2> Pages: </h2>
+		<p class="option"> <u><a href="../../index.html" style="color:#aafff0">Intro Page</a></u></p>
+		<p style="font-style:underline; color:#ee0000; cursor:pointer">	<u><a href="../../TWEbsiteRulesetPage.html" style="font-style:underline; color:#ee0000;">Ruleset Page</a></u> </p>
+		<p style="font-style:underline; color:#eeee00; cursor:pointer">	<u><a href="../../TWEbsiteClassPage.html" style="font-style:underline; color:#eeee00; cursor:pointer">Classes Page</a></u> </p>
+		<p style="font-style:underline; color:#00dd00; cursor:pointer" > <a href="../../TWEbsiteRacesPage.html" style="font-style:underline; color:#00dd00;"><u>Races Page </u></a> </p>
+		<p style="font-style:underline; color:#0000dd; cursor:pointer">	<u><a href="../../TWEbsiteLorePage.html" style="font-style:underline; color:#0000dd;">Lore Page</a> </u> </p> 
+		<p style="font-style:underline; color:#440044; cursor:pointer">	<u><a href="../../TWEbsiteResourcesPage.html" style="font-style:underline; color:#440044;">Resources Page</a> </u> </p>
+
+	</div>
+
+	<a id="Picture-Link" target="_blank" href="images/Manabound/ManaboundImage.jpg">
+		<img id="Picture" src="images/Manabound/ManaboundImage.jpg" class="class-picture">
+	</a>
+	
+	<p class="class-description"> <b class="subheader"> Armor and Shields </b>
+	<br> That Which Exists (TWE) is a dangerous place. Regardless of who you are, you are likely going to find yourself in some sort of a fight if you are traveling across TWE. Some travelers are content with their ordinary clothes, relying on their skills, speed, or magic to protect them. Others, however, wish to better prepare themselves to survive when deadly foes confront them. These people are likely interested in some form of armor. 
+	<br><br> Depending on an adventurer's class, they will be more or less proficient in the wearing of armor. It is <b>very important</b> to consider your armor proficiency before donning it. When you are wearing armor you are not proficient with, you suffer the following effects:
+	<br>- Your dexterity modifier is reduced by 2 if the armor is light, 4 if the armor is medium, and 6 if the armor is heavy. If this penalty reduces your dexterity bonus to 0, then you are unable to move in the armor.
+	<br>- You suffer a penalty on attack rolls and damage rolls with physical weapons equal to the penalty mentioned above.
+	<br>- You suffer a penalty on CMB checks, CMD, Reflex Saves, and concentration checks equal to the penalty mentioned above.
+	<br>- You suffer a penalty on dex-or-str-based skill checks equal to the penalty mentioned above.
+	<br>- You cannot Charge or Run.
+	<br>- You suffer -1 action on your turn in combat.
+	
+	<br><br>
+
+	<br><br> Each armor has a set of statistics in the following categories, represented by columns in the table below:
+	<br><b>Slot:</b> The part of your body that the armor is intended to cover. There are three regions: The Head, the Torso, and the Legs. Bonuses and penalties of the armors worn in different slots do stack together.
+	<br><b>Name:</b> The name of the armor itself.
+	<br><b>AC Bonus:</b> The bonus to AC granted by wearing the armor.
+	<br><b>DR/X:</b> Damage reduction applied to physical attacks received while wearing the armor. X denotes the type of physical damage that bypasses this DR.
+	<br><b>Dex AC Penalty:</b> When a wearer has a bonus to their AC as a result of their Dex, this number is a penalty to that bonus. If the combined penalties are greater than the wearer's Dex bonus to AC, then they simply do not add their Dex to their AC. This penalty cannot apply a penalty to a wearer's AC by overcoming their Dex.
+	<br><b>Movement Penalty:</b> This number is subtracted from a wearer's base movement speed when they don the armor.
+	<br><b>Arcane Interference:</b> When the wearer casts a spell with Somatic components, they must roll 1d100. If their result is less than or equal to this chance, then they roll on the Aetheric Interference Table to determine what happens.
+	<br><b>Requirements:</b> These are additional specific requirements a wearer must meet in order to be considered proficient with this armor.
+	<br><b>Special:</b> This contains a tag describing any special traits specific to the armor.
+	 
+	 
+	
+
+	<hr>
+
+
+
+
+	<div class="weapontableDiv">
+		<b class="header"> Armor Tables </b>
+		<br>
+		<br>
+		<hr>
+		<br>
+	
+		<b class="header"> Light Armor</b>
+		<br> 
+		<br><br> 
+		<table class="WeaponTable">
+
+			<colgroup>
+				<col span="1" style="background-color:darkgray;">
+				<col span="1" style="background-color: lightslategrey;">
+				<col span="2" style="background-color: lightblue;">
+				<col span="3" style="background-color: lightpink;">
+				<col span="2" style="background-color: palegreen;">
+			</colgroup>
+			<tr>
+				<th>Light Armor</th>
+			</tr>
+			<tr>
+				<th>Slot</th>
+				<th>Name</th>
+				<th>AC Bonus</th>
+				<th>DR/-</th>
+				<th>Dex AC Penalty</th>
+				<th>Movement Penalty</th>
+				<th>Arcane Interference</th>
+				<th>Requirements</th>
+				<th>Special</th>
+
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Padded Vest</td>
+				<td>+1</td>
+				<td>-</td>
+				<td>0</td>
+				<td>0</td>
+				<td>5%</td>
+				<td>Str-7</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Head</td>
+				<td>Leather Cap</td>
+				<td>+1</td>
+				<td>-</td>
+				<td>0</td>
+				<td>0</td>
+				<td>5%</td>
+				<td>Str-8</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Leather Tunic</td>
+				<td>+2</td>
+				<td>1/B</td>
+				<td>0</td>
+				<td>0</td>
+				<td>10%</td>
+				<td>Str-8</td>
+				<td>Survivalist</td>
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Studded Leather Tunic</td>
+				<td>+3</td>
+				<td>1/B</td>
+				<td>0</td>
+				<td>0</td>
+				<td>15%</td>
+				<td>Str-9</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Leather Trousers</td>
+				<td>+1</td>
+				<td>-</td>
+				<td>0</td>
+				<td>0</td>
+				<td>5%</td>
+				<td>Str-8</td>
+				<td>Survivalist</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Leather Skirt</td>
+				<td>+1</td>
+				<td>-</td>
+				<td>1/S</td>
+				<td>0</td>
+				<td>0%</td>
+				<td>Str-7</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Head</td>
+				<td>Wooden Helmet</td>
+				<td>+1</td>
+				<td>1/-</td>
+				<td>0</td>
+				<td>0</td>
+				<td>5%</td>
+				<td>Str-10</td>
+				<td>Weak Fire, Grounding</td>
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Wooden Chestplate</td>
+				<td>+2</td>
+				<td>1/-</td>
+				<td>0</td>
+				<td>0</td>
+				<td>10%</td>
+				<td>Str-10</td>
+				<td>Survivalist, Weak Fire, Grounding</td>
+			</tr>
+			<tr>
+				<td>Head</td>
+				<td>Hide Helmet</td>
+				<td>+1</td>
+				<td>-</td>
+				<td>1/P</td>
+				<td>0</td>
+				<td>10%</td>
+				<td>Str-11</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Hide Tunic</td>
+				<td>+3</td>
+				<td>1/S</td>
+				<td>0</td>
+				<td>0</td>
+				<td>10%</td>
+				<td>Str-11</td>
+				<td>Survivalist, Insulating</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Hide Chausses</td>
+				<td>+2</td>
+				<td>1/S</td>
+				<td>0</td>
+				<td>0</td>
+				<td>10%</td>
+				<td>Str-11</td>
+				<td>Survivalist, Insulating</td>
+			</tr>
+			<tr>
+				<td>Head</td>
+				<td>Hardleaf Headdress</td>
+				<td>+1</td>
+				<td>-</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0%</td>
+				<td>Str-7</td>
+				<td>Fluid, Weak Fire, Fragile</td>
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Hardleaf Top</td>
+				<td>+1</td>
+				<td>-</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0%</td>
+				<td>Str-7</td>
+				<td>Fluid, Weak Fire, Fragile</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Hardleaf Skirt</td>
+				<td>+1</td>
+				<td>-</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0%</td>
+				<td>Str-7</td>
+				<td>Fluid, Weak Fire, Fragile</td>
+			</tr>
+			<tr>
+				<td>Torso AND Legs</td>
+				<td>Silken Bodysuit</td>
+				<td>+2</td>
+				<td>1/S</td>
+				<td>0</td>
+				<td>0</td>
+				<td>10%</td>
+				<td>Str-7</td>
+				<td>Fluid, Insulating, Weak Fire, Fragile</td>
+			</tr>
+			<tr>
+				<td>Head</td>
+				<td>Dancing Scarves</td>
+				<td>+2</td>
+				<td>-</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0%</td>
+				<td>Str-7</td>
+				<td>Fluid, Moving</td>
+			</tr>
+			
+			
+		</table>
+
+		<br><br>
+		<b class="header"> Medium Armor</b>
+		<br> 
+		<br><br> 
+
+		<table class="WeaponTable">
+
+			<colgroup>
+				<col span="1" style="background-color:darkgray;">
+				<col span="1" style="background-color: lightslategrey;">
+				<col span="2" style="background-color: lightblue;">
+				<col span="3" style="background-color: lightpink;">
+				<col span="2" style="background-color: palegreen;">
+			</colgroup>
+			<tr>
+				<th>Medium Armor</th>
+			</tr>
+			<tr>
+				<th>Slot</th>
+				<th>Name</th>
+				<th>AC Bonus</th>
+				<th>DR/-</th>
+				<th>Dex AC Penalty</th>
+				<th>Movement Penalty</th>
+				<th>Arcane Interference</th>
+				<th>Requirements</th>
+				<th>Special</th>
+
+			</tr>
+			<tr>
+				<td>Head</td>
+				<td>Chain Cowl</td>
+				<td>+1</td>
+				<td>1/P</td>
+				<td>0</td>
+				<td>0</td>
+				<td>10%</td>
+				<td>Str-13</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Chainmail Tunic</td>
+				<td>+4</td>
+				<td>2/P</td>
+				<td>1</td>
+				<td>0</td>
+				<td>15%</td>
+				<td>Str-13</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Chainmail Pants</td>
+				<td>+2</td>
+				<td>2/P</td>
+				<td>0</td>
+				<td>0</td>
+				<td>10%</td>
+				<td>Str-13</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Chainmail Pants</td>
+				<td>+2</td>
+				<td>2/P</td>
+				<td>0</td>
+				<td>0</td>
+				<td>10%</td>
+				<td>Str-13</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Breastplate</td>
+				<td>+5</td>
+				<td>4/B</td>
+				<td>2</td>
+				<td>0</td>
+				<td>20%</td>
+				<td>Str-15</td>
+				<td>Crumpling</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Demiplate Chausses</td>
+				<td>+3</td>
+				<td>3/B</td>
+				<td>1</td>
+				<td>5</td>
+				<td>15%</td>
+				<td>Str-15</td>
+				<td>Crumpling</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Plated Kilt</td>
+				<td>+1</td>
+				<td>3/P</td>
+				<td>1</td>
+				<td>0</td>
+				<td>10%</td>
+				<td>Str-15</td>
+				<td>Breathable</td>
+			</tr>
+			<tr>
+				<td>Head</td>
+				<td>Scale Helmet</td>
+				<td>+2</td>
+				<td>2/S</td>
+				<td>0</td>
+				<td>0</td>
+				<td>10%</td>
+				<td>Str-15</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Scale Tunic</td>
+				<td>+4</td>
+				<td>3/S</td>
+				<td>1</td>
+				<td>0</td>
+				<td>15%</td>
+				<td>Str-15</td>
+				<td>Insulating</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Scale Chausses</td>
+				<td>+2</td>
+				<td>2/S</td>
+				<td>1</td>
+				<td>5</td>
+				<td>10%</td>
+				<td>Str-15</td>
+				<td>Insulating</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Scale Skirt</td>
+				<td>+2</td>
+				<td>-</td>
+				<td>0</td>
+				<td>5</td>
+				<td>10%</td>
+				<td>Str-15</td>
+				<td>-</td>
+			</tr>
+
+			
+		</table>
+
+		<br><br>
+		<b class="header"> Heavy Armor</b>
+		<br> 
+		<br><br> 
+
+		<table class="WeaponTable">
+
+			<colgroup>
+				<col span="1" style="background-color:darkgray;">
+				<col span="1" style="background-color: lightslategrey;">
+				<col span="2" style="background-color: lightblue;">
+				<col span="3" style="background-color: lightpink;">
+				<col span="2" style="background-color: palegreen;">
+			</colgroup>
+			<tr>
+				<th>Heavy Armor</th>
+			</tr>
+			<tr>
+				<th>Slot</th>
+				<th>Name</th>
+				<th>AC Bonus</th>
+				<th>DR/-</th>
+				<th>Dex AC Penalty</th>
+				<th>Movement Penalty</th>
+				<th>Arcane Interference</th>
+				<th>Requirements</th>
+				<th>Special</th>
+
+			</tr>
+			<tr>
+				<td>Head</td>
+				<td>Plate Helmet</td>
+				<td>+3</td>
+				<td>4/B</td>
+				<td>1</td>
+				<td>0</td>
+				<td>20%</td>
+				<td>Str or Con-17</td>
+				<td>Ricochet</td>
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Heavy Plate Armor</td>
+				<td>+6</td>
+				<td>6/B</td>
+				<td>2</td>
+				<td>5</td>
+				<td>30%</td>
+				<td>Str or Con-17</td>
+				<td>Polished, Reflect, Impact</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Heavy Plated Chausses</td>
+				<td>+4</td>
+				<td>4/B</td>
+				<td>2</td>
+				<td>5</td>
+				<td>30%</td>
+				<td>Str or Con-17</td>
+				<td>Sturdy</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Heavy Plated Skirt</td>
+				<td>+4</td>
+				<td>-</td>
+				<td>1</td>
+				<td>0</td>
+				<td>30%</td>
+				<td>Str or Con-17</td>
+				<td>Sturdy</td>
+			</tr>
+			<tr>
+				<td>Head</td>
+				<td>Stone Helmet</td>
+				<td>+5</td>
+				<td>4/-</td>
+				<td>2</td>
+				<td>0</td>
+				<td>25%</td>
+				<td>Str or Con-19</td>
+				<td>Piecemeal, Grounding, Thick</td>
+			</tr>
+			<tr>
+				<td>Torso</td>
+				<td>Stone Coat</td>
+				<td>+8</td>
+				<td>6/-</td>
+				<td>3</td>
+				<td>5</td>
+				<td>30%</td>
+				<td>Str or Con-19</td>
+				<td>Piecemeal, Grounding, Ricochet, Thick, Impact</td>
+			</tr>
+			<tr>
+				<td>Legs</td>
+				<td>Stone Legs</td>
+				<td>+6</td>
+				<td>5/-</td>
+				<td>2</td>
+				<td>5</td>
+				<td>30%</td>
+				<td>Str or Con-19</td>
+				<td>Piecemeal, Grounding, Sturdy, Survivalist, Thick</td>
+			</tr>
+
+		</table>
+
+		
+	</div>
+
+
+
+
+
+	<p class="body-text">
+
+
+	<hr>
+	
+	<p class="body-text"> <b class="header"> Tag Information </b>
+	<br> 
+	<br><br> 
+
+		<p class="body-text"><br><b class="classFeatureHeader">Special Tag Descriptions </b>
+		<br> Each of the tags in the 'Special' columns above are explained here. 
+		<br><br> The abilities represented by the Special tags are available to any wielder who is proficient with that weapon.
+
+
+		<br><br><br><b><i> Breathable -</i></b> The DR of this armor also counts as Elemental Resistance to Fire.
+		<br><br><br><b><i> Crumpling -</i></b> When the wearer suffers a critical hit, the armor restricts the ability of the skin to heal the damage from that wound.
+		<br><br><br><b><i> Fragile -</i></b> The armor has half the usual Hardness and HP for an armor of its material.
+		<br><br><br><b><i> Fluid -</i></b> The AC bonus granted by this armor is included in your Touch AC.
+		<br><br><br><b><i> Fragile -</i></b> The armor has half the usual Hardness and HP for an armor of its material.
+		<br><br><br><b><i> Grounded -</i></b> The DR of this armor also counts as Elemental Resistance to Electricity.
+		<br><br><br><b><i> Impact -</i></b> This armor adds 1d6 damage to successful Bullrush attempts and attacks that involve falling onto the target.
+		<br><br><br><b><i> Insulating -</i></b> The DR of this armor also counts as Elemental Resistance to Cold.
+		<br><br><br><b><i> Moving -</i></b> The armor’s AC bonus is only granted if the wearer has moved at least 10 feet this turn.
+		<br><br><br><b><i> Piecemeal -</i></b> Whenever the wearer of this armor is damaged by a melee attack, a piece of the armor falls off and the AC bonus of this armor is reduced by 1.
+		<br><br><br><b><i> Polished -</i></b> Once per turn, when a melee attack misses you, inflict Dazzled EB for 1 turn. This effect is nullified if the armor is dirtied.
+		<br><br><br><b><i> Reflect -</i></b> Once per turn, when a ray attack misses you, you may choose any direction to reflect it in. The attack roll of the attack is applied to the AC of the first creature in that direction. A natural 1 attack roll is treated as a natural 20 for the purposes of this ability.
+		<br><br><br><b><i> Ricochet -</i></b> Once per turn, when a ranged projectile attack misses you, you may choose a direction to deflect it in. It cannot be the same direction the attack came from. The attack roll of the attacker is applied to the AC of the first creature in that direction. A natural 1 attack roll is treated as a natural 20 for the purposes of this ability.
+		<br><br><br><b><i> Sturdy -</i></b> This armor grants a 2 + EB bonus on CMD against against Trip, Bullrush, Reposition and Drag maneuvers.
+		<br><br><br><b><i> Survivalist -</i></b> This armor grants resistance to damage from moving through environments such as harsh winds, thorny briars, and harsh crags.
+		<br><br><br><b><i> Thick -</i></b> The DR of this armor also counts as Elemental Resistance to Acid.
+		<br><br><br><b><i> Weak X -</i></b> The armor’s AC bonus is negated for 1 turn after suffering damage of X type.
+
+
+
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	</p>
+
+
+
+	
+</body>
+
+
+
+
+</html>
