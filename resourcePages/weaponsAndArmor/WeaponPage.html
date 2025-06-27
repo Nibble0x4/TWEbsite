@@ -50,7 +50,7 @@
 		<b class="header"> Simple Weapons </b>
 		<br> 
 		<br><br> 
-		<table class="WeaponTable">
+		<table class="WeaponTable" id="Light-Simple">
 
 			<colgroup>
 				<col span="1" style="background-color:darkgray;">
@@ -131,6 +131,17 @@
 			</tr>
 			<tr>
 				<td>Light</td>
+				<td>Ritual Knife</td>
+				<td>1d3</td>
+				<td>1d4</td>
+				<td>1d6</td>
+				<td>X2</td>
+				<td>-</td>
+				<td>Hidden</td>
+				<td>Dextrous, Channeling</td>
+			</tr>
+			<tr>
+				<td>Light</td>
 				<td>Kunai</td>
 				<td>1d3</td>
 				<td>1d4</td>
@@ -186,7 +197,7 @@
 			</tr>
 		</table>
 
-		<table class="WeaponTable">
+		<table class="WeaponTable" id="1H-Simple">
 
 			<colgroup>
 				<col span="1" style="background-color:darkgray;">
@@ -256,7 +267,7 @@
 			</tr>
 		</table>
 
-		<table class="WeaponTable">
+		<table class="WeaponTable" id="2H-Simple">
 
 			<colgroup>
 				<col span="1" style="background-color:darkgray;">
@@ -359,7 +370,7 @@
 			</tr>
 		</table>
 
-		<table class="WeaponTable">
+		<table class="WeaponTable" id="Ranged-Simple">
 
 			<colgroup>
 				<col span="1" style="background-color:darkgray;">
@@ -466,7 +477,7 @@
 		<b class="header"> Martial Weapons </b>
 		<br> 
 		<br><br> 
-		<table class="weaponTable">
+		<table class="weaponTable" id="Light-Martial">
 
 			<colgroup>
 				<col span="1" style="background-color:darkgray;">
@@ -690,7 +701,7 @@
 			</tr>
 		</table>
 
-		<table class="weaponTable">
+		<table class="weaponTable" id="1H-Martial">
 
 			<colgroup>
 				<col span="1" style="background-color:darkgray;">
@@ -848,7 +859,7 @@
 			</tr>
 		</table>
 
-		<table class="weaponTable">
+		<table class="weaponTable" id="2H-Martial">
 
 			<colgroup>
 				<col span="1" style="background-color:darkgray;">
@@ -1039,7 +1050,7 @@
 			</tr>
 		</table>
 
-		<table class="weaponTable">
+		<table class="weaponTable" id="Ranged-Martial">
 
 			<colgroup>
 				<col span="1" style="background-color:darkgray;">
@@ -1144,7 +1155,7 @@
 		<b class="header"> Exotic Weapons </b>
 		<br> 
 		<br><br> 
-		<table class="weaponTable">
+		<table class="weaponTable" id="Light-Exotic">
 
 			<colgroup>
 				<col span="1" style="background-color:darkgray;">
@@ -1280,7 +1291,7 @@
 			</tr>
 		</table>
 
-		<table class="weaponTable">
+		<table class="weaponTable" id="1H-Exotic">
 		<colgroup>
 				<col span="1" style="background-color:darkgray;">
 				<col span="1" style="background-color: lightslategrey;">
@@ -1437,7 +1448,7 @@
 			</tr>
 		</div>
 
-		<table class="weaponTable">
+		<table class="weaponTable" id="2H-Exotic">
 		<colgroup>
 				<col span="1" style="background-color:darkgray;">
 				<col span="1" style="background-color: lightslategrey;">
@@ -1770,7 +1781,7 @@
 			</tr>
 		</table>
 
-		<table class="weaponTable">
+		<table class="weaponTable" id="Ranged-Exotic">
 		<colgroup>
 				<col span="1" style="background-color:darkgray;">
 				<col span="1" style="background-color: lightslategrey;">
@@ -1920,7 +1931,7 @@
 	<br> 
 	<br><br> 
 
-		<p class="body-text"><br><b class="classFeatureHeader">Special Tag Descriptions </b>
+		<p class="body-text"><br><b class="classFeatureHeader" id="Special-Tags">Special Tag Descriptions </b>
 		<br> Each of the tags in the 'Special' columns above are explained here. 
 		<br><br> The abilities represented by the Special tags are available to any wielder who is proficient with that weapon.
 
@@ -1985,7 +1996,7 @@
 
 	</p>
 
-	<hr><p class="body-text"><br><b class="classFeatureHeader">Focus Tag Descriptions </b>
+	<hr><p class="body-text"><br><b class="classFeatureHeader" id="Focus-Tags">Focus Tag Descriptions </b>
 		<br> Each of the tags in the 'Focus' columns above are explained here. 
 		<br><br> The abilities represented by the Focus tags are available to any wielder who is proficient with that weapon and also has the Weapon Focus feat for that weapon.
 		<br><br> There are some rules about how Focus abilities are used:
@@ -1999,6 +2010,7 @@
 
 		<br><br><br><b><i> Addle-</i></b> The target suffers a -(1 + EB) penalty on attack rolls until the start of your next turn.
 		<br><br><br><b><i> Brawling-</i></b> You may use the Defend action as a swift action.
+		<br><br><br><b><i> Channeling-</i></b> This weapon can be infused with energy to deal 1 extra damage and convert the damage type to match. (This cannot be used to heal)
 		<br><br><br><b><i> Chop-</i></b> If the attack is a critical hit, add 1 + EB d6s as bonus damage to the damage dealt (This damage is multiplied). If the attack is a soft crit, the damage is not multiplied.
 		<br><br><br><b><i> Concuss-</i></b> The target suffers a -(1 + EB) penalty on saving throws until the start of your next turn.
 		<br><br><br><b><i> Crush-</i></b> You may make a Sunder combat maneuver against your target as a swift action with a 1 + EB bonus on the check. If you are successful, you may deal half the damage of your attack to one of the target's pieces of worn or wielded equipment.
@@ -2035,7 +2047,7 @@
 		<br><br> 
 
 
-	<table class="weaponTable">
+	<table class="weaponTable" id="Unique-Weapons">
 		<colgroup>
 				<col span="2" style="background-color:darkgray;">
 				<col span="1" style="background-color: lightslategrey;">
@@ -2107,10 +2119,22 @@
 				<td>Feral, Finesse, Zodiac-Dog, Bardic (Sing), Dramatic</td>
 				<td>Disorient, Gash, Brawling, Dextrous</td>
 			</tr>
+			<tr>
+				<td>Ranged</td>
+				<td>Divine</td>
+				<td>Toxobeles Replica</td>
+				<td>4d6</td>
+				<td>4d8</td>
+				<td>4d10</td>
+				<td>19-20/X5</td>
+				<td>300</td>
+				<td>Divine-Artemis</td>
+				<td>Pierce, Skewer</td>
+			</tr>
 			
 		</table>
 
-		<hr><p class="body-text"><br><b class="classFeatureHeader">Unique Tag Descriptions </b>
+		<hr><p class="body-text"><br><b class="classFeatureHeader" id="Unique-Weapon-Tags">Unique Tag Descriptions </b>
 		<br> The Unique weapons often have more cplex and unique abilities. Thus, this section will cover them separately.
 		<br><br> The abilities represented by these special tags are unique to each of these weapons, scattered throughout TWE. They apply whenever a wielder of the weapons meets the criteria and wields the weapon in combat.
 
@@ -2123,6 +2147,7 @@
 		<br>- Whenever one of you misses an attack, the enemy provokes an attack of opportunity from your flanking partners.
 		<br>- You gain an additional bonus to attack rolls equal to this weapon's EB.
 		<br>- You gain 1d6 extra damage.
+		<br><br><br><b><i> Divine-Artemis-</i></b> This weapon is a boon granted only to followers of Artemis. Damage dealt by this weapon takes on a Divine attribute, allowing it to bypass DR and take advantage of some weaknesses. This weapon functions as a composite longbow with a rating equal to the strength modifier of the one to whom it was given (If the wielder is weaker than 10 strength, it loses this composite functionality). It can be wielded only by followers who have earned the power to do so from Artemis. Anyone who attempts to wield it in an unworthy manner suffers severe consequences. 
 	</p>
 
 	
