@@ -1,18 +1,41 @@
 
 * {
 		box-sizing: border-box;
+		background-color: #D2D2CF;
 }
 
-a {
+div.option-box a {
 	color: #044440;
+	background-color: gray;
 }
 
 a:hover {
 	background-color: #909090;
 }
 
+a {
+	color: #044440;
+	background-color:  #BABAB3;
+}
+
 div a:hover {
-	background-color:  #red;
+	background-color:  darkslategray;
+}
+
+div u {
+	background-color: grey;
+}
+
+div p {
+	background-color: grey;
+}
+
+div h2 {
+	background-color: grey;
+}
+
+.option-box {
+	background-color: grey;
 }
 
 body {
@@ -29,12 +52,23 @@ ol {
 	width: 85%;
 }
 
+ul {
+	text-align: left;
+	display: inline-block;
+	font-size: 20px;
+	margin: 16px 12px;
+	position: relative;
+	left: 10%;
+	width: 85%;
+}
+
 table {
 	border-style: ridge;
 	border-color: black;
 	border-radius: 2px;
 	text-align: center;
 	font-size: 1.5em;
+	background-color: gray;
 }
 
 div.stat-block {
@@ -268,6 +302,7 @@ div.option-box {
 	top: 20%;
 	left: 2%;
 	background: grey;
+	background-color: grey;
 	color: #aaffff;
 	border: 5px outset #044440;
 	width: 30%;
@@ -276,6 +311,7 @@ div.option-box {
 .option {
 	font-style:  underline;
 	cursor: pointer;
+	background-color: grey;
 }
 
 .suboption {
