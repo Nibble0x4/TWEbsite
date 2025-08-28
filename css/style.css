@@ -94,6 +94,12 @@ div.stat-block b {
 	border-style: solid;
 }
 
+p.width-setter {
+	text-align: justify;
+	width: 100%;
+	display: inline-block;
+}
+
 .fireHeader {
 	color: darkred;
 	background-color: lightpink;
@@ -279,7 +285,7 @@ div.classFeature {
 	text-align: center;
 	font-size: 60 px;
 	background: grey;
-	color: #aa0000;
+	color: #770077;
 }
 
 img.class-picture {
@@ -291,6 +297,10 @@ img.class-picture {
 }
 img.class-picture:hover {
 	border: 2px solid #444;
+}
+
+div.width-container {
+	width:100%;
 }
 
 div.option-box {
@@ -362,6 +372,7 @@ table.weaponTable {
 	display: inline-block;
 	position: static;
 	left: 34px;
+	width:99%;
 }
 .text {
 	text-align: left;
@@ -369,7 +380,7 @@ table.weaponTable {
 	font-size: 20px;
 	margin: 16px 12px;
 	position: relative;
-	left: 35%;
+	left: 30%;
 	width: 20%;
 	overflow:  auto;
 }
