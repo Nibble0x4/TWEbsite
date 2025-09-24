@@ -483,4 +483,10 @@ table.featTable {
 		width: 40%;
 		left: 30%;
 	}
+	.index-div-text {
+		font-size: 14px;
+	}
+	.subheader {
+		font-size: 18px;
+	}
 }
