@@ -1,12 +1,12 @@
 
 * {
 		box-sizing: border-box;
-		background-color: #D2D2CF;
 }
 
 body {
 	border-radius: 4px;
 	border-style: ridge;
+	background-color: #B2B2AF;
 }
 
 div.option-box a {
@@ -20,7 +20,7 @@ a:hover {
 
 a {
 	color: #044440;
-	background-color:  #D2D2CF;
+	background-color:  inherit;
 }
 
 div a:hover {
@@ -31,7 +31,7 @@ div u {
 	background-color: grey;
 }
 
-div p {
+div.option-box p {
 	background-color: grey;
 }
 
@@ -41,9 +41,18 @@ div h2 {
 
 div.half {
 	display: inline-flex;
-	left: 5%;
-	right: 5%;
-	width: 45%;
+	margin-left: 5%;
+	width: 44%;
+}
+
+div.index-box {
+	margin-left: 2%;
+	width: 90%;
+	border-style: ridge;
+	border-radius: 12px;
+	border-width: 16px;
+	border-color: #044440;
+	background-color: #828282;
 }
 
 .option-box {
@@ -262,7 +271,7 @@ div.classFeature {
 
 .subheader {
 	color:  #044440;
-	background: lightgrey;
+	background: inherit;
 	font-size: 24px;
 	font-weight: bold;
 }
@@ -407,6 +416,19 @@ table.featTable {
 	position: relative;
 	left: 10%;
 	width: 85%;
+}
+.index-div-text {
+	text-align: left;
+	display: inline-block;
+	font-size: 20px;
+	margin: 16px 12px;
+	position: relative;
+	left: 10%;
+	width: 85%;
+	background-color: inherit;
+	border-style: solid;
+	border-color: #044440;
+	border-width: 2px;
 }
 .top-text {
 	text-align: left;
