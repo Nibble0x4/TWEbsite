@@ -489,4 +489,9 @@ table.featTable {
 	.subheader {
 		font-size: 18px;
 	}
+	div.half {
+	display: inline-flex;
+	margin-left: 5%;
+	width: 85%;
+}
 }
