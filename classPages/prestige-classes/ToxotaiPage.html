@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> TWEbsite Toxotus Page </title>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="icon" type="image/x-icon" href="../../images/TWEbsiteFavicon.png">
+
+
+</head>
+<body class="std">
+
+	<h1 class="page-header"> Toxotus Page <button id="Picture-Button">Reroll Image</button></h1>
+		
+	<div id="page-select-box" class="option-box"> 
+		<h2> Pages: </h2>
+		<p class="option"> <u><a href="../../index.html" style="color:#aafff0">Intro Page</a></u></p>
+		<p style="font-style:underline; color:#ee0000; cursor:pointer">	<u><a href="../../TWEbsiteRulesetPage.html" style="font-style:underline; color:#ee0000;">Ruleset Page</a></u> </p>
+		<p style="font-style:underline; color:#eeee00; cursor:pointer">	<u><a href="../../TWEbsiteClassPage.html" style="font-style:underline; color:#eeee00; cursor:pointer">Classes Page</a></u> </p>
+			<p style="text-indent: 30px; cursor:pointer" >	<a href="../CoreClassPage.html" style="font-style:underline; color:#aafff0;">Core Classes</a></p>
+			<p style="text-indent: 30px; cursor:pointer" >	<a href="../BaseClassPage.html" style="font-style:underline; color:#aafff0;">Base Classes</a></p>
+			<p style="text-indent: 30px; cursor:pointer" >	<a href="../HybridClassPage.html" style="font-style:underline; color:#aafff0;">Hybrid Classes</a></p>
+			<p style="text-indent: 30px; cursor:pointer">	<a href="../UniqueClassPage.html" style="font-style:underline; color:#aafff0;">Unique Classes</a></p>
+			<p style="text-indent: 30px; cursor:pointer">	<a href="../PrestigeClassPage.html" style="font-style:underline; color:#aafff0;">Prestige Classes</a></p>
+		<p style="font-style:underline; color:#00dd00; cursor:pointer" > <a href="../../TWEbsiteRacesPage.html" style="font-style:underline; color:#00dd00;"><u>Races Page </u></a> </p>
+		<p style="font-style:underline; color:#0000dd; cursor:pointer">	<u><a href="../../TWEbsiteLorePage.html" style="font-style:underline; color:#0000dd;">Lore Page</a> </u> </p> 
+		<p style="font-style:underline; color:#440044; cursor:pointer">	<u><a href="../../TWEbsiteResourcesPage.html" style="font-style:underline; color:#440044;">Resources Page</a> </u> </p>
+
+	</div>
+
+	<a id="Picture-Link" target="_blank" href="images/Toxotai/Toxotai0.png">
+		<img id="Picture" src="images/WildDancer/WildDancerImage.jpg" class="class-picture">
+	</a>
+
+	
+	<p class="class-description"> <b class="subheader"> The Toxotai </b>
+	<br> In the eastern plains of Taria stands the legendary Tri-Villages, three villages that have spent generations raising master warriors specializing in different kinds of warfare.
+	<br> From the westernmost Tri-Village, Carta, come the Toxotai. These master marksmen have dedicated their lives to chasing the mastery attained by their great founder, Cartra.
+	<br> Cartra was a master of positioning, always in the right place at the right time. It is said she could see the future, but her people know otherwise. They seek to mimic her skills through the careful study of distance.
+	<br> Sponsored and guided by the goddess Artemis, the Toxotai train to attain a fraction of Cartra's skills.
+	<br> Before they can be trained, toxotai must prove themselves. They often are trained as fighters, rangers, rogues, or even inquisitors and clerics before coming to receive the title of Toxotus.
+
+	<br><br><b>Role</b>: As a Prestige Class, Toxotai are always adventurers with some measure of experience prior to their training in Carta.
+	<br>Because of this, they can have a variety of backgrounds. However, they are typically best if they are wisd with a strong dexterity and extensive experience with a ranged weapon.
+	<br>Rangers are the most common and natural fit, due to their affinity for bowmanship and their wisdom connection to nature.
+	<br>Fighters make solid Toxotai due to their mastery of weapon groups.
+	<br>Inquisitors and clerics, especially those that follow Artemis herself, often fit in extremely well as toxotai.
+	<br>Rogues often learn shortbows and are already used to considering positioning with their sneak attacks.
+	<br>Finally, the door to Toxotus training swings open to anyone willing to put in the effort. It is uncommon for other classes, perhaps, but not unheard of!
+	 
+	
+
+	<hr>
+
+	<p class="body-text">
+	<b style="font-size:30px">Requirements</b>: 
+	<br><b> Scores</b>: Wisdom 15
+	<br><b> Skills</b>: Survival 3 ranks, Perception 3 ranks
+	<br><b> Special</b>: BAB +3, The Weapon Focus feat for a bow, Bow Weapon Training (Fighter) OR the Archery combat style (Ranger) OR the Precise Shot feat.
+
+	<hr>
+
+
+	<div class="tableDiv">
+		<b id="class-table" class="header"> Class Advancement Table </b>
+		<br>
+		<br>
+		<hr>
+		<br>
+		<table>
+
+			<colgroup>
+				<col span="1" style="background-color: darkgray;">
+				<col span="4" style="background-color: lightblue;">
+				<col span="1" style="background-color: lightgrey;">
+				<col span="1" style="background-color: lightpink;">
+				<col span="4" style="background-color: palegreen;">
+			</colgroup>
+			<tr>
+				<th>Level</th>
+				<th>BAB</th>
+				<th>Fort</th>
+				<th>Ref</th>
+				<th>Will</th>
+				<th>Special_Class_Features</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>+1</td>
+				<td>+0</td>
+				<td>+1</td>
+				<td>+1</td>
+				<td><a href="#Bow-Dedication">Bow Dedication</a>, <a href="#Positioning">Positioning</a>, <a href="#Fletching">Fletching</a></td>
+
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>+2</td>
+				<td>+1</td>
+				<td>+1</td>
+				<td>+1</td>
+				<td><a href="#Trick-Arrows">Trick Arrows</a>, <a href="#Bownus-Feat">Bownus Feat</a>
+
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>+3</td>
+				<td>+1</td>
+				<td>+2</td>
+				<td>+2</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>+4</td>
+				<td>+1</td>
+				<td>+2</td>
+				<td>+2</td>
+				<td><a href="#Practiced-Position">Practiced Position</a></td>
+
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>+5</td>
+				<td>+2</td>
+				<td>+3</td>
+				<td>+3</td>
+				<td><a href="#Bownus-Feat">Bownus Feat</a></td>
+
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>+6</td>
+				<td>+2</td>
+				<td>+3</td>
+				<td>+3</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>+7</td>
+				<td>+2</td>
+				<td>+4</td>
+				<td>+4</td>
+				<td><a href="#Practiced-Position">Practiced Position</a></td>
+
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>+8</td>
+				<td>+3</td>
+				<td>+4</td>
+				<td>+4</td>
+				<td><a href="#Bownus-Feat">Bownus Feat</a></td>
+
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>+9</td>
+				<td>+3</td>
+				<td>+5</td>
+				<td>+5</td>
+				<td></td>
+
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>+10</td>
+				<td>+3</td>
+				<td>+5</td>
+				<td>+5</td>
+				<td><a href="#Perfectly-Placed">Perfectly Placed</a></td>
+
+			</tr>
+			
+
+		</table>
+	</div>
+
+	<p class="body-text">
+	<b>Alignment</b>: Any
+	<br><b> Hit Die</b>: d10
+	<br><br><b>Class Skills</b>: The Toxotai class skills are: Acrobatics(Dex), Athletics(Str), Knowledge(History)(Int), Knowledge(Planes)(Int), Perception(Wis), Ride(Dex), Survival(Wis).
+	<br><b>Skill ranks per level</b>: 2 + int modifier
+
+	<hr>
+	
+	<p class="body-text"> <b class="header"> Class Features </b>
+	<br> 
+	<br><br> 
+
+		<hr><p class="body-text"><br><b class="classFeatureHeader">Weapon and Armor Proficiency </b>
+		<br> A Toxotus gains proficiency with all bow weapons, but does not gain any armor or shield proficiencies.
+
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Bow-Dedication"> Polearm Dedication </b>
+		<br> Toxotai are exclusive in their use of bows. None of her toxotus abilities can be used unless she is wielding a bow of some kind.
+		<br>However, they are also capable of handling any bow. They gain proficiency with any bow they find, though they can still take penalties if they fail to meet the requirements for wielding it.
+
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Positioning"> Positioning </b>
+		<br> Toxotai are trained to adapt to an ever-shifting battlefield, always working to put themselves in the perfect place to land the perfect shot.
+		<br> Toxotai learn how to leverage several different positions in combat, but they inevitably get better taking advantage of some positions than others.
+		<br><br> At 1st level, a toxotus chooses three of the Positions and gains rank 1 in them.
+		<br> At each level afterward, she chooses two Positions and increases her rank in it by 1, or gains rank 1 in a Position she does not already have.
+		<br><br> When making an attack action, the toxotus may choose to employ 1 of the positions she has at least 1 rank in, as long as the conditions for using that position are satisfied.
+		<br>Below is the list of Positions that Toxotai are trained to use.
+
+		<hr><p class="body-text"><br><b class="classFeatureSubheader"> Positions </b>
+
+		<ul>
+			<br><br><p class="body-text"><br><b class="classFeatureSubheader"> Sniping </b> - <b>Conditions: (100+ ft away)</b>
+			<ol>
+				<li>
+					Gain a bonus on damage equal to your wisdom modifier (min 1)
+				</li>
+				<li>
+					Ignore attack penalties and miss chances applied by long distance.
+				</li>
+				<li>
+					When attacking, you may roll attack for all attacks against a single creature and combine the damage of the attacks that would pierce their AC into one single strike, gaining an additional +4 bonus to damage for each attack.
+					<br>This counts as one attack and only uses one arrow.
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Dartboard  </b> - <b>Conditions: (30-40 ft away, enemy adjacent to a surface and between you and the surface)</b>
+			<ol>
+				<li>
+					Suffer a -2 penalty to the attack roll and halve damage to impose a reflex save (DC 10+Toxotai lvl + Wisdom).
+					<br>On failure, the target is pinned to the surface and must spend an action to remove the arrow if they wish to leave the space. If the target is pinned by multiple arrows, they can remove all of them as 2 actions.
+				</li>
+				<li>
+					When you pin the target to a surface, you can choose a limb to pin them by. That limb cannot be used until freed or until use a swift action to succeed at a Strength check (Same DC).
+				</li>
+				<li>
+					When you pin the target to a surface, you may deal full damage.
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Pincushion   </b> - <b>Conditions: (20-40 ft away, Ally shot the enemy with an arrow this turn)</b>
+			<ol>
+				<li>
+					 Gain a bonus on damage equal to the number of arrows or ranged weapons currently stuck in the target.
+				</li>
+				<li>
+					Grant a bonus to the next attack roll made using a bow against the creature equal to your wisdom modifier (min 1).
+				</li>
+				<li>
+					Gain a bonus on damage equal to double the the number of arrows or ranged weapons currently stuck in the target. (This does not stack with the rank 1 ability)
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Corralling   </b> - <b>Conditions: (30-60 ft away, 3+ allies threaten)</b>
+			<ol>
+				<li>
+					You are considered to be threatening the target for the rest of this turn for the purposes of flanking bonuses for you and your allies.
+				</li>
+				<li>
+					The next time one of those allies makes a melee attack against the target, they gain a bonus on their attack roll equal to your wisdom modifier.
+				</li>
+				<li>
+					The attack is made against your target's flat-footed AC.
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Merciless   </b> - <b>Conditions: (20-80 ft away, enemy weakness exposed this turn)</b>
+			<ol>
+				<li>
+					Take a -6 penalty on the attack roll to target the exposed weakness, adding your wisdom modifier (min 1) to damage in addition to any effects of the weakness.
+				</li>
+				<li>
+					Increase your crit range by 2 when you target the exposed weakness.
+				</li>
+				<li>
+					Increase your crit multiplier by 1 when you target the exposed weakness.
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Weaving   </b> - <b>Conditions: (10-20 ft away, Took a move action this turn to move at least 15 feet)</b>
+			<ol>
+				<li>
+					Gain a bonus to reflex saves until the start of your next turn equal to your Wisdom modifier (min 1) until the start of your next turn.
+				</li>
+				<li>
+					Gain a bonus to AC against attacks made by your target equal to your Wisdom modifier (min 1) until the start of your next turn.
+				</li>
+				<li>
+					Inflict a penalty on the target's next attack roll equal to your Wisdom modifier (min 1).
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Moon  </b> - <b>Conditions: (30-80 ft away, in shade, Unseen, Direct line-of-sight on target)</b>
+			<ol>
+				<li>
+					Deal 1d6 extra damage for every two Toxotai levels you possess (min 1).
+				</li>
+				<li>
+					Roll Stealth to remain hidden after making the shot.
+				</li>
+				<li>
+					Deal 1d6 extra damage for every Toxotus level you possess.
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Compromised   </b> - <b>Conditions: (5 ft away, Threatened)</b>
+			<ol>
+				<li>
+					Make a melee attack with an arrow, using 1d4 as base damage and adding any bonuses or effects associated with your bow as if the attack was a ranged attack.
+				</li>
+				<li>
+					After successfully stabbing with an arrow, you no longer provoke attacks of opportunity for movement from the enemy you stabbed.
+				</li>
+				<li>
+					After successfully stabbing with an arrow, you may move up to 15 feet and reduce the target's movement speed by 10 feet for 1 turn.
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Stabilized   </b> - <b>Conditions: (40-50 ft away, No Move this turn)</b>
+			<ol>
+				<li>
+					Gain a bonus to the attack roll equal to your Wisdom modifier
+				</li>
+				<li>
+					Make an additional attack after this one with a -10 attack modifier
+				</li>
+				<li>
+					Reduce the penalty for the additional attack to -5.
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Huntress   </b> - <b>Conditions: (20-60 ft away, Target behind cover with a route for a banking shot)</b>
+			<ol>
+				<li>
+					Suffer a -2 penalty on attack and damage to ricochet your arrow off of a surface toward the target.
+				</li>
+				<li>
+					You no longer suffer a penalty when ricocheting.
+				</li>
+				<li>
+					Gain a bonus on damage rolls when ricocheting equal to your wisdom modifier and you can ricochet twice before striking your mark.
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Skewering   </b> - <b>Conditions: (10-20 ft away, This must be your final action this turn)</b>
+			<ol>
+				<li>
+					If this attack hits, compare the attack result to the ac of a creature adjacent to and on the opposite side of your target. If it hits, deal damage to both targets.
+				</li>
+				<li>
+					If this attack hits, draw a line 20 feet through your target and compare the attack result to the next creature in the line. If it hits, deal damage to both targets.
+				</li>
+				<li>
+					If this attack hits, draw a line 40 feet through your target and compare the attack result to the next creature in the line. If it hits, continue comparing until the attack fails or there are no more creatures in the line.
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Raining   </b> - <b>Conditions: (60-90 ft away, This must be your final action this turn)</b>
+			<ol>
+				<li>
+					Any creatures adjacent to your target must make a reflex save (DC 10 + Toxotus lvl + Wisdom) or take 1/2 damage from this attack.
+					<br>You spend a number of arrows equal to the number of creatures in the area.
+				</li>
+				<li>
+					The area extends to any creatures within 10 feet of the target.
+				</li>
+				<li>
+					The area extends to any creatures within 15 feet of the target. Those that fail the save now take full damage from the attack.
+				</li>
+			</ol>
+
+			<br><br><hr><p class="body-text"><br><b class="classFeatureSubheader"> Splitting   </b> - <b>Conditions: (20-30 ft away, Opponent holding something in one hand)</b>
+			<ol>
+				<li>
+					Make an attack roll against the target's crit guard. If the attack lands, deal regular damage against the object.
+				</li>
+				<li>
+					If the damage reduces the object to half of its max HP, it is knocked from the wielder's hand.
+				</li>
+				<li>
+					Ignore the object's hardness when dealing damage.
+				</li>
+			</ol>
+
+		</ul>
+
+
+
+
+
+
+
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Fletching"> Fletching </b>
+		<br>During downtime, Toxotai often busy themselves fletching more arrows to fill their quivers.
+		<br>Toxotai can manage up to two different quivers during combat, each holding no more than 20 arrows. Because of this, they are careful about what kinds of arrows they bring.
+
+		<br><br>Toxotai can fletch during an hour of downtime. They can spend a maximum of four hours fletching each day before losing focus.
+		<br>In each hour, the Toxotai decide what arrows they want to craft and roll a craft check. They can add this to a running total and complete their task when they have the appropriate result.
+		<br>Here is a list of some basic crafting benchmarks and their special material requirements
+
+		<div class="tableDiv">
+		<b class="header"> Table: Fletching </b>
+		<br>
+		<br>
+		<hr>
+		<br>
+		<table>
+
+			<colgroup>
+				<col span="1" style="background-color:darkgray;">
+				<col span="2" style="background-color: lightblue;">
+				<col span="1" style="background-color: lightpink;">
+			</colgroup>
+			<tr>
+				<th>Arrow Name</th>
+				<th>DC to create</th>
+				<th>Materials Needed</th>
+				<th>Special Effects</th>
+			</tr>
+			<tr>
+				<td>Basic Arrow</td>
+				<td>10</td>
+				<td>None</td>
+				<td>None</td>
+			</tr>
+			<tr>
+				<td>Material Arrow</td>
+				<td>10+DC per Artisan Material Sheet</td>
+				<td>Any Material</td>
+				<td>Arrow Gains the qualities of the material used to make it</td>
+			</tr>
+		</table>
+		</div>
+		
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Trick-Arrows"> Trick Arrows </b>
+		<br>While fletching, Toxotai sometimes get creative. Instead of preparing traditional arrows, they may try their hand at tricky alternatives to fit specific situations.
+		<br>They can create their own designs for trick arrows if they show blueprints to the GM, but below are a set of trick arrows that are commonly crafted by skilled Toxotai:
+
+		<div class="tableDiv">
+		<b class="header"> Table: Trick Arrow Fletching </b>
+		<br>
+		<br>
+		<hr>
+		<br>
+		<table>
+
+			<colgroup>
+				<col span="1" style="background-color:darkgray;">
+				<col span="2" style="background-color: lightblue;">
+				<col span="1" style="background-color: lightpink;">
+			</colgroup>
+			<tr>
+				<th>Arrow Name</th>
+				<th>DC to create</th>
+				<th>Materials Needed</th>
+				<th>Special Effects</th>
+			</tr>
+			<tr>
+				<td>Bomb Arrow</td>
+				<td>25</td>
+				<td>Explosive</td>
+				<td>Explodes on contact dealing Wis dmg, 5-ft radius | Half range</td>
+			</tr>
+			<tr>
+				<td>Fire</td>
+				<td>30</td>
+				<td>Flammable, Sparking</td>
+				<td>Ignites on contact. Fort DC 10 + toxotai lvl + wis or take wisd4 burn</td>
+			</tr>
+			<tr>
+				<td>Shrapnel</td>
+				<td>25</td>
+				<td>Shrapnel pieces</td>
+				<td>Deals 1d8 dmg to target and in 5-ft cone. | 20% chance it falls apart mid-flight</td>
+			</tr>
+			<tr>
+				<td>Screaming</td>
+				<td>40</td>
+				<td>None</td>
+				<td>Piercing whistle sound that hurts creatures weak to sonic and can be heard from far away | Negates stealth</td>
+			</tr>
+			<tr>
+				<td>Rope</td>
+				<td>15</td>
+				<td>Up to 30-ft length of rope</td>
+				<td>Carries rope with it into target | Suffers -6 attack penalty and Half Range</td>
+			</tr>
+			<tr>
+				<td>Smoking</td>
+				<td>35</td>
+				<td>Something burning</td>
+				<td>Leaves smoke trail behind it and a 5-ft radius cloud offering partial concealment | Negates stealth</td>
+			</tr>
+			<tr>
+				<td>Heavy</td>
+				<td>20</td>
+				<td>None</td>
+				<td>Fort DC 10 + toxotus lvl + Wis or target is pushed 5-ft | Suffers -2 attack penalty and Half range</td>
+			</tr>
+			<tr>
+				<td>Blunted</td>
+				<td>15</td>
+				<td>None</td>
+				<td>Deals nonlethal damage</td>
+			</tr>
+			<tr>
+				<td>Conducting</td>
+				<td>25</td>
+				<td>Conductive metal</td>
+				<td>Applies -2 penalty on saves against electric effects and grants electric attacks +2 to attack rolls while in the target | Suffers -2 attack penalty</td>
+			</tr>
+			<tr>
+				<td>Spiral</td>
+				<td>30</td>
+				<td>None</td>
+				<td>Increases critical multiplier by 1 on a true critical hit | Misses if the attack isn't at least a soft crit</td>
+			</tr>
+		</table>
+		</div>
+
+
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Bownus-Feat"> Bownus Feat </b>
+		<br>At 2nd level, the Toxotai furthers her skills with a bow.
+		<br>She can choose one of the feats from the following list as a bonus feat, if she meets the prerequisites.
+		<br>For the purposes of meeting the prerequisites for these feats, ignore racial requirements and treat your BAB as being equal to your total character level.
+		<ol> <b>Feat Options</b>
+			<li>
+				Clustered Shots
+			</li>	
+			<li>
+				Disrupting Shot
+			</li>	
+			<li>
+				Far Shot
+			</li>	
+			<li>
+				Impact Critical Shot
+			</li>	
+			<li>
+				Bullseye Shot
+			</li>	
+			<li>
+				Focused Shot
+			</li>	
+			<li>
+				Improved Precise Shot
+			</li>	
+			<li>
+				Pinpoint Targeting
+			</li>	
+			<li>
+				Rapid Shot
+			</li>	
+			<li>
+				Manyshot
+			</li>	
+			<li>
+				Snap Shot
+			</li>	
+			<li>
+				Improved Snap Shot
+			</li>	
+			<li>
+				Greater Snap Shot
+			</li>	
+			<li>
+				Stabbing Shot
+			</li>	
+			<li>
+				Shot on the Run
+			</li>	
+			<li>
+				Parting Shot
+			</li>	
+			<li>
+				Deadly Aim
+			</li>	
+		</ol>
+
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Practiced-Position"> Practiced Position </b>
+		<br>At fourth level, the Toxotai becomes well-versed enough in one of her positions that she can pull off the related moves with more flexibility.
+		<br>Choose one position you have at 3 ranks in. You can increase the valid range of the position by 10 feet in either direction.
+		<br>You may do this again at 7th level and 10th level.
+
+
+
+		<br><br><hr><p class="body-text"><br><b class="classFeatureHeader" id="Perfectly-Placed"> Perfectly Placed </b>
+		<br>At 10th level, The Toxotai becomes a master of her craft and her skills ascend into legend.
+		<br>Her positioning is fluid, allowing her to take advantage of two Positions at once if she meets the requirements for them.
+		<br><br>OR
+		<br><br>Alternatively, she can choose to gain 4 more ranks to place in Positions of her choice.
+
+
+
+
+		
+
+			
+	</p>
+
+
+</body>
+
+<script>
+
+function chatimgset() {
+    //declare an array
+    var randomImage = new Array();
+
+    //insert the URL of images in array  
+    randomImage[0] = "images/Toxotai/Toxotai0.png";
+    randomImage[1] = "images/Toxotai/Toxotai1.png";
+    randomImage[2] = "images/Toxotai/Toxotai2.png";
+    randomImage[3] = "images/Toxotai/Toxotai3.png";
+    randomImage[4] = "images/Toxotai/Toxotai4.png";
+    randomImage[5] = "images/Toxotai/Toxotai5.png";
+    randomImage[6] = "images/Toxotai/Toxotai6.png";
+    randomImage[7] = "images/Toxotai/Toxotai7.png";
+    randomImage[8] = "images/Toxotai/Toxotai8.png";
+    
+
+    //generate a number 
+    var number = Math.floor(Math.random() * randomImage.length);
+
+    //return the images generated by number 
+    return randomImage[number];
+}
+document.getElementById("Picture").src = chatimgset()
+document.getElementById("Picture-Link").href = document.getElementById("Picture").src
+
+document.querySelector("button")
+	.addEventListener("click",reload);
+
+function reload() {
+	location.reload()
+}
+
+</script>
+
+</html>
