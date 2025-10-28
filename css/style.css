@@ -94,21 +94,30 @@ table {
 }
 
 div.stat-block {
-	background-color: lightslategray;
-	border-style: solid;
-	border-color: darkblue;
-	border-radius: 2px;
-	left: 10%;
-	width: 55%;
-	font-size: 16pt;
-	color: black;
+	margin-left: 2%;
+	width: 90%;
+	border-style: ridge;
+	border-radius: 12px;
+	border-width: 16px;
+	border-color: #044440;
+	background-color: #828282;
+	font-size: 24px;
 }
 
 div.stat-block b {
 	background-color: skyblue;
 	border-radius: 1px;
-	border-color: darkblue;
-	border-style: solid;
+	border-color: black;
+	border-style: ridge;
+	align-content: center;
+	display: inline-flex;
+}
+
+li.spirit-move {
+	border-color: #044440; 
+	border-width: 8px; 
+	border-style: ridge;
+	background-color: grey;
 }
 
 p.width-setter {
