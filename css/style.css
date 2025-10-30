@@ -236,6 +236,12 @@ p.width-setter {
 	width: 30%;
 }
 
+.tableDivCentral {
+	text-align: center;
+	margin: auto;
+	width: 80%;
+}
+
 .fluxtableDiv {
 	text-align: center;
 	margin: auto;
@@ -380,8 +386,9 @@ table.fluxTable {
 	width: 30%;
 	position: relative;
 	align-content: left;
-
 }
+
+
 
 table.weaponTable {
 	display: relative;
