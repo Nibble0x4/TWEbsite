@@ -378,7 +378,7 @@
 				<td>X4</td>
 				<td>20</td>
 				<td>P</td>
-				<td>Brace, Riding</td>
+				<td>Brace, Riding, Charging</td>
 				<td>Pierce</td>
 			</tr>
 		</table>
@@ -569,18 +569,6 @@
 				<td>S</td>
 				<td>Disarm, Nonlethal</td>
 				<td>Distract</td>
-			</tr>
-			<tr>
-				<td>Light</td>
-				<td>Claw blades</td>
-				<td>1d3</td>
-				<td>1d4</td>
-				<td>1d6</td>
-				<td>X2</td>
-				<td>-</td>
-				<td>S</td>
-				<td>Feral</td>
-				<td>Shred</td>
 			</tr>
 			<tr>
 				<td>Light</td>
@@ -2367,6 +2355,389 @@
 	</div>
 
 
+	<hr>
+	
+	<p class="body-text"> <b class="header"> Fittings </b>
+	<br> 
+	<b>Weapon Fittings</b> are specialized weapons that attach to an existing unarmed or natural attack. <b>Only one fitting can be equipped on a given unarmed or natural attack at a time.</b>
+	<br>They are considered manufactured weapons for the purposes of restrictions like those applied to a druid, however, making an attack with them is still considered the same as making an unarmed or natural attack.
+	<br>The <b>damage of the Fitting is added to the base damage of the unarmed or natural attack</b>.
+	<br>The "Base" column lists the <b>possible unarmed or natural attack types</b> that can benefit from the fitting.
+	<br>If you do not meet the requirements listed in the "Required" column, you are unable to use the unarmed or natural attack that the fitting is attached to as long as it is attached.
+	<br><b>Fittings follow the critical values of their base attack</b>. If the 'Critical' column is something other than '-', then that critical overrides the critical information of their base attack.
+	<br>The Damage type of <b>the fitting changes the damage type</b> of the base attack.
+	<br><b>Equipping or removing a fitting takes 2 actions</b>. If you possess the Quick Draw feat, you may equip or remove a fitting as 1 action.
+	<br>Weapon Focus feats cannot be taken for fittings. Instead, <b>Focus tag abilities are accessible to a character who properly equips the fitting on an unarmed or natural attack they have taken weapon focus for</b>.
+	<br><br> 
+
+
+	<div class="weapontableDiv">
+		<br><br>
+		<b class="header"> Natural Attack Fittings </b>
+		<br> 
+		<br><br> 
+		<table class="weaponTable" id="Natural-Fittings">
+
+			<colgroup>
+				<col span="1" style="background-color: lightslategrey;">
+				<col span="3" style="background-color: lightblue;">
+				<col span="3" style="background-color: palegreen;">
+				<col span="1" style="background-color:darkgray;">
+				<col span="2" style="background-color: lightpink;">
+			</colgroup>
+			<tr>
+				<th>Natural Attack Fittings</th>
+			</tr>
+			<tr>
+				<th>Name</th>
+				<th>Damage (S)</th>
+				<th>Damage (M)</th>
+				<th>Damage (L)</th>
+				<th>Critical</th>
+				<th>Dmg Type</th>
+				<th>Base</th>
+				<th>Required</th>
+				<th>Special</th>
+				<th>Focus</th>
+
+			</tr>
+			<tr>
+				<td>Tail Spike</td>
+				<td>1</td>
+				<td>2</td>
+				<td>4</td>
+				<td>-</td>
+				<td>P</td>
+				<td>Tail</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Pierce</td>
+			</tr>
+			<tr>
+				<td>Tail Axe</td>
+				<td>1d3</td>
+				<td>1d4</td>
+				<td>1d8</td>
+				<td>-</td>
+				<td>S</td>
+				<td>Tail</td>
+				<td>Str-15</td>
+				<td>-</td>
+				<td>Chop</td>
+			</tr>
+			<tr>
+				<td>Tail Hammer</td>
+				<td>1d3</td>
+				<td>1d4</td>
+				<td>1d8</td>
+				<td>-</td>
+				<td>B</td>
+				<td>Tail</td>
+				<td>Str-15</td>
+				<td>-</td>
+				<td>Crush</td>
+			</tr>
+			<tr>
+				<td>Tail Flail</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>X2</td>
+				<td>B</td>
+				<td>Tail</td>
+				<td>-</td>
+				<td>Reach, Unwieldy</td>
+				<td>Addle</td>
+			</tr>
+			<tr>
+				<td>Tail Blade</td>
+				<td>1</td>
+				<td>2</td>
+				<td>4</td>
+				<td>-</td>
+				<td>S</td>
+				<td>Tail</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Slash</td>
+			</tr>
+			<tr>
+				<td>Razor Finger Cap</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>19-20/X2</td>
+				<td>S</td>
+				<td>Claw, Tentacle</td>
+				<td>Dex-15</td>
+				<td>-</td>
+				<td>Shred, Dextrous</td>
+			</tr>
+			<tr>
+				<td>Blunt Finger Cap</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>-</td>
+				<td>B</td>
+				<td>Claw, Tentacle</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Knock</td>
+			</tr>
+			<tr>
+				<td>Pricking Finger Cap</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>-</td>
+				<td>P</td>
+				<td>Claw, Tentacle</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Pierce</td>
+			</tr>
+			<tr>
+				<td>Flickblade</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>-</td>
+				<td>S</td>
+				<td>Tentacle</td>
+				<td>-</td>
+				<td>Reach, Unwieldy, Opportunistic</td>
+				<td>Hook</td>
+			</tr>
+			<tr>
+				<td>Clawguards</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Claw</td>
+				<td>-</td>
+				<td>Unwieldy</td>
+				<td>Brawling</td>
+			</tr>
+			<tr>
+				<td>Sleeveguard</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Tentacle, Tail</td>
+				<td>-</td>
+				<td>Unwieldy</td>
+				<td>Brawling</td>
+			</tr>
+			<tr>
+				<td>Horn Barb</td>
+				<td>1</td>
+				<td>2</td>
+				<td>4</td>
+				<td>-</td>
+				<td>P</td>
+				<td>Gore</td>
+				<td>-</td>
+				<td>Charging</td>
+				<td>Pierce</td>
+			</tr>
+			<tr>
+				<td>Longhorn</td>
+				<td>1</td>
+				<td>2</td>
+				<td>4</td>
+				<td>-</td>
+				<td>P</td>
+				<td>Gore</td>
+				<td>Str-15</td>
+				<td>Charging, Reach, Unwieldy</td>
+				<td>Skewer</td>
+			</tr>
+			<tr>
+				<td>Horn Cap</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>-</td>
+				<td>B</td>
+				<td>Gore</td>
+				<td>-</td>
+				<td>Charging</td>
+				<td>Push</td>
+			</tr>
+			<tr>
+				<td>Jagged Horn Cap</td>
+				<td>1</td>
+				<td>2</td>
+				<td>4</td>
+				<td>-</td>
+				<td>S</td>
+				<td>Gore</td>
+				<td>-</td>
+				<td>Charging</td>
+				<td>Gash</td>
+			</tr>
+			<tr>
+				<td>Runic Fitting</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Any</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Channeling</td>
+			</tr>
+			<tr>
+				<td>Hooked Fangs</td>
+				<td>1</td>
+				<td>2</td>
+				<td>4</td>
+				<td>-</td>
+				<td>P</td>
+				<td>Bite</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Gash</td>
+			</tr>
+			<tr>
+				<td>Tooth Blunter</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>B</td>
+				<td>Bite</td>
+				<td>-</td>
+				<td>Nonlethal</td>
+				<td>Addle</td>
+			</tr>
+			<tr>
+				<td>Wing Canvas</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Wing</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Push</td>
+			</tr>
+			
+			
+		</table>
+	</div>
+
+		<div class="weapontableDiv">
+		<br><br>
+		<b class="header"> Unarmed Fittings </b>
+		<br> 
+		<br><br> 
+		<table class="weaponTable" id="Unarmed-Fittings">
+
+			<colgroup>
+				<col span="1" style="background-color: lightslategrey;">
+				<col span="3" style="background-color: lightblue;">
+				<col span="3" style="background-color: palegreen;">
+				<col span="1" style="background-color:darkgray;">
+				<col span="2" style="background-color: lightpink;">
+			</colgroup>
+			<tr>
+				<th>Unarmed Fittings</th>
+			</tr>
+			<tr>
+				<th>Name</th>
+				<th>Damage (S)</th>
+				<th>Damage (M)</th>
+				<th>Damage (L)</th>
+				<th>Critical</th>
+				<th>Dmg Type</th>
+				<th>Base</th>
+				<th>Required</th>
+				<th>Special</th>
+				<th>Focus</th>
+
+			</tr>
+			<tr>
+				<td>Spiked Gauntlet</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>-</td>
+				<td>P</td>
+				<td>Punch</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Pierce</td>
+			</tr>
+			<tr>
+				<td>Forehead Plate</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>-</td>
+				<td>B</td>
+				<td>Headbutt</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Addle</td>
+			</tr>
+			<tr>
+				<td>Shinguard</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Kick</td>
+				<td>-</td>
+				<td>Guarded</td>
+				<td>Brawling</td>
+			</tr>
+			<tr>
+				<td>Boot Spike</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>-</td>
+				<td>P</td>
+				<td>Kick</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Pierce</td>
+			</tr>
+			<tr>
+				<td>Armbraces</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Elbow</td>
+				<td>-</td>
+				<td>Guarded</td>
+				<td>Knock</td>
+			</tr>
+			<tr>
+				<td>Knee Spike</td>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>-</td>
+				<td>P</td>
+				<td>Knee</td>
+				<td>-</td>
+				<td>-</td>
+				<td>Pierce</td>
+			</tr>
+		</table>
+
 
 
 
@@ -2388,6 +2759,7 @@
 		<br><br><br><b><i> Brace-</i></b> If you have a readied action prepared and you are attacked by a charging creature, you may make an attack roll against them with a +2 bonus on the attack roll and deal double damage with that attack.
 		<br><br><br><b><i> Breathing-</i></b> In order to use this weapon, you must be able to breathe.
 		<br><br><br><b><i> Bullrush-</i></b> You may use this weapon during a bullrush to gain a +2 bonus on the check.
+		<br><br><br><b><i> Charging-</i></b> If this weapon is used in an attack made as a part of a Charge, gain a +2 bonus on the attack roll and damage roll.
 		<br><br><br><b><i> Composite-</i></b> You add your strength modifier to damage with this weapon in addition to your dex modifier.
 		<br><br><br><b><i> Composite+-</i></b> You add your strength modifier to damage with this weapon in addition to your dex modifier. For every 2 your strength score is higher than the strength requirement for this weapon, increase the base damage dice of this weapon by 1.
 		<br><br><br><b><i> Con X-</i></b> You must have a constitution score of at least X in order to wield this weapon without becoming fatigued.
@@ -2397,7 +2769,6 @@
 		<br><br><br><b><i> Disarm-</i></b> When you use this weapon to try and disarm an opponent, you gain +2 bonus on the check.
 		<br><br><br><b><i> Double-</i></b> You may choose an end of the weapon to be considered the primary weapon and use the other as a secondary weapon. You may choose to spend one action to make an attack with each end of the weapon at a -2 penalty. You may only do this once on your turn and may not do it during an attack of opportunity.
 		<br><br><br><b><i> Dramatic-</i></b> Perform or intimidate checks made with this weapon gain a +2 bonus.
-		<br><br><br><b><i> Feral-</i></b> This weapon may be worn atop suitable natural weapon and adds its damage to the base damage of the natural weapon.
 		<br><br><br><b><i> Finesse-</i></b> This weapon can be used with the Weapon Finesse and Deadly Grace feats.
 		<br><br><br><b><i> Fixed-</i></b> This weapon takes at least a minute to equip but cannot be disarmed.
 		<br><br><br><b><i> Guarded-</i></b> When you use the Defend action, gain a +1 bonus to your AC.
@@ -2571,7 +2942,7 @@
 				<td>1d8</td>
 				<td>18-20/X3</td>
 				<td>-</td>
-				<td>Feral, Finesse, Zodiac-Dog, Bardic (Sing), Dramatic</td>
+				<td>Finesse, Zodiac-Dog, Bardic (Sing), Dramatic</td>
 				<td>Disorient, Gash, Brawling, Dextrous</td>
 			</tr>
 			<tr>
