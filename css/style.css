@@ -327,6 +327,13 @@ img.class-picture {
 	display: inline-block;
 	left: 40%;
 }
+img.big-map {
+	width: 80%;
+	position: absolute;
+	display: inline-block;
+	left: 10%;
+	image-rending: pixelated;
+}
 img.class-picture:hover {
 	border: 2px solid #444;
 }
@@ -477,6 +484,7 @@ table.featTable {
 		width: 20%;
 		left: 60%;
 	}
+
 }
 
 @media (max-width: 900px) {
