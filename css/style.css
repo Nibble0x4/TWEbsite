@@ -333,6 +333,7 @@ img.big-map {
 	display: inline-block;
 	left: 10%;
 	image-rending: pixelated;
+	object-fit: none;
 }
 img.class-picture:hover {
 	border: 2px solid #444;
