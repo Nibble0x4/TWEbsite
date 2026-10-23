@@ -1,20 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Sheets Table Lookup</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        .container { background: #f9f9f9; padding: 20px; border-radius: 8px; width: 350px; }
-        select { width: 100%; padding: 8px; margin-bottom: 15px; }
-        .result-box { background: #fff; padding: 15px; border: 1px solid #ddd; border-radius: 4px; }
-    </style>
-</head>
-<body>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Clerk </title>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="icon" type="image/x-icon" href="../../images/TWEbsiteFavicon.png">
 
-    <div class="container">
-        <h2>Where are you shopping?</h2>
+
+</head>
+<body class="std">
+
+	<h1 class="page-header"> Innkeeper <button id="Picture-Button">Reroll Image</button></h1>
+		
+	<div id="page-select-box" class="option-box"> 
+		<h2> Pages: </h2>
+		<p class="option"> <u><a href="../../index.html" style="color:#aafff0">Intro Page</a></u></p>
+		<p style="font-style:underline; color:#ee0000; cursor:pointer">	<u><a href="../../TWEbsiteRulesetPage.html" style="font-style:underline; color:#ee0000;">Ruleset Page</a></u> </p>
+		<p style="font-style:underline; color:#eeee00; cursor:pointer">	<u><a href="../../TWEbsiteClassPage.html" style="font-style:underline; color:#eeee00; cursor:pointer">Classes Page</a></u> </p>
+		<p style="font-style:underline; color:#00dd00; cursor:pointer" > <a href="../../TWEbsiteRacesPage.html" style="font-style:underline; color:#00dd00;"><u>Races Page </u></a> </p>
+		<p style="font-style:underline; color:#0000dd; cursor:pointer">	<u><a href="../../TWEbsiteLorePage.html" style="font-style:underline; color:#0000dd;">Lore Page</a> </u> </p> 
+		<p style="font-style:underline; color:#440044; cursor:pointer">	<u><a href="../../TWEbsiteResourcesPage.html" style="font-style:underline; color:#440044;">Resources Page</a> </u> </p>
+
+	</div>
+
+	<a id="Picture-Link" target="_blank" href="images/Manabound/ManaboundImage.jpg">
+		<img id="Picture" src="images/Manabound/ManaboundImage.jpg" class="class-picture">
+	</a>
+
+	<br>
+	
+	<div class="weapontableDiv">
+		<b class="header"> Clerk </b>
+		<br>
+		<br>
+	<br> <p class="class-description"> Clerks exist in just about every settlement in TWE, thought the office may be more or less official in some places.
+		<br><br> Use this page to explore housing costs! This could give you something to save for or, if you are a merchant, you may wish to know what you'll be paying each day to keep your market spot!
+		<br><br> Don't forget to select your settlement to get adjusted prices and proper currencies!
+
+	</p></div>
+</p>
+	
+
+	<hr>
+
+
+    <div class="weapontableDiv">
+
+    
+        <br><br><b class="subheader">Where are you? </b><br><br>
         
         <!-- Dropdown populated dynamically -->
         <select id="settlementDropdown" onchange="displaySettlementRowData()">
@@ -22,29 +56,45 @@
         </select>
 
         <!-- Results Display -->
-        <div class="result-box" id="settlementDisplay">
+        <div id="settlementDisplay">
             This will help inform your shopping!
         </div>
-    </div>
+        <br><br>
 
-    <div class="container">
-        <h2>Select an Item</h2>
+
+
+        <br><br>
+		<b class="header"> Real Estate Costs </b>
+		<br>
+		<br>
+		<hr>
+		</p>
+
+
+        <br><br><b class="subheader">Select an Item</b><br><br>
         
         <!-- Dropdown populated dynamically -->
         <select id="itemDropdown" onchange="displayRowData()">
             <option value="">-- Choose a name --</option>
         </select>
 
-        <h3> How many do you want?</h3>
-        <input type="number" id="count" value="1" min="1" max="1000" step="1">
+        <h3 id="countPrompt"> How many rooms do you want?</h3>
+        <input type="number" id="count" value="1" min="1" max="1000" step="1" onchange="displayRowData()">
         <button onclick="increment()">+1</button>
         <button onclick="decrement()">-1</button>
 
         <!-- Results Display -->
-        <div class="result-box" id="resultDisplay">
+        <div id="resultDisplay">
             Select a value from the dropdown to see details.
         </div>
-    </div>
+
+        <hr>
+        <br><br><br><br><br>
+
+		
+
+	
+</body>
 
 
 
@@ -65,8 +115,18 @@
 
 
 
-    <script>
-        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=41727665&single=true&output=csv';
+
+
+
+
+
+
+
+
+
+
+<script>
+        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=1874136130&single=true&output=csv';
         const settlementUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=117792388&single=true&output=csv'
         
         let globalTableData = [];
@@ -77,8 +137,10 @@
 
         let settlement_name = ''
         let settlement_class_val = 0
+        let settlement_mult = 1
         let selected_province = ''
         let province_string = ''
+        let province_mult_string = ''
         let currency = ''
         let count_val = 1
 
@@ -183,9 +245,7 @@
                     const col3Name = headerNames[9] || 'GP Conversion';
 
                     displayBox.innerHTML = `
-                        <p><strong>Name:</strong> ${matchedRow[firstColumnKey]}</p>
-                        <p><strong>${col2Name}:</strong> ${matchedRow[col2Name] || 'N/A'}</p>
-                        <p><strong>${col3Name}:</strong> ${matchedRow[col3Name] || 'N/A'}</p>
+                        <p><strong>${col2Name}:</strong> ${matchedRow[col2Name] * count_val * settlement_mult} GP</p>
                     `;
                 }
                 else {
@@ -193,13 +253,53 @@
 
                     if (headerNames.includes(province_string)) {
                         const provPrice = headerNames[headerNames.indexOf(province_string)]
+                        let provMult = 1
+
+                        // Determine the multiplier based on region (If it is one of the GP using regions, don't multiply by 4)
+                        switch (selected_province) {
+                            case 'Enthan':
+                                provMult = Number(Number(matchedRow[headerNames[9]]) * Number(matchedRow[headerNames[headerNames.indexOf(province_mult_string)]]));
+                            break
+                            case 'Taria':
+                                provMult = Number(Number(matchedRow[headerNames[9]]) * Number(matchedRow[headerNames[headerNames.indexOf(province_mult_string)]]));
+                            break
+                            case 'Areth':
+                                provMult = Number(Number(matchedRow[headerNames[9]]) * Number(matchedRow[headerNames[headerNames.indexOf(province_mult_string)]]));
+                            break
+                            default:
+                                provMult = matchedRow[headerNames[headerNames.indexOf(province_mult_string)]];
+                        }
+
+                        const truePrice = headerNames[3]
                         
                         // Keep the var we use for calculations up to date
                         count_val = Number(document.getElementById('count').value);
 
-                        displayBox.innerHTML = `
-                        <p><strong> Cost : ${matchedRow[provPrice] * count_val} ${currency} </p>
-                    `;
+                        switch (selectedValue) {
+                            case 'Shop Stall':
+                                displayBox.innerHTML = `
+                                <p><strong> Cost : ${Math.round(((matchedRow[truePrice] * count_val) + ((matchedRow[truePrice] / 2) * (1 / count_val))) * provMult * settlement_mult)} ${currency} </p>
+                                `;
+                                document.getElementById('countPrompt').innerHTML = 'How many days will you be doing Business?'
+                            break
+                            case 'House':
+                                displayBox.innerHTML = `
+                                <p><strong> Cost : ${Math.round(((matchedRow[truePrice] * count_val) + (200 * 1.5)) * provMult * settlement_mult)} ${currency} </p>
+                                `;
+                                document.getElementById('countPrompt').innerHTML = 'How many rooms do you want?'
+                            break
+                            case 'Apartment':
+                                displayBox.innerHTML = `
+                                <p><strong> Cost : ${Math.round(((matchedRow[truePrice] * count_val) + (150 * 1.2)) * provMult * settlement_mult)} ${currency} </p>
+                                `;
+                                document.getElementById('countPrompt').innerHTML = 'How many rooms do you want?'
+                            break
+                            default:
+                                displayBox.innerHTML = `
+                                <p>ERROR</p>
+                                `;
+                                document.getElementById('countPrompt').innerHTML = 'How many rooms do you want?'
+                        }
                     }
                     else {
                     const col2Name = headerNames[3] || 'True Price';
@@ -218,6 +318,8 @@
                 displayBox.innerHTML = 'No data found for this selection.';
             }
         }
+
+
 
         // Do it for Settlement
         function displaySettlementRowData() {
@@ -241,12 +343,15 @@
                 const class_val = headerNames2[2] || 'Class';
                 const class_name = headerNames2[3] || 'Class Name';
                 const specialty = headerNames2[4] || 'Specialty';
+                const set_mult = headerNames2[6] || 'Class Modifier'
 
                 // Assign the settlement info to the permanent variables for display
                 settlement_name = matchedRow[firstColumnKey];
                 settlement_class_val = matchedRow[class_val];
+                settlement_mult = matchedRow[set_mult];
                 selected_province = matchedRow[province];
-                province_string = selected_province+' Price';
+                province_string = selected_province + ' Price';
+                province_mult_string = selected_province + ' Multiplier';
                 if (selected_province == 'Enthan') {
                     currency = 'EP'
                 }
@@ -262,13 +367,9 @@
 
 
                 displayBox.innerHTML = `
-                    <p><strong>Name:</strong> ${matchedRow[firstColumnKey]}</p>
+                    <p><strong>Settlement:</strong> ${matchedRow[firstColumnKey]}</p>
                     <p><strong>${province}:</strong> ${matchedRow[province] || 'N/A'}</p>
-                    <p><strong>${class_name}:</strong> ${matchedRow[class_name] || 'N/A'}</p>
-                    <p><strong>${class_val}:</strong> ${matchedRow[class_val] || 'N/A'}</p>
-                    <p>${settlement_name}</p>
-                    <p>${settlement_class_val}</p>
-                    <p>${province_string}</p>
+                    <p><strong>Size:</strong> ${matchedRow[class_name] || 'N/A'}</p>
                 `;
             } else {
                 displayBox.innerHTML = 'No data found for this selection.';
@@ -298,5 +399,6 @@
         }
     </script>
 
-</body>
+
+
 </html>
