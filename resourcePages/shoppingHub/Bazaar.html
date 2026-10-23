@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Bazaar </title>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="icon" type="image/x-icon" href="../../images/TWEbsiteFavicon.png">
+
+
+</head>
+<body class="std">
+
+	<h1 class="page-header"> Bazaar <button id="Picture-Button">Reroll Image</button></h1>
+		
+	<div id="page-select-box" class="option-box"> 
+		<h2> Pages: </h2>
+		<p class="option"> <u><a href="../../index.html" style="color:#aafff0">Intro Page</a></u></p>
+		<p style="font-style:underline; color:#ee0000; cursor:pointer">	<u><a href="../../TWEbsiteRulesetPage.html" style="font-style:underline; color:#ee0000;">Ruleset Page</a></u> </p>
+		<p style="font-style:underline; color:#eeee00; cursor:pointer">	<u><a href="../../TWEbsiteClassPage.html" style="font-style:underline; color:#eeee00; cursor:pointer">Classes Page</a></u> </p>
+		<p style="font-style:underline; color:#00dd00; cursor:pointer" > <a href="../../TWEbsiteRacesPage.html" style="font-style:underline; color:#00dd00;"><u>Races Page </u></a> </p>
+		<p style="font-style:underline; color:#0000dd; cursor:pointer">	<u><a href="../../TWEbsiteLorePage.html" style="font-style:underline; color:#0000dd;">Lore Page</a> </u> </p> 
+		<p style="font-style:underline; color:#440044; cursor:pointer">	<u><a href="../../TWEbsiteResourcesPage.html" style="font-style:underline; color:#440044;">Resources Page</a> </u> </p>
+
+	</div>
+
+	<a id="Picture-Link" target="_blank" href="images/Manabound/ManaboundImage.jpg">
+		<img id="Picture" src="images/Manabound/ManaboundImage.jpg" class="class-picture">
+	</a>
+
+	<br>
+	
+	<div class="weapontableDiv">
+		<b class="header"> Bazaar </b>
+		<br>
+		<br>
+	<br> <p class="class-description"> Bazaars are exciting places full of the strange and mystical. Most normal people love the break from mundanity when they visit these places, but they are not always available! If you see one outside of a city, you may wish to take advantage!
+		<br><br> Bazaars are full of a seemingly random variety of objects, making standardized shopping difficult, but there are categories that items tend to fall under. Use this page to investigate ahead of your next Bazaar visit!
+		<br><br> Don't forget to select your settlement to get adjusted prices and proper currencies!
+
+	</p></div>
+</p>
+	
+
+	<hr>
+
+
+    <div class="weapontableDiv">
+
+    
+        <br><br><b class="subheader">Where are you? </b><br><br>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="settlementDropdown" onchange="displaySettlementRowData()">
+            <option value="">-- Choose a name --</option>
+        </select>
+
+        <!-- Results Display -->
+        <div id="settlementDisplay">
+            This will help inform your shopping!
+        </div>
+        <br><br>
+
+
+
+        <br><br>
+		<b class="header"> Bazaar Buys </b>
+		<br>
+		<br>
+		<hr>
+		</p>
+
+
+        <br><br><b class="subheader">Wands</b><br><br>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="itemDropdown" onchange="displayRowData()">
+            <option value="">-- Choose a name --</option>
+        </select>
+
+        <h3 id="countPrompt"> How many Casts?</h3>
+        <input type="number" id="count" value="1" min="1" max="1000" step="1" onchange="displayRowData()">
+        <button onclick="increment('count')">+1</button>
+        <button onclick="decrement('count')">-1</button>
+
+        <h3 id="tierPrompt"> What Tier?</h3>
+        <input type="number" id="tier" value="1" min="1" max="4" step="1" onchange="displayRowData()">
+        <button onclick="increment('tier')">+1</button>
+        <button onclick="decrement('tier')">-1</button>
+        <br>
+        <p id="healAvg"> </p>
+
+        <!-- Results Display -->
+        <div id="resultDisplay">
+            Select a value from the dropdown to see details.
+        </div>
+
+
+
+        <br><br><hr>
+        
+        
+        
+        <br><br><b class="subheader">Magic Items</b><br><br>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="magicItemDropdown" onchange="displayRowData2()">
+            <option value="">-- Choose a name --</option>
+        </select>
+
+        <h3 id="superTier"> Lesser or Greater?</h3>
+       <select id="lesserGreater" onchange="displayRowData2()">
+            <option value="lesser">Lesser</option>
+            <option value="greater">Greater</option>
+       </select>
+
+
+
+        <h3 id="subTier"> Minor, Medium, or Major?</h3>
+        <select id="minorMediumMajor" onchange="displayRowData2()">
+            <option value="minor">Minor</option>
+            <option value="medium">Medium</option>
+            <option value="major">Major</option>
+       </select>
+
+        <!-- Results Display -->
+        <div id="resultDisplay2">
+            Select a value from the dropdown to see details.
+        </div>
+
+        <hr>
+        <br><br><br><br><br>
+
+		
+
+	
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=188928295&single=true&output=csv';
+        const settlementUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=117792388&single=true&output=csv'
+        
+        let globalTableData = [];
+        let headerNames = [];
+
+        let globalTableData2 = [];
+        let headerNames2 = [];
+
+        let settlement_name = ''
+        let settlement_class_val = 0
+        let settlement_mult = 1
+        let selected_province = ''
+        let province_string = ''
+        let province_mult_string = ''
+        let currency = ''
+        let count_val = 1
+        let tier_val = 1
+
+        // Fetch and parse the sheet data on page load
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData = dataRows.map(row => {
+                    let obj = {};
+                    headerNames.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('itemDropdown');
+                const firstColumnKey = headerNames[0];
+
+                // Grab JUST the wands
+                globalTableData.slice(0,3).forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+
+                // assign dropdown2 to the magical item dropdown
+                const dropdown2 = document.getElementById('magicItemDropdown')
+                // Grab JUST the Magical Items
+                globalTableData.slice(3).forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown2.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+        // Fetch and parse again on the settlement table
+        fetch(settlementUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames2 = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData2 = dataRows.map(row => {
+                    let obj = {};
+                    headerNames2.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames2[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('settlementDropdown');
+                const firstColumnKey = headerNames2[0];
+
+                globalTableData2.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+
+        // Function triggered when dropdown selection changes
+        function displayRowData() {
+            const selectedValue = document.getElementById('itemDropdown').value;
+            const displayBox = document.getElementById('resultDisplay');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'Select an item to shop for.';
+                return;
+            }
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames[0];
+
+            // Grab the row matching the item we picked
+            let matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+                
+                // Check to see if we have a settlement picked yet. If not, grab the true price
+                if (settlement_class_val == 0) {
+                    const col2Name = headerNames[3] || 'True Price';
+
+                    displayBox.innerHTML = `
+                        <p><strong>${col2Name}:</strong> ${matchedRow[col2Name] * count_val * settlement_mult} GP</p>
+                    `;
+                    const truePrice = headerNames[3]
+                        
+                    // Keep the var we use for calculations up to date
+                    count_val = Number(document.getElementById('count').value);
+                    tier_val = Number(document.getElementById('tier').value);
+
+                    displayBox.innerHTML = `
+                                <p><strong> Cost : ${Math.round((((tier_val  / 4) * (tier_val * tier_val) * matchedRow[truePrice]) + (matchedRow[truePrice] * count_val)) * provMult * settlement_mult )} ${currency} </p>
+                                `;
+                }
+                else {
+                    // If we do have a settlement picked, do a similar but different thing
+
+                    if (headerNames.includes(province_string)) {
+                        const provPrice = headerNames[headerNames.indexOf(province_string)]
+                        let provMult = 1
+
+                        // Determine the multiplier based on region (If it is one of the GP using regions, don't multiply by 4)
+                        switch (selected_province) {
+                            case 'Enthan':
+                                provMult = Number(Number(matchedRow[headerNames[9]]) * Number(matchedRow[headerNames[headerNames.indexOf(province_mult_string)]]));
+                            break
+                            case 'Taria':
+                                provMult = Number(Number(matchedRow[headerNames[9]]) * Number(matchedRow[headerNames[headerNames.indexOf(province_mult_string)]]));
+                            break
+                            case 'Areth':
+                                provMult = Number(Number(matchedRow[headerNames[9]]) * Number(matchedRow[headerNames[headerNames.indexOf(province_mult_string)]]));
+                            break
+                            default:
+                                provMult = matchedRow[headerNames[headerNames.indexOf(province_mult_string)]];
+                        }
+
+                        const truePrice = headerNames[3]
+                        
+                        // Keep the var we use for calculations up to date
+                        count_val = Number(document.getElementById('count').value);
+                        tier_val = Number(document.getElementById('tier').value);
+
+                        //// Use count_val for minor/medium/major
+                        //// Use tier_val for lesser/greater
+                        // switch (document.getElementById('lesserGreater').value) {
+                        //     case 'lesser':
+                        //         tier_val = 1
+                        //     break
+                        //     case 'greater':
+                        //         tier_val = 2
+                        //     break
+                        //     default:
+                        //         tier_val = 1
+                        // }
+                        // switch (document.getElementById('minorMediumMajor').value) {
+                        //     case 'minor':
+                        //         count_val = 1
+                        //     break
+                        //     case 'medium':
+                        //         count_val = 2
+                        //     break
+                        //     case 'major':
+                        //         count_val = 3
+                        //     break
+                        //     default:
+                        //         count_val = 1
+                        // }
+
+
+                        switch (selectedValue) {
+                            case 'Arcane Wand':
+                                displayBox.innerHTML = `
+                                <p><strong> Cost : ${Math.round((((tier_val  / 4) * (tier_val * tier_val) * matchedRow[truePrice]) + (matchedRow[truePrice] * count_val)) * provMult * settlement_mult )} ${currency} </p>
+                                `;
+                            break
+                            case 'Divine Wand':
+                                displayBox.innerHTML = `
+                                <p><strong> Cost : ${Math.round((((tier_val  / 4) * (tier_val * tier_val) * matchedRow[truePrice]) + (matchedRow[truePrice] * count_val)) * provMult * settlement_mult )} ${currency} </p>
+                                `;
+                            break
+                            case 'Primal Wand':
+                                displayBox.innerHTML = `
+                                <p><strong> Cost : ${Math.round((((tier_val  / 4) * (tier_val * tier_val) * matchedRow[truePrice]) + (matchedRow[truePrice] * count_val)) * provMult * settlement_mult )} ${currency} </p>
+                                `;
+                            break
+                            default:
+                                displayBox.innerHTML = `
+                                <p>ERROR</p>
+                                `;
+                        }
+                    }
+                    else {
+                    const col2Name = headerNames[3] || 'True Price';
+                    const col3Name = headerNames[9] || 'GP Conversion';
+
+                    displayBox.innerHTML = `
+                        <p><strong>Name:</strong> ${matchedRow[firstColumnKey]}</p>
+                        <p><strong>${col2Name}:</strong> ${matchedRow[col2Name] || 'N/A'}</p>
+                        <p><strong>${col3Name}:</strong> ${matchedRow[col3Name] || 'N/A'}</p>
+                        <p><strong> WE ARE IN THE ELSE RIGHT NOW, SO WE DIDN'T FIND A MATCH </p>
+                    `;
+                    }
+                }
+                
+            } else {
+                displayBox.innerHTML = 'No data found for this selection.';
+            }
+
+
+
+
+
+
+            
+
+            
+        }
+
+
+
+        function displayRowData2() {
+            // Second pass for magic items!
+
+
+
+
+
+
+            const selectedValue2 = document.getElementById('magicItemDropdown').value;
+            const displayBox2 = document.getElementById('resultDisplay2');
+
+            if (!selectedValue2) {
+                displayBox2.innerHTML = 'Select an item to shop for OKAY?!.';
+                return;
+            }
+
+            // Grab the Item Name column
+            firstColumnKey = headerNames[0];
+
+            // Grab the row matching the item we picked
+            matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue2);
+
+            if (matchedRow) {
+                
+                // Check to see if we have a settlement picked yet. If not, grab the true price
+                if (settlement_class_val == 0) {
+                    const col2Name = headerNames[3] || 'True Price';
+
+                    displayBox2.innerHTML = `
+                        <p><strong>${col2Name}:</strong> ${matchedRow[col2Name] * count_val * settlement_mult} GP</p>
+                    `;
+                    const truePrice = headerNames[3]
+
+                    // Use count_val for minor/medium/major
+                        // Use tier_val for lesser/greater
+                        switch (document.getElementById('lesserGreater').value) {
+                            case 'lesser':
+                                tier_val = 1
+                            break
+                            case 'greater':
+                                tier_val = 2
+                            break
+                            default:
+                                tier_val = 1
+                        }
+                        switch (document.getElementById('minorMediumMajor').value) {
+                            case 'minor':
+                                count_val = 1
+                            break
+                            case 'medium':
+                                count_val = 2
+                            break
+                            case 'major':
+                                count_val = 3
+                            break
+                            default:
+                                count_val = 1
+                        }
+
+                    displayBox2.innerHTML = `
+                                <p><strong> Cost : ${Math.round(((tier_val * tier_val) * 30 * (count_val + 1)))} ${currency} </p>
+                                `;
+                }
+                else {
+                    // If we do have a settlement picked, do a similar but different thing
+
+                    if (headerNames.includes(province_string)) {
+                        const provPrice = headerNames[headerNames.indexOf(province_string)]
+                        let provMult = 1
+
+                        // Determine the multiplier based on region (If it is one of the GP using regions, don't multiply by 4)
+                        switch (selected_province) {
+                            case 'Enthan':
+                                provMult = Number(Number(matchedRow[headerNames[9]]) * Number(matchedRow[headerNames[headerNames.indexOf(province_mult_string)]]));
+                            break
+                            case 'Taria':
+                                provMult = Number(Number(matchedRow[headerNames[9]]) * Number(matchedRow[headerNames[headerNames.indexOf(province_mult_string)]]));
+                            break
+                            case 'Areth':
+                                provMult = Number(Number(matchedRow[headerNames[9]]) * Number(matchedRow[headerNames[headerNames.indexOf(province_mult_string)]]));
+                            break
+                            default:
+                                provMult = matchedRow[headerNames[headerNames.indexOf(province_mult_string)]];
+                        }
+
+                        const truePrice = headerNames[3]
+                        
+                        // Keep the var we use for calculations up to date
+                        count_val = Number(document.getElementById('count').value);
+                        tier_val = Number(document.getElementById('tier').value);
+
+                        // Use count_val for minor/medium/major
+                        // Use tier_val for lesser/greater
+                        switch (document.getElementById('lesserGreater').value) {
+                            case 'lesser':
+                                tier_val = 1
+                            break
+                            case 'greater':
+                                tier_val = 2
+                            break
+                            default:
+                                tier_val = 1
+                        }
+                        switch (document.getElementById('minorMediumMajor').value) {
+                            case 'minor':
+                                count_val = 1
+                            break
+                            case 'medium':
+                                count_val = 2
+                            break
+                            case 'major':
+                                count_val = 3
+                            break
+                            default:
+                                count_val = 1
+                        }
+
+
+                        switch (selectedValue2) {
+                            case 'Arcane Wand':
+                                displayBox2.innerHTML = `
+                                <p><strong> Cost : ${Math.round((((tier_val  / 4) * (tier_val * tier_val) * matchedRow[truePrice]) + (matchedRow[truePrice] * count_val)) * provMult * settlement_mult )} ${currency} </p>
+                                `;
+                            break
+                            case 'Divine Wand':
+                                displayBox2.innerHTML = `
+                                <p><strong> Cost : ${Math.round((((tier_val  / 4) * (tier_val * tier_val) * matchedRow[truePrice]) + (matchedRow[truePrice] * count_val)) * provMult * settlement_mult )} ${currency} </p>
+                                `;
+                            break
+                            case 'Primal Wand':
+                                displayBox2.innerHTML = `
+                                <p><strong> Cost : ${Math.round((((tier_val  / 4) * (tier_val * tier_val) * matchedRow[truePrice]) + (matchedRow[truePrice] * count_val)) * provMult * settlement_mult )} ${currency} </p>
+                                `;
+                            break
+                            default:
+                                displayBox2.innerHTML = `
+                                <p><strong> Cost : ${Math.round(((tier_val * tier_val) * 30 * (count_val + 1)) * provMult * settlement_mult)} ${currency} </p>
+                                `;
+                        }
+                    }
+                    else {
+                    const col2Name = headerNames[3] || 'True Price';
+                    const col3Name = headerNames[9] || 'GP Conversion';
+
+                    displayBox2.innerHTML = `
+                        <p><strong>Name:</strong> ${matchedRow[firstColumnKey]}</p>
+                        <p><strong>${col2Name}:</strong> ${matchedRow[col2Name] || 'N/A'}</p>
+                        <p><strong>${col3Name}:</strong> ${matchedRow[col3Name] || 'N/A'}</p>
+                        <p><strong> WE ARE IN THE ELSE RIGHT NOW, SO WE DIDN'T FIND A MATCH </p>
+                    `;
+                    }
+                }
+                
+            } else {
+                displayBox2.innerHTML = 'No data found for this selection.';
+            }
+        }
+
+
+
+        // Do it for Settlement
+        function displaySettlementRowData() {
+            const selectedValue = document.getElementById('settlementDropdown').value;
+            const displayBox = document.getElementById('settlementDisplay');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'Where are you shopping?';
+                return;
+            }
+
+            // Grab the Item Name column
+            const firstColumnKey = headerNames2[0];
+
+            // Grab the row matching the item we picked
+            const matchedRow = globalTableData2.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+                // CHANGE THESE to match your actual specific column header names
+                const province = headerNames2[1] || 'Province';
+                const class_val = headerNames2[2] || 'Class';
+                const class_name = headerNames2[3] || 'Class Name';
+                const specialty = headerNames2[4] || 'Specialty';
+                const set_mult = headerNames2[6] || 'Class Modifier'
+
+                // Assign the settlement info to the permanent variables for display
+                settlement_name = matchedRow[firstColumnKey];
+                settlement_class_val = matchedRow[class_val];
+                settlement_mult = matchedRow[set_mult];
+                selected_province = matchedRow[province];
+                province_string = selected_province + ' Price';
+                province_mult_string = selected_province + ' Multiplier';
+                if (selected_province == 'Enthan') {
+                    currency = 'EP'
+                }
+                else if (selected_province == 'Taria') {
+                    currency = 'TP'
+                }
+                else if (selected_province == 'Areth') {
+                    currency = 'AP'
+                }
+                else {
+                    currency = 'GP'
+                }
+
+
+                displayBox.innerHTML = `
+                    <p><strong>Settlement:</strong> ${matchedRow[firstColumnKey]}</p>
+                    <p><strong>${province}:</strong> ${matchedRow[province] || 'N/A'}</p>
+                    <p><strong>Size:</strong> ${matchedRow[class_name] || 'N/A'}</p>
+                `;
+            } else {
+                displayBox.innerHTML = 'No data found for this selection.';
+            }
+
+            // Call the update function for the other dropdown so it changes live
+            displayRowData()
+            displayRowData2()
+        }
+
+        // Two simple functions to handle the count buttons
+        function increment(which_one) {
+            const input = document.getElementById(which_one);
+            input.stepUp();
+            // Keep the var we use for calculations up to date
+            switch (which_one) {
+                case 'count':
+                    count_val = Number(document.getElementById('count').value);
+                break
+                case 'tier':
+                    tier_val = Number(document.getElementById('tier').value);
+                break
+            }
+             // Call the update function for the other dropdown so it changes live
+            displayRowData()
+        }
+
+        function decrement(which_one) {
+            const input = document.getElementById(which_one);
+            input.stepDown();
+            // Keep the var we use for calculations up to date
+            switch (which_one) {
+                case 'count':
+                    count_val = Number(document.getElementById('count').value);
+                break
+                case 'tier':
+                    tier_val = Number(document.getElementById('tier').value);
+                break
+            }
+             // Call the update function for the other dropdown so it changes live
+            displayRowData()
+        }
+    </script>
+
+
+
+</html>
