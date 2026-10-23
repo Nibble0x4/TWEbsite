@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets Table Lookup</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { background: #f9f9f9; padding: 20px; border-radius: 8px; width: 350px; }
+        select { width: 100%; padding: 8px; margin-bottom: 15px; }
+        .result-box { background: #fff; padding: 15px; border: 1px solid #ddd; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Where are you shopping?</h2>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="settlementDropdown" onchange="displaySettlementRowData()">
+            <option value="">-- Choose a name --</option>
+        </select>
+
+        <!-- Results Display -->
+        <div class="result-box" id="settlementDisplay">
+            This will help inform your shopping!
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Select an Item</h2>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="itemDropdown" onchange="displayRowData()">
+            <option value="">-- Choose a name --</option>
+        </select>
+
+        <h3> How many do you want?</h3>
+        <input type="number" id="count" value="1" min="1" max="1000" step="1">
+        <button onclick="increment()">+1</button>
+        <button onclick="decrement()">-1</button>
+
+        <!-- Results Display -->
+        <div class="result-box" id="resultDisplay">
+            Select a value from the dropdown to see details.
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=41727665&single=true&output=csv';
+        const settlementUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=117792388&single=true&output=csv'
+        
+        let globalTableData = [];
+        let headerNames = [];
+
+        let globalTableData2 = [];
+        let headerNames2 = [];
+
+        let settlement_name = ''
+        let settlement_class_val = 0
+        let selected_province = ''
+        let province_string = ''
+        let currency = ''
+        let count_val = 1
+
+        // Fetch and parse the sheet data on page load
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData = dataRows.map(row => {
+                    let obj = {};
+                    headerNames.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('itemDropdown');
+                const firstColumnKey = headerNames[0];
+
+                globalTableData.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+        // Fetch and parse again on the settlement table
+        fetch(settlementUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames2 = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData2 = dataRows.map(row => {
+                    let obj = {};
+                    headerNames2.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames2[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('settlementDropdown');
+                const firstColumnKey = headerNames2[0];
+
+                globalTableData2.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+
+        // Function triggered when dropdown selection changes
+        function displayRowData() {
+            const selectedValue = document.getElementById('itemDropdown').value;
+            const displayBox = document.getElementById('resultDisplay');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'Select an item to shop for.';
+                return;
+            }
+
+            // Grab the Item Name column
+            const firstColumnKey = headerNames[0];
+
+            // Grab the row matching the item we picked
+            const matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+                
+                // Check to see if we have a settlement picked yet. If not, grab the true price
+                if (settlement_class_val == 0) {
+                    const col2Name = headerNames[3] || 'True Price';
+                    const col3Name = headerNames[9] || 'GP Conversion';
+
+                    displayBox.innerHTML = `
+                        <p><strong>Name:</strong> ${matchedRow[firstColumnKey]}</p>
+                        <p><strong>${col2Name}:</strong> ${matchedRow[col2Name] || 'N/A'}</p>
+                        <p><strong>${col3Name}:</strong> ${matchedRow[col3Name] || 'N/A'}</p>
+                    `;
+                }
+                else {
+                    // If we do have a settlement picked, do a similar but different thing
+
+                    if (headerNames.includes(province_string)) {
+                        const provPrice = headerNames[headerNames.indexOf(province_string)]
+                        
+                        // Keep the var we use for calculations up to date
+                        count_val = Number(document.getElementById('count').value);
+
+                        displayBox.innerHTML = `
+                        <p><strong> Cost : ${matchedRow[provPrice] * count_val} ${currency} </p>
+                    `;
+                    }
+                    else {
+                    const col2Name = headerNames[3] || 'True Price';
+                    const col3Name = headerNames[9] || 'GP Conversion';
+
+                    displayBox.innerHTML = `
+                        <p><strong>Name:</strong> ${matchedRow[firstColumnKey]}</p>
+                        <p><strong>${col2Name}:</strong> ${matchedRow[col2Name] || 'N/A'}</p>
+                        <p><strong>${col3Name}:</strong> ${matchedRow[col3Name] || 'N/A'}</p>
+                        <p><strong> WE ARE IN THE ELSE RIGHT NOW, SO WE DIDN'T FIND A MATCH </p>
+                    `;
+                    }
+                }
+                
+            } else {
+                displayBox.innerHTML = 'No data found for this selection.';
+            }
+        }
+
+        // Do it for Settlement
+        function displaySettlementRowData() {
+            const selectedValue = document.getElementById('settlementDropdown').value;
+            const displayBox = document.getElementById('settlementDisplay');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'Where are you shopping?';
+                return;
+            }
+
+            // Grab the Item Name column
+            const firstColumnKey = headerNames2[0];
+
+            // Grab the row matching the item we picked
+            const matchedRow = globalTableData2.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+                // CHANGE THESE to match your actual specific column header names
+                const province = headerNames2[1] || 'Province';
+                const class_val = headerNames2[2] || 'Class';
+                const class_name = headerNames2[3] || 'Class Name';
+                const specialty = headerNames2[4] || 'Specialty';
+
+                // Assign the settlement info to the permanent variables for display
+                settlement_name = matchedRow[firstColumnKey];
+                settlement_class_val = matchedRow[class_val];
+                selected_province = matchedRow[province];
+                province_string = selected_province+' Price';
+                if (selected_province == 'Enthan') {
+                    currency = 'EP'
+                }
+                else if (selected_province == 'Taria') {
+                    currency = 'TP'
+                }
+                else if (selected_province == 'Areth') {
+                    currency = 'AP'
+                }
+                else {
+                    currency = 'GP'
+                }
+
+
+                displayBox.innerHTML = `
+                    <p><strong>Name:</strong> ${matchedRow[firstColumnKey]}</p>
+                    <p><strong>${province}:</strong> ${matchedRow[province] || 'N/A'}</p>
+                    <p><strong>${class_name}:</strong> ${matchedRow[class_name] || 'N/A'}</p>
+                    <p><strong>${class_val}:</strong> ${matchedRow[class_val] || 'N/A'}</p>
+                    <p>${settlement_name}</p>
+                    <p>${settlement_class_val}</p>
+                    <p>${province_string}</p>
+                `;
+            } else {
+                displayBox.innerHTML = 'No data found for this selection.';
+            }
+
+            // Call the update function for the other dropdown so it changes live
+            displayRowData()
+        }
+
+        // Two simple functions to handle the count buttons
+        function increment() {
+            const input = document.getElementById('count');
+            input.stepUp();
+            // Keep the var we use for calculations up to date
+            count_val = Number(document.getElementById('count').value);
+             // Call the update function for the other dropdown so it changes live
+            displayRowData()
+        }
+
+        function decrement() {
+            const input = document.getElementById('count');
+            input.stepDown();
+            // Keep the var we use for calculations up to date
+            count_val = Number(document.getElementById('count').value);
+             // Call the update function for the other dropdown so it changes live
+            displayRowData()
+        }
+    </script>
+
+</body>
+</html>
