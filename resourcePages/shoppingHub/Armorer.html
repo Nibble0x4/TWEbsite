@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Armorer </title>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="icon" type="image/x-icon" href="../../images/TWEbsiteFavicon.png">
+
+
+</head>
+<body class="std">
+
+	<h1 class="page-header"> Armorer <button id="Picture-Button">Reroll Image</button></h1>
+		
+	<div id="page-select-box" class="option-box"> 
+		<h2> Pages: </h2>
+		<p class="option"> <u><a href="../../index.html" style="color:#aafff0">Intro Page</a></u></p>
+		<p style="font-style:underline; color:#ee0000; cursor:pointer">	<u><a href="../../TWEbsiteRulesetPage.html" style="font-style:underline; color:#ee0000;">Ruleset Page</a></u> </p>
+		<p style="font-style:underline; color:#eeee00; cursor:pointer">	<u><a href="../../TWEbsiteClassPage.html" style="font-style:underline; color:#eeee00; cursor:pointer">Classes Page</a></u> </p>
+		<p style="font-style:underline; color:#00dd00; cursor:pointer" > <a href="../../TWEbsiteRacesPage.html" style="font-style:underline; color:#00dd00;"><u>Races Page </u></a> </p>
+		<p style="font-style:underline; color:#0000dd; cursor:pointer">	<u><a href="../../TWEbsiteLorePage.html" style="font-style:underline; color:#0000dd;">Lore Page</a> </u> </p> 
+		<p style="font-style:underline; color:#440044; cursor:pointer">	<u><a href="../../TWEbsiteResourcesPage.html" style="font-style:underline; color:#440044;">Resources Page</a> </u> </p>
+
+	</div>
+
+	<a id="Picture-Link" target="_blank" href="images/Manabound/ManaboundImage.jpg">
+		<img id="Picture" src="images/Manabound/ManaboundImage.jpg" class="class-picture">
+	</a>
+
+	<br>
+	
+	<div class="weapontableDiv">
+		<b class="header"> Armorer </b>
+		<br>
+		<br>
+	<br> <p class="class-description"> Armorers are essential stops for any adventuring crew. In a world as dangerous as TWE, it is important for most people to have some sort of weapon at their side. Blacksmiths forge standard equipment and custom equipment alike, if you have the coin! The key is to find a skilled enough smith for the item you desire.
+		<br><br> Picking the right equipment can mean the difference between death and survival, so be sure to choose carefully. Use this page to see what exactly you can afford!
+		<br><br> Don't forget to select your settlement to get adjusted prices and proper currencies!
+
+	</p></div>
+</p>
+	
+
+	<hr>
+
+
+    <div class="weapontableDiv">
+
+    
+        <br><br><b class="subheader">Where are you? </b><br><br>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="settlementDropdown" onchange="displaySettlementRowData()">
+            <option value="">-- Choose a name --</option>
+        </select>
+
+        <!-- Results Display -->
+        <div id="settlementDisplay">
+            This will help inform your shopping!
+        </div>
+        <br><br>
+
+
+
+        <br><br>
+		<b class="header"> Armory Acquisitions </b>
+		<br>
+		<br>
+		<hr>
+		</p>
+
+
+        <br><br><b class="subheader">Weapons</b><br><br>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="weaponDropdown" onchange="displayRowData()">
+            <option value="">-- Choose a weapon --</option>
+        </select>
+
+        <h3 id="countPrompt"> What Material?</h3>
+        <select id="weaponMatDropdown" onchange="displayRowData()">
+            <!-- <option value="">Basic Material</option> -->
+        </select>
+
+        <h3 id="tierPrompt"> Masterwork Level</h3>
+        <input type="number" id="tier" value="0" min="0" max="5" step="1" onchange="displayRowData()">
+        <button onclick="increment('tier')">+1</button>
+        <button onclick="decrement('tier')">-1</button>
+        <br>
+
+        <!-- Results Display -->
+        <div id="resultDisplay">
+            Your weapon details will be displayed for you here!
+        </div>
+
+
+
+        <br><br><hr>
+        
+        
+        
+        <br><br><b class="subheader">Armor and Shields</b><br><br>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="armorDropdown" onchange="resetArmorTier()">
+            <option value="">-- Choose a name --</option>
+        </select>
+
+        <h3 id="countPrompt2"> What Material?</h3>
+        <select id="armorMatDropdown" onchange="displayRowData2()">
+            <!-- <option value="">Basic Material</option> -->
+        </select>
+
+        <h3 id="tierPrompt2"> Masterwork Level</h3>
+        <input type="number" id="tier2" value="0" min="0" max="3" step="1" onchange="displayRowData2()">
+        <button onclick="increment('tier2')">+1</button>
+        <button onclick="decrement('tier2')">-1</button>
+        <br>
+
+        <!-- Results Display -->
+        <div id="resultDisplay2">
+            Select a value from the dropdown to see details.
+        </div>
+
+        <hr>
+        <br><br><br><br><br>
+
+		
+
+	
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=1996704988&single=true&output=csv';
+        const armorUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=105049924&single=true&output=csv';
+        const settlementUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=117792388&single=true&output=csv';
+        const matUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=2130424858&single=true&output=csv';
+        
+        // For Weapons
+        let globalTableData = [];
+        let headerNames = [];
+
+        // For Settlements
+        let globalTableData2 = [];
+        let headerNames2 = [];
+
+        // For Weapon Materials
+        let globalTableData3 = [];
+        let headerNames3 = [];
+
+        // For Armor Materials
+        let globalTableData4 = [];
+        let headerNames4 = [];
+
+        // For Armor
+        let globalTableData5 = [];
+        let headerNames5 = [];
+
+        // Settlement stuff
+        let settlement_name = ''
+        let settlement_class_val = 0
+        let settlement_mult = 1
+        let selected_province = ''
+        let province_string = ''
+        let province_mult_string = ''
+        let province_mult = 1
+        let currency = 'GP'
+        let tier_val = 0
+        let tier_val2 = 0
+
+        // Weapon Stuff
+        let weaponName = ''
+        let weaponMat = ''
+        let weapMatWeapEff = ''
+        let weapMatDesc = ''
+        let weapMatHard = 8
+        let weapMatCost = 0
+        let weapMatMult = 1
+        let weapMatProvMult = 1
+        let weapType = ''
+        let weapClass = ''
+
+        let weapBasePrice = 1
+        let weapHP = 4
+        let weapEnhancementMult = 1
+        let weapFullBasePrice = 1
+        let weapSettlMult = 1
+        let weapProvMult = 1
+        let weapFullCost = 1
+
+        // Armor stuff
+        let armName = ''
+        let armMat = ''
+        let armMatarmEff = ''
+        let armMatDesc = ''
+        let armMatHard = 8
+        let armMatCost = 0
+        let armMatMult = 1
+        let armMatProvMult = 1
+        let armSlot = ''
+        let armType = ''
+
+        let armBasePrice = 1
+        let armHP = 4
+        let armEnhancementMult = 1
+        let armFullBasePrice = 1
+        let armSettlMult = 1
+        let armProvMult = 1
+        let armFullCost = 1
+
+
+        
+
+        // Fetch and parse the weapon sheet data on page load
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData = dataRows.map(row => {
+                    let obj = {};
+                    headerNames.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('weaponDropdown');
+                const firstColumnKey = headerNames[0];
+
+                // Grab JUST the wands
+                globalTableData.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+        // Fetch and parse again on the settlement table
+        fetch(settlementUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames2 = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData2 = dataRows.map(row => {
+                    let obj = {};
+                    headerNames2.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames2[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('settlementDropdown');
+                const firstColumnKey = headerNames2[0];
+
+                globalTableData2.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+        
+        
+        // Fetch and parse again on the Material table FOR WEAPONS
+        fetch(matUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames3 = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData3 = dataRows.map(row => {
+                    let obj = {};
+                    headerNames3.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames3[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('weaponMatDropdown');
+                const firstColumnKey = headerNames3[0];
+
+                // Grab all the materials except for the textile and gemstone stuff that can't be made into weapons
+                globalTableData3.slice(0,23).forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+            // Fetch and parse the ARMOR sheet data on page load
+        fetch(armorUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames5 = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData5 = dataRows.map(row => {
+                    let obj = {};
+                    headerNames5.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames5[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('armorDropdown');
+                const firstColumnKey = headerNames5[0];
+
+                // grab ALL the armors and shields
+                globalTableData5.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+
+        // Fetch and parse again on the Material table FOR ARMOR AND SHIELDS
+        fetch(matUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames4 = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData4 = dataRows.map(row => {
+                    let obj = {};
+                    headerNames4.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames4[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('armorMatDropdown');
+                const firstColumnKey = headerNames4[0];
+
+                // Grab all the materials except for the gemstone stuff that can't be made into armor
+                globalTableData4.slice(0,28).forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+
+
+
+
+
+
+
+
+        // Function triggered when any WEAPON dropdowns selections changes
+        function displayRowData() {
+            const selectedValue = document.getElementById('weaponDropdown').value;
+            const selectedMaterial = document.getElementById('weaponMatDropdown').value;
+            const displayBox = document.getElementById('resultDisplay');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'Select an item to shop for.';
+                return;
+            }
+
+            // Grab the Item Name column from Weapons
+            let firstColumnKey = headerNames[0];
+
+            // Grab the Item Name column from Materials
+            let firstColumnKeyMat = headerNames3[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+            let matchedMatRow = globalTableData3.find(row => row[firstColumnKeyMat] === selectedMaterial);
+
+            if (matchedRow) {
+
+                    
+
+                // Figure out as much of our stuff here as we can, since we picked WEAPON (And hopefully picked a material too)!
+                    weapBasePrice = matchedRow[headerNames[10]]
+                    weapHP = matchedRow[headerNames[11]]
+                    weaponName = selectedValue
+                    weapType = matchedRow[headerNames[1]]
+                    weapClass = matchedRow[headerNames[12]]
+
+                    // IF we also have material picked, then figure out material stuff here
+                    if (matchedMatRow) {
+                        weaponMat = selectedMaterial
+                        // Figure out our provmult for materials based on selected province name
+                        switch (selected_province) {
+                            case 'Enthan':
+                                weapMatProvMult = matchedMatRow[headerNames3[10]] * 4
+                                break;
+                            case 'Taria':
+                                weapMatProvMult = matchedMatRow[headerNames3[11]] * 4
+                                break;
+                            case 'Areth':
+                                weapMatProvMult = matchedMatRow[headerNames3[12]] * 4
+                                break;
+                            case 'Gruss':
+                                weapMatProvMult = matchedMatRow[headerNames3[13]]
+                                break;
+                            case 'Island':
+                                weapMatProvMult = matchedMatRow[headerNames3[14]]
+                                break;
+                            default:
+                                weapMatProvMult = 1
+
+                        }
+                        weapMatCost = Number(matchedMatRow[headerNames3[3]]) * Number(weapMatProvMult) * Number(weapHP / 6) 
+                        weapFullBasePrice = Number(weapBasePrice) + Number(weapMatCost)
+                        weapMatDesc = matchedMatRow[headerNames3[15]]
+                        weapMatWeapEff = matchedMatRow[headerNames3[17]]
+                        weapMatHard = matchedMatRow[headerNames3[18]]
+                        
+
+                        // Prepare for calcs
+                        weapFullCost = weapFullBasePrice
+
+                        // Okay now we do the full full price INCLUDING enhancement (tier_val)
+                        weapFullCost = Math.round(weapFullCost + ((tier_val * 1.2) * (tier_val * 1.1) * (weapFullBasePrice)))
+
+                        // Okay we apply the settlement multiplier
+                        weapFullCost = Math.round(weapFullCost * settlement_mult)
+                    }
+                
+                //  OKAY so I tried simplifying the logic let's just set everything
+
+                    displayBox.innerHTML = `
+                                <p>You have chosen <strong>${selectedValue}</strong>, a <strong>${weapClass} ${weapType}</strong> weapon. </p>
+                                <p> Your <strong>${selectedValue}</strong> is made of <strong>${weaponMat}</strong>, ${weapMatDesc}. ${weapMatWeapEff} It has <strong>Hardness ${weapMatHard}</strong> and <strong>${weapHP} HP</strong>.</p>
+                                <p>Your <strong>${weaponMat} ${selectedValue}</strong> is Enhanced to +<strong>${tier_val}</strong>, meaning it adds <strong>${tier_val}</strong> to <strong>Attack and Damage rolls</strong>. This <strong>Enhancement Bonus</strong> can be converted into <strong>Enchantments</strong> AND boosts the efficacy of its <strong>Focus Abilities</strong>.</p>
+                                <p>Your <strong>${weaponMat} ${selectedValue}</strong> costs <strong>${weapFullCost} ${currency}</strong></p>
+                                `;
+                
+                
+            } else {
+                displayBox.innerHTML = 'No data found for this selection.';
+            }
+        }
+
+
+
+
+        // Function triggered when any ARMOR dropdowns selections changes
+        function displayRowData2() {
+            const selectedValue = document.getElementById('armorDropdown').value;
+            const selectedMaterial = document.getElementById('armorMatDropdown').value;
+            const displayBox = document.getElementById('resultDisplay2');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'Select an item to shop for.';
+                return;
+            }
+
+            // Grab the Item Name column from Armors
+            let firstColumnKey = headerNames5[0];
+
+            // Grab the Item Name column from Materials
+            let firstColumnKeyMat = headerNames4[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData5.find(row => row[firstColumnKey] === selectedValue);
+            let matchedMatRow = globalTableData4.find(row => row[firstColumnKeyMat] === selectedMaterial);
+
+            if (matchedRow) {
+
+                    
+
+                // Figure out as much of our stuff here as we can, since we picked WEAPON (And hopefully picked a material too)!
+                    armBasePrice = matchedRow[headerNames5[10]]
+                    armHP = matchedRow[headerNames5[11]]
+                    armName = selectedValue
+                    armType = matchedRow[headerNames5[1]]
+                    armSlot = matchedRow[headerNames5[2]]
+
+                    // IF we also have material picked, then figure out material stuff here
+                    if (matchedMatRow) {
+                        armMat = selectedMaterial
+                        // Figure out our provmult for materials based on selected province name
+                        switch (selected_province) {
+                            case 'Enthan':
+                                armMatProvMult = matchedMatRow[headerNames4[10]] * 4
+                                break;
+                            case 'Taria':
+                                armMatProvMult = matchedMatRow[headerNames4[11]] * 4
+                                break;
+                            case 'Areth':
+                                armMatProvMult = matchedMatRow[headerNames4[12]] * 4
+                                break;
+                            case 'Gruss':
+                                armMatProvMult = matchedMatRow[headerNames4[13]]
+                                break;
+                            case 'Island':
+                                armMatProvMult = matchedMatRow[headerNames4[14]]
+                                break;
+                            default:
+                                armMatProvMult = 1
+
+                        }
+                        armMatCost = Number(matchedMatRow[headerNames4[3]]) * Number(armMatProvMult) * Number(armHP / 6) 
+                        armFullBasePrice = Number(armBasePrice) + Number(armMatCost)
+                        armMatDesc = matchedMatRow[headerNames4[15]]
+                        armMatArmEff = matchedMatRow[headerNames4[16]]
+                        armMatHard = matchedMatRow[headerNames4[18]]
+                        tier_val2 = Number(document.getElementById('tier2').value)
+                        
+
+                        // Prepare for calcs
+                        armFullCost = armFullBasePrice
+
+                        // Okay now we do the full full price INCLUDING enhancement (tier_val2)
+                        armFullCost = Math.round(armFullCost + ((tier_val2 * 1.5) * (armFullBasePrice)))
+
+                        // Okay we apply the settlement multiplier
+                        armFullCost = Math.round(armFullCost * settlement_mult)
+                    }
+                
+                //  OKAY so I tried simplifying the logic let's just set everything
+
+                    displayBox.innerHTML = `
+                                <p>You have chosen <strong>${selectedValue}</strong>, a <strong>${armType}</strong> armor piece for your <strong>${armSlot}</strong>. </p>
+                                <p> Your <strong>${selectedValue}</strong> is made of <strong>${armMat}</strong>, ${armMatDesc}. ${armMatArmEff} It has <strong>Hardness ${armMatHard}</strong> and <strong>${armHP} HP</strong>.</p>
+                                <p>Your <strong>${armMat} ${selectedValue}</strong> is Enhanced to +<strong>${tier_val2}</strong>, meaning it has <strong>${tier_val2}</strong> more <strong>AC</strong>, <strong>${tier_val2}</strong> more <strong>DR</strong>, and any <strong>Dex Penalty to AC</strong> it has is reduced by <strong>${tier_val2}</strong> (If it has these attributes to begin with). <strong>This Enhancement Bonus</strong> can be converted into <strong>Enchantments</strong>.</p>
+                                <p>Your <strong>${armMat} ${selectedValue}</strong> costs <strong>${armFullCost} ${currency}</strong></p>
+                                `;
+                
+                
+            } else {
+                displayBox.innerHTML = 'No data found for this selection.';
+            }
+        }
+
+        // Since armors have finicky rules about how high they can be enhanced, alter the tier2 value and max whenever the armor selection is changed
+        function resetArmorTier() {
+            // reset the value back to 0
+            document.getElementById('tier2').value = 0
+
+            // Set the max to a different value depending on the type of armor we have
+
+            // Start by grabbing everything so we can check the type
+            const selectedValue = document.getElementById('armorDropdown').value;
+            // Grab the Item Name column from Armors
+            let firstColumnKey = headerNames5[0];
+            let matchedRow = globalTableData5.find(row => row[firstColumnKey] === selectedValue);
+            armType = matchedRow[headerNames5[1]]
+            // Actually do the checking and setting
+            switch (armType) {
+                case 'Light':
+                    document.getElementById('tier2').max = 1
+                    break;
+                case 'Medium':
+                    document.getElementById('tier2').max = 2
+                    break;
+                case 'Heavy':
+                    document.getElementById('tier2').max = 3
+                    break;
+                case 'Shield':
+                    document.getElementById('tier2').max = 2
+                    break;
+                default:
+                    document.getElementById('tier2').max = 3
+                    break;
+            }
+
+            // Call the display after updating
+            displayRowData2()
+        }
+
+
+
+        // Do it for Settlement
+        function displaySettlementRowData() {
+            const selectedValue = document.getElementById('settlementDropdown').value;
+            const displayBox = document.getElementById('settlementDisplay');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'Where are you shopping?';
+                return;
+            }
+
+            // Grab the Item Name column
+            const firstColumnKey = headerNames2[0];
+
+            // Grab the row matching the item we picked
+            const matchedRow = globalTableData2.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+                // CHANGE THESE to match your actual specific column header names
+                const province = headerNames2[1] || 'Province';
+                const class_val = headerNames2[2] || 'Class';
+                const class_name = headerNames2[3] || 'Class Name';
+                const specialty = headerNames2[4] || 'Specialty';
+                const set_mult = headerNames2[6] || 'Class Modifier'
+
+                // Assign the settlement info to the permanent variables for display
+                settlement_name = matchedRow[firstColumnKey];
+                settlement_class_val = matchedRow[class_val];
+                settlement_mult = matchedRow[set_mult];
+                selected_province = matchedRow[province];
+                province_string = selected_province + ' Price';
+                province_mult_string = selected_province + ' Multiplier';
+                if (selected_province == 'Enthan') {
+                    currency = 'EP'
+                }
+                else if (selected_province == 'Taria') {
+                    currency = 'TP'
+                }
+                else if (selected_province == 'Areth') {
+                    currency = 'AP'
+                }
+                else {
+                    currency = 'GP'
+                }
+
+
+                displayBox.innerHTML = `
+                    <p><strong>Settlement:</strong> ${matchedRow[firstColumnKey]}</p>
+                    <p><strong>${province}:</strong> ${matchedRow[province] || 'N/A'}</p>
+                    <p><strong>Size:</strong> ${matchedRow[class_name] || 'N/A'}</p>
+                `;
+            } else {
+                displayBox.innerHTML = 'No data found for this selection.';
+            }
+
+            // Call the update function for the other dropdown so it changes live
+            displayRowData()
+            displayRowData2()
+        }
+
+        // Two simple functions to handle the count buttons
+        function increment(which_one) {
+            const input = document.getElementById(which_one);
+            input.stepUp();
+            // Keep the var we use for calculations up to date
+            switch (which_one) {
+                case 'tier':
+                    tier_val = Number(document.getElementById('tier').value);
+                    displayRowData()
+                break
+                case 'tier2':
+                    tier_val2 = Number(document.getElementById('tier2').value);
+                    displayRowData2()
+                break
+            }
+        }
+
+        function decrement(which_one) {
+            const input = document.getElementById(which_one);
+            input.stepDown();
+            // Keep the var we use for calculations up to date
+            switch (which_one) {
+                case 'tier':
+                    tier_val = Number(document.getElementById('tier').value);
+                    displayRowData()
+                break
+                case 'tier2':
+                    tier_val2 = Number(document.getElementById('tier2').value);
+                    displayRowData2()
+                break
+            }
+             // Call the update function for the other dropdown so it changes live
+            
+        }
+    </script>
+
+
+
+</html>

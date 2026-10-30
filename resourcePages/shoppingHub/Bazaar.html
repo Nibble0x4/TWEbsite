@@ -298,7 +298,7 @@
                     const col2Name = headerNames[3] || 'True Price';
 
                     displayBox.innerHTML = `
-                        <p><strong>${col2Name}:</strong> ${matchedRow[col2Name] * count_val * settlement_mult} GP</p>
+                        <p><strong>${col2Name}:</strong> ${matchedRow[col2Name] * count_val * tier_val} GP</p>
                     `;
                     const truePrice = headerNames[3]
                         
@@ -307,7 +307,7 @@
                     tier_val = Number(document.getElementById('tier').value);
 
                     displayBox.innerHTML = `
-                                <p><strong> Cost : ${Math.round((((tier_val  / 4) * (tier_val * tier_val) * matchedRow[truePrice]) + (matchedRow[truePrice] * count_val)) * provMult * settlement_mult )} ${currency} </p>
+                                <p><strong> True Price : ${Math.round((((tier_val  / 4) * (tier_val * tier_val) * matchedRow[truePrice]) + (matchedRow[truePrice] * count_val)) * provMult * settlement_mult )} GP </p>
                                 `;
                 }
                 else {
@@ -338,31 +338,6 @@
                         count_val = Number(document.getElementById('count').value);
                         tier_val = Number(document.getElementById('tier').value);
 
-                        //// Use count_val for minor/medium/major
-                        //// Use tier_val for lesser/greater
-                        // switch (document.getElementById('lesserGreater').value) {
-                        //     case 'lesser':
-                        //         tier_val = 1
-                        //     break
-                        //     case 'greater':
-                        //         tier_val = 2
-                        //     break
-                        //     default:
-                        //         tier_val = 1
-                        // }
-                        // switch (document.getElementById('minorMediumMajor').value) {
-                        //     case 'minor':
-                        //         count_val = 1
-                        //     break
-                        //     case 'medium':
-                        //         count_val = 2
-                        //     break
-                        //     case 'major':
-                        //         count_val = 3
-                        //     break
-                        //     default:
-                        //         count_val = 1
-                        // }
 
 
                         switch (selectedValue) {
