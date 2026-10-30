@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Docks </title>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="icon" type="image/x-icon" href="../../images/TWEbsiteFavicon.png">
+
+
+</head>
+<body class="std">
+
+	<h1 class="page-header"> Docks <button id="Picture-Button">Reroll Image</button></h1>
+		
+	<div id="page-select-box" class="option-box"> 
+		<h2> Pages: </h2>
+		<p class="option"> <u><a href="../../index.html" style="color:#aafff0">Intro Page</a></u></p>
+		<p style="font-style:underline; color:#ee0000; cursor:pointer">	<u><a href="../../TWEbsiteRulesetPage.html" style="font-style:underline; color:#ee0000;">Ruleset Page</a></u> </p>
+		<p style="font-style:underline; color:#eeee00; cursor:pointer">	<u><a href="../../TWEbsiteClassPage.html" style="font-style:underline; color:#eeee00; cursor:pointer">Classes Page</a></u> </p>
+		<p style="font-style:underline; color:#00dd00; cursor:pointer" > <a href="../../TWEbsiteRacesPage.html" style="font-style:underline; color:#00dd00;"><u>Races Page </u></a> </p>
+		<p style="font-style:underline; color:#0000dd; cursor:pointer">	<u><a href="../../TWEbsiteLorePage.html" style="font-style:underline; color:#0000dd;">Lore Page</a> </u> </p> 
+		<p style="font-style:underline; color:#440044; cursor:pointer">	<u><a href="../../TWEbsiteResourcesPage.html" style="font-style:underline; color:#440044;">Resources Page</a> </u> </p>
+
+	</div>
+
+	<a id="Picture-Link" target="_blank" href="images/Manabound/ManaboundImage.jpg">
+		<img id="Picture" src="images/Manabound/ManaboundImage.jpg" class="class-picture">
+	</a>
+
+	<br>
+	
+	<div class="weapontableDiv">
+		<b class="header"> Docks </b>
+		<br>
+		<br>
+	<br> <p class="class-description"> Docks exist in all ports of TWE, and most settlements have a marketplace equivalent. Either way, this is the place where most merchants make their money!
+		<br><br> Most merchants make money through the buying and selling of general goods. Materials that can be acquired cheaply in one place and sold for a profit elsewhere. Use this page to explore costs surrounding different goods throughout TWE!
+		<br><br> Don't forget to select your settlement to get adjusted prices and proper currencies!
+
+	</p></div>
+</p>
+	
+
+	<hr>
+
+
+    <div class="weapontableDiv">
+
+    
+        <br><br><b class="subheader">Where are you? </b><br><br>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="settlementDropdown" onchange="displaySettlementRowData()">
+            <option value="">-- Choose a name --</option>
+        </select>
+
+        <!-- Results Display -->
+        <div id="settlementDisplay">
+            This will help inform your shopping!
+        </div>
+        <br><br>
+
+
+
+        <br><br>
+		<b class="header"> Mercantile Goods </b>
+		<br>
+		<br>
+		<hr>
+		</p>
+
+        <br>
+        <b class="subheader">Running Total</b>
+        <br>
+        <br>
+        <h2 id="total"></h2>
+        <br>
+        <br>
+        <hr>
+
+
+        <br><br><b class="subheader">Select Items</b>   |   <b> How many Pounds? </b><br><br>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="itemDropdown" onchange="displayRowData()">
+            <option value="">-- Choose a good --</option>
+        </select>
+        <input type="number" id="1" value="1" min="0" max="1000" step="1" onchange="displayRowData()">
+        <button onclick="increment('1')">+1</button>
+        <button onclick="decrement('1')">-1</button>
+        <p id="resultDisplay"></p>
+
+        <hr>
+
+        <!-- Dropdown populated dynamically -->
+        <select id="itemDropdown2" onchange="displayRowData2()">
+            <option value="">-- Choose a good --</option>
+        </select>
+        <input type="number" id="2" value="1" min="0" max="1000" step="1" onchange="displayRowData2()">
+        <button onclick="increment('2')">+1</button>
+        <button onclick="decrement('2')">-1</button>
+        <p id="resultDisplay2"></p>
+
+        <hr>
+
+        <!-- Dropdown populated dynamically -->
+        <select id="itemDropdown3" onchange="displayRowData3()">
+            <option value="">-- Choose a good --</option>
+        </select>
+        <input type="number" id="3" value="1" min="0" max="1000" step="1" onchange="displayRowData3()">
+        <button onclick="increment('3')">+1</button>
+        <button onclick="decrement('3')">-1</button>
+        <p id="resultDisplay3"></p>
+
+        <hr>
+
+        <!-- Dropdown populated dynamically -->
+        <select id="itemDropdown4" onchange="displayRowData4()">
+            <option value="">-- Choose a good --</option>
+        </select>
+        <input type="number" id="4" value="1" min="0" max="1000" step="1" onchange="displayRowData4()">
+        <button onclick="increment('4')">+1</button>
+        <button onclick="decrement('4')">-1</button>
+        <p id="resultDisplay4"></p>
+
+        <hr>
+
+        <!-- Dropdown populated dynamically -->
+        <select id="itemDropdown5" onchange="displayRowData5()">
+            <option value="">-- Choose a good --</option>
+        </select>
+        <input type="number" id="5" value="1" min="0" max="1000" step="1" onchange="displayRowData5()">
+        <button onclick="increment('5')">+1</button>
+        <button onclick="decrement('5')">-1</button>
+        <p id="resultDisplay5"></p>
+
+        <hr>
+
+        <!-- Dropdown populated dynamically -->
+        <select id="itemDropdown6" onchange="displayRowData6()">
+            <option value="">-- Choose a good --</option>
+        </select>
+        <input type="number" id="6" value="1" min="0" max="1000" step="1" onchange="displayRowData6()">
+        <button onclick="increment('6')">+1</button>
+        <button onclick="decrement('6')">-1</button>
+        <p id="resultDisplay6"></p>
+        
+
+        <!-- Results Display
+        <div id="resultDisplay">
+            Select a value from the dropdown to see details.
+        </div> -->
+
+        <hr>
+        <br><br><br><br><br>
+
+		
+
+	
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=1040507961&single=true&output=csv';
+        const settlementUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=117792388&single=true&output=csv'
+        
+        // for Item 1
+        let globalTableData = [];
+        let headerNames = [];
+
+        // for settlement stuff
+        let globalTableData2 = [];
+        let headerNames2 = [];
+
+        // for Item 2
+        let globalTableData3 = [];
+        let headerNames3 = [];
+
+        // for Item 3
+        let globalTableData4 = [];
+        let headerNames4 = [];
+
+        // for Item 4
+        let globalTableData5 = [];
+        let headerNames5 = [];
+
+        // for Item 5
+        let globalTableData6 = [];
+        let headerNames6 = [];
+
+        // for Item 6
+        let globalTableData7 = [];
+        let headerNames7 = [];
+
+
+        let settlement_name = ''
+        let settlement_class_val = 0
+        let settlement_mult = 1
+        let selected_province = ''
+        let province_string = ''
+        let province_mult_string = ''
+        let currency = 'GP'
+        
+
+        let item1_total = 0
+        let item1_val = 0
+        let count1_val = 1
+        let item2_total = 0
+        let item2_val = 0
+        let count2_val = 1
+        let item3_total = 0
+        let item3_val = 0
+        let count3_val = 1
+        let item4_total = 0
+        let item4_val = 0
+        let count4_val = 1
+        let item5_total = 0
+        let item5_val = 0
+        let count5_val = 1
+        let item6_total = 0
+        let item6_val = 0
+        let count6_val = 1
+
+        // Fetch and parse the sheet data on page load
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData = dataRows.map(row => {
+                    let obj = {};
+                    headerNames.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('itemDropdown');
+                const firstColumnKey = headerNames[0];
+
+                globalTableData.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+        // Fetch 2!
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData = dataRows.map(row => {
+                    let obj = {};
+                    headerNames.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('itemDropdown2');
+                const firstColumnKey = headerNames[0];
+
+                globalTableData.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+        // Fetch 3!
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData = dataRows.map(row => {
+                    let obj = {};
+                    headerNames.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('itemDropdown3');
+                const firstColumnKey = headerNames[0];
+
+                globalTableData.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+        
+        // Fetch 4!
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData = dataRows.map(row => {
+                    let obj = {};
+                    headerNames.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('itemDropdown4');
+                const firstColumnKey = headerNames[0];
+
+                globalTableData.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+        // Fetch 5!
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData = dataRows.map(row => {
+                    let obj = {};
+                    headerNames.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('itemDropdown5');
+                const firstColumnKey = headerNames[0];
+
+                globalTableData.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+        // Fetch 6!
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData = dataRows.map(row => {
+                    let obj = {};
+                    headerNames.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('itemDropdown6');
+                const firstColumnKey = headerNames[0];
+
+                globalTableData.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+
+        // Fetch and parse again on the settlement table
+        fetch(settlementUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames2 = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData2 = dataRows.map(row => {
+                    let obj = {};
+                    headerNames2.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames2[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('settlementDropdown');
+                const firstColumnKey = headerNames2[0];
+
+                globalTableData2.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+
+        // Function triggered when dropdown selection changes
+        function displayRowData() {
+            const selectedValue = document.getElementById('itemDropdown').value;
+            const displayBox = document.getElementById('resultDisplay');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'We are not getting a selected value!';
+                return;
+            }
+            else {
+                displayBox.innerHTML = `Value: ${selectedValue}`;
+            }
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+
+                // Figure out as much of our stuff here as we can
+                    item1_total = 0
+                    item1_val = matchedRow[headerNames[3]]
+                    switch (selected_province) {
+                        case 'Enthan':
+                            item1_val = item1_val * matchedRow[headerNames[10]] * 4
+                        break;
+                        case 'Taria':
+                            item1_val = item1_val * matchedRow[headerNames[11]] * 4
+                        break;
+                        case 'Areth':
+                            item1_val = item1_val * matchedRow[headerNames[12]] * 4
+                        break;
+                        case 'Gruss':
+                            item1_val = item1_val * matchedRow[headerNames[13]]
+                        break;
+                        case 'Island':
+                            item1_val = item1_val * matchedRow[headerNames[14]]
+                        break;
+                        default:
+                            item1_val = item1_val
+                    }
+                    item1_total = Math.round(item1_val * count1_val / 5)
+
+                
+                //  OKAY so I tried simplifying the logic let's just set everything
+                    displayBox.innerHTML = `Market Value: <strong>${item1_total} ${currency}</strong>`;
+            }
+            else {
+                displayBox.innerHTML = `
+                                <p>AUR NAUR</p>
+                                `;
+            }
+            updateTotal()
+        }
+
+        // Display 2
+        function displayRowData2() {
+            const selectedValue = document.getElementById('itemDropdown2').value;
+            const displayBox = document.getElementById('resultDisplay2');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'We are not getting a selected value!';
+                return;
+            }
+            else {
+                displayBox.innerHTML = `Value: ${selectedValue}`;
+            }
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+
+                // Figure out as much of our stuff here as we can
+                    item2_total = 0
+                    item2_val = matchedRow[headerNames[3]]
+                    switch (selected_province) {
+                        case 'Enthan':
+                            item2_val = item2_val * matchedRow[headerNames[10]] * 4
+                        break;
+                        case 'Taria':
+                            item2_val = item2_val * matchedRow[headerNames[11]] * 4
+                        break;
+                        case 'Areth':
+                            item2_val = item2_val * matchedRow[headerNames[12]] * 4
+                        break;
+                        case 'Gruss':
+                            item2_val = item2_val * matchedRow[headerNames[13]]
+                        break;
+                        case 'Island':
+                            item2_val = item2_val * matchedRow[headerNames[14]]
+                        break;
+                        default:
+                            item2_val = item2_val
+                    }
+                    item2_total = Math.round(item2_val * count2_val / 5)
+
+                
+                //  OKAY so I tried simplifying the logic let's just set everything
+                    displayBox.innerHTML = `Market Value: <strong>${item2_total} ${currency}</strong>`;
+            }
+            else {
+                displayBox.innerHTML = `
+                                <p>AUR NAUR</p>
+                                `;
+            }
+            updateTotal()
+        }
+
+    // Display 3
+        function displayRowData3() {
+            const selectedValue = document.getElementById('itemDropdown3').value;
+            const displayBox = document.getElementById('resultDisplay3');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'We are not getting a selected value!';
+                return;
+            }
+            else {
+                displayBox.innerHTML = `Value: ${selectedValue}`;
+            }
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+
+                // Figure out as much of our stuff here as we can
+                    item3_total = 0
+                    item3_val = matchedRow[headerNames[3]]
+                    switch (selected_province) {
+                        case 'Enthan':
+                            item3_val = item3_val * matchedRow[headerNames[10]] * 4
+                        break;
+                        case 'Taria':
+                            item3_val = item3_val * matchedRow[headerNames[11]] * 4
+                        break;
+                        case 'Areth':
+                            item3_val = item3_val * matchedRow[headerNames[12]] * 4
+                        break;
+                        case 'Gruss':
+                            item3_val = item3_val * matchedRow[headerNames[13]]
+                        break;
+                        case 'Island':
+                            item3_val = item3_val * matchedRow[headerNames[14]]
+                        break;
+                        default:
+                            item3_val = item3_val
+                    }
+                    item3_total = Math.round(item3_val * count3_val / 5)
+
+                
+                //  OKAY so I tried simplifying the logic let's just set everything
+                    displayBox.innerHTML = `Market Value: <strong>${item3_total} ${currency}</strong>`;
+            }
+            else {
+                displayBox.innerHTML = `
+                                <p>AUR NAUR</p>
+                                `;
+            }
+            updateTotal()
+        }
+
+        // Display 4
+        function displayRowData4() {
+            const selectedValue = document.getElementById('itemDropdown4').value;
+            const displayBox = document.getElementById('resultDisplay4');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'We are not getting a selected value!';
+                return;
+            }
+            else {
+                displayBox.innerHTML = `Value: ${selectedValue}`;
+            }
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+
+                // Figure out as much of our stuff here as we can
+                    item4_total = 0
+                    item4_val = matchedRow[headerNames[3]]
+                    switch (selected_province) {
+                        case 'Enthan':
+                            item4_val = item4_val * matchedRow[headerNames[10]] * 4
+                        break;
+                        case 'Taria':
+                            item4_val = item4_val * matchedRow[headerNames[11]] * 4
+                        break;
+                        case 'Areth':
+                            item4_val = item4_val * matchedRow[headerNames[12]] * 4
+                        break;
+                        case 'Gruss':
+                            item4_val = item4_val * matchedRow[headerNames[13]]
+                        break;
+                        case 'Island':
+                            item4_val = item4_val * matchedRow[headerNames[14]]
+                        break;
+                        default:
+                            item4_val = item4_val
+                    }
+                    item4_total = Math.round(item4_val * count4_val / 5)
+
+                
+                //  OKAY so I tried simplifying the logic let's just set everything
+                    displayBox.innerHTML = `Market Value: <strong>${item4_total} ${currency}</strong>`;
+            }
+            else {
+                displayBox.innerHTML = `
+                                <p>AUR NAUR</p>
+                                `;
+            }
+            updateTotal()
+        }
+
+        // Display 5
+        function displayRowData5() {
+            const selectedValue = document.getElementById('itemDropdown5').value;
+            const displayBox = document.getElementById('resultDisplay5');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'We are not getting a selected value!';
+                return;
+            }
+            else {
+                displayBox.innerHTML = `Value: ${selectedValue}`;
+            }
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+
+                // Figure out as much of our stuff here as we can
+                    item5_total = 0
+                    item5_val = matchedRow[headerNames[3]]
+                    switch (selected_province) {
+                        case 'Enthan':
+                            item5_val = item5_val * matchedRow[headerNames[10]] * 4
+                        break;
+                        case 'Taria':
+                            item5_val = item5_val * matchedRow[headerNames[11]] * 4
+                        break;
+                        case 'Areth':
+                            item5_val = item5_val * matchedRow[headerNames[12]] * 4
+                        break;
+                        case 'Gruss':
+                            item5_val = item5_val * matchedRow[headerNames[13]]
+                        break;
+                        case 'Island':
+                            item5_val = item5_val * matchedRow[headerNames[14]]
+                        break;
+                        default:
+                            item5_val = item5_val
+                    }
+                    item5_total = Math.round(item5_val * count5_val / 5)
+
+                
+                //  OKAY so I tried simplifying the logic let's just set everything
+                    displayBox.innerHTML = `Market Value: <strong>${item5_total} ${currency}</strong>`;
+            }
+            else {
+                displayBox.innerHTML = `
+                                <p>AUR NAUR</p>
+                                `;
+            }
+            updateTotal()
+        }
+
+        // Display 6
+        function displayRowData6() {
+            const selectedValue = document.getElementById('itemDropdown6').value;
+            const displayBox = document.getElementById('resultDisplay6');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'We are not getting a selected value!';
+                return;
+            }
+            else {
+                displayBox.innerHTML = `Value: ${selectedValue}`;
+            }
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+
+                // Figure out as much of our stuff here as we can
+                    item6_total = 0
+                    item6_val = matchedRow[headerNames[3]]
+                    switch (selected_province) {
+                        case 'Enthan':
+                            item6_val = item6_val * matchedRow[headerNames[10]] * 4
+                        break;
+                        case 'Taria':
+                            item6_val = item6_val * matchedRow[headerNames[11]] * 4
+                        break;
+                        case 'Areth':
+                            item6_val = item6_val * matchedRow[headerNames[12]] * 4
+                        break;
+                        case 'Gruss':
+                            item6_val = item6_val * matchedRow[headerNames[13]]
+                        break;
+                        case 'Island':
+                            item6_val = item6_val * matchedRow[headerNames[14]]
+                        break;
+                        default:
+                            item6_val = item6_val
+                    }
+                    item6_total = Math.round(item6_val * count6_val / 5)
+
+                
+                //  OKAY so I tried simplifying the logic let's just set everything
+                    displayBox.innerHTML = `Market Value: <strong>${item6_total} ${currency}</strong>`;
+            }
+            else {
+                displayBox.innerHTML = `
+                                <p>AUR NAUR</p>
+                                `;
+            }
+            updateTotal()
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Do it for Settlement
+        function displaySettlementRowData() {
+            const selectedValue = document.getElementById('settlementDropdown').value;
+            const displayBox = document.getElementById('settlementDisplay');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'Where are you shopping?';
+                return;
+            }
+
+            // Grab the Item Name column
+            const firstColumnKey = headerNames2[0];
+
+            // Grab the row matching the item we picked
+            const matchedRow = globalTableData2.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+                // CHANGE THESE to match your actual specific column header names
+                const province = headerNames2[1] || 'Province';
+                const class_val = headerNames2[2] || 'Class';
+                const class_name = headerNames2[3] || 'Class Name';
+                const specialty = headerNames2[4] || 'Specialty';
+                const set_mult = headerNames2[6] || 'Class Modifier'
+
+                // Assign the settlement info to the permanent variables for display
+                settlement_name = matchedRow[firstColumnKey];
+                settlement_class_val = matchedRow[class_val];
+                settlement_mult = matchedRow[set_mult];
+                selected_province = matchedRow[province];
+                province_string = selected_province + ' Price';
+                province_mult_string = selected_province + ' Multiplier';
+                if (selected_province == 'Enthan') {
+                    currency = 'EP'
+                }
+                else if (selected_province == 'Taria') {
+                    currency = 'TP'
+                }
+                else if (selected_province == 'Areth') {
+                    currency = 'AP'
+                }
+                else {
+                    currency = 'GP'
+                }
+
+
+                displayBox.innerHTML = `
+                    <p><strong>Settlement:</strong> ${matchedRow[firstColumnKey]}</p>
+                    <p><strong>${province}:</strong> ${matchedRow[province] || 'N/A'}</p>
+                    <p><strong>Size:</strong> ${matchedRow[class_name] || 'N/A'}</p>
+                `;
+            } else {
+                displayBox.innerHTML = 'No data found for this selection.';
+            }
+
+            // Call the update function for the other dropdown so it changes live
+            displayRowData()
+        }
+
+        // Two simple functions to handle the count buttons
+        function increment(which_one) {
+            const input = document.getElementById(which_one);
+            input.stepUp();
+            // Keep the var we use for calculations up to date
+            switch (which_one) {
+                case '1':
+                    count1_val = Number(document.getElementById('1').value);
+                    displayRowData()
+                break
+                case '2':
+                    count2_val = Number(document.getElementById('2').value);
+                    displayRowData2()
+                break
+                case '3':
+                    count3_val = Number(document.getElementById('3').value);
+                    displayRowData3()
+                break
+                case '4':
+                    count4_val = Number(document.getElementById('4').value);
+                    displayRowData4()
+                break
+                case '5':
+                    count5_val = Number(document.getElementById('5').value);
+                    displayRowData5()
+                break
+                case '6':
+                    count6_val = Number(document.getElementById('6').value);
+                    displayRowData6()
+                break
+            }
+        }
+
+        function decrement(which_one) {
+            const input = document.getElementById(which_one);
+            input.stepDown();
+            // Keep the var we use for calculations up to date
+            switch (which_one) {
+                case '1':
+                    count1_val = Number(document.getElementById('1').value);
+                    displayRowData()
+                break
+                case '2':
+                    count2_val = Number(document.getElementById('2').value);
+                    displayRowData2()
+                break
+                case '3':
+                    count3_val = Number(document.getElementById('3').value);
+                    displayRowData3()
+                break
+                case '4':
+                    count4_val = Number(document.getElementById('4').value);
+                    displayRowData4()
+                break
+                case '5':
+                    count5_val = Number(document.getElementById('5').value);
+                    displayRowData5()
+                break
+                case '6':
+                    count6_val = Number(document.getElementById('6').value);
+                    displayRowData6()
+                break
+            }
+        }
+
+        function updateTotal() {
+            let full_total = item1_total + item2_total + item3_total + item4_total + item5_total + item6_total
+            document.getElementById('total').innerHTML = `${full_total} ${currency}`
+        }
+    </script>
+
+
+
+</html>
