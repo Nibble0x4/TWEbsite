@@ -244,9 +244,42 @@
                     const col2Name = headerNames[3] || 'True Price';
                     const col3Name = headerNames[9] || 'GP Conversion';
 
-                    displayBox.innerHTML = `
-                        <p><strong>${col2Name}:</strong> ${matchedRow[col2Name] * count_val * settlement_mult} GP</p>
-                    `;
+                    // Keep the var we use for calculations up to date
+                    count_val = Number(document.getElementById('count').value);
+
+                    const truePrice = headerNames[3]
+
+                    switch (selectedValue) {
+                        case 'Shop Stall':
+                            displayBox.innerHTML = `
+                            <p><strong> Cost : ${Math.round(((matchedRow[truePrice] * count_val) + ((matchedRow[truePrice] / 2) * (1 / count_val))))} GP </p>
+                            `;
+                            document.getElementById('countPrompt').innerHTML = 'How many days will you be doing Business?'
+                        break
+                        case 'House':
+                            displayBox.innerHTML = `
+                            <p><strong> Cost : ${Math.round(((matchedRow[truePrice] * count_val) + (200 * 1.5)))} GP </p>
+                            `;
+                            document.getElementById('countPrompt').innerHTML = 'How many rooms do you want?'
+                        break
+                        case 'Apartment':
+                            displayBox.innerHTML = `
+                            <p><strong> Cost : ${Math.round(((matchedRow[truePrice] * count_val) + (150 * 1.2)))} GP </p>
+                            `;
+                            document.getElementById('countPrompt').innerHTML = 'How many rooms do you want?'
+                        break
+                        case 'Foreign Weapon Sales Permit':
+                            displayBox.innerHTML = `
+                            <p><strong> Cost : ${((Number(matchedRow[truePrice]) + Number(matchedRow[truePrice] * (count_val * 0.5))))} GP </p>
+                            `;
+                            document.getElementById('countPrompt').innerHTML = 'How many days will you be selling these weapons?'
+                        break
+                        default:
+                            displayBox.innerHTML = `
+                            <p>ERROR</p>
+                            `;
+                            document.getElementById('countPrompt').innerHTML = 'How many rooms do you want?'
+                    }
                 }
                 else {
                     // If we do have a settlement picked, do a similar but different thing
@@ -293,6 +326,12 @@
                                 <p><strong> Cost : ${Math.round(((matchedRow[truePrice] * count_val) + (150 * 1.2)) * provMult * settlement_mult)} ${currency} </p>
                                 `;
                                 document.getElementById('countPrompt').innerHTML = 'How many rooms do you want?'
+                            break
+                            case 'Foreign Weapon Sales Permit':
+                                displayBox.innerHTML = `
+                                <p><strong> Cost : ${Math.round((Number(matchedRow[truePrice]) + Number(matchedRow[truePrice] * (count_val * 0.5))) * provMult * settlement_mult)} ${currency} </p>
+                                `;
+                                document.getElementById('countPrompt').innerHTML = 'How many days will you be selling these weapons?'
                             break
                             default:
                                 displayBox.innerHTML = `

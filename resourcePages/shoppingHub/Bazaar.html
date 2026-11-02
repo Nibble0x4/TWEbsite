@@ -128,8 +128,88 @@
             Select a value from the dropdown to see details.
         </div>
 
+
+
+        <br><br><hr>
+        
+        
+        
+        <br><br><b class="subheader">Enchanting</b><br><br>
+
+        <p class=""class-description> When you enchant your weapon with an effect, the effect has an Enhancement Cost (Something between +1 and +5). The total cost of all enchantments on an item cannot exceed the Enhancement Bonus of the item. Otherwise, feel free to enchant an item with multiple effects! </p>
+        
+
+        <h3 id="existingEnchantPrompt"> How much has your item been enchanted already?</h3>
+        <input type="number" id="existTier" value="0" min="0" max="4" step="1" onchange="updateEnchantCosts()">
+        <button onclick="increment('existTier')">+1</button>
+        <button onclick="decrement('existTier')">-1</button>
+
+        <br><br><br><br>
         <hr>
+        <br><br>
+
+        <!-- Dropdown populated dynamically -->
+        <select id="enchantMDropdown" onchange="displayRowData3()">
+            <option value="">-- Choose a Melee Enchant --</option>
+        </select>
+
+        
+
+        <!-- Results Display -->
+        <div id="resultDisplay3">
+            <label id="EBMCost"></label> 
+            <br>
+            <label id="enchantMEffect"></label>
+            <br>
+            <label id="enchantMBoostedEffect"></label>
+            <br>
+            <label id="enchantMCost"></label>
+        </div>
+
+        <hr>
+        <br><br>
+
+        <!-- Dropdown populated dynamically -->
+        <select id="enchantRDropdown" onchange="displayRowData4()">
+            <option value="">-- Choose a Ranged Enchant --</option>
+        </select>
+
+        
+
+        <!-- Results Display -->
+        <div id="resultDisplay4">
+            <label id="EBRCost"></label> 
+            <br>
+            <label id="enchantREffect"></label>
+            <br>
+            <label id="enchantRCost"></label>
+        </div>
+
+        <hr>
+        <br><br>
+
+        <!-- Dropdown populated dynamically -->
+        <select id="enchantADropdown" onchange="displayRowData5()">
+            <option value="">-- Choose an Armor Enchant --</option>
+        </select>
+
+        
+
+        <!-- Results Display -->
+        <div id="resultDisplay5">
+            <label id="EBACost"></label> 
+            <br>
+            <label id="enchantAEffect"></label>
+            <br>
+            <label id="enchantACost"></label>
+        </div>
+
+        <hr>
+        <br><br>
         <br><br><br><br><br>
+
+
+        
 
 		
 
@@ -167,7 +247,8 @@
 
 <script>
         const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=188928295&single=true&output=csv';
-        const settlementUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=117792388&single=true&output=csv'
+        const settlementUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=117792388&single=true&output=csv';
+        const enchantUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=1860019811&single=true&output=csv';
         
         let globalTableData = [];
         let headerNames = [];
@@ -175,15 +256,27 @@
         let globalTableData2 = [];
         let headerNames2 = [];
 
+        // For Melee, Ranged, Armor, and Shield Enchants
+        let globalTableData3 = [];
+        let headerNames3 = [];
+        let headerNames4 = [];
+        let headerNames5 = [];
+        let headerNames6 = [];
+
         let settlement_name = ''
         let settlement_class_val = 0
         let settlement_mult = 1
         let selected_province = ''
         let province_string = ''
         let province_mult_string = ''
-        let currency = ''
+        let currency = 'GP'
         let count_val = 1
         let tier_val = 1
+
+        let meleeCost = 0;
+        let rangedCost = 0;
+        let armorCost = 0;
+        let existingLevel = 0;
 
         // Fetch and parse the sheet data on page load
         fetch(csvUrl)
@@ -274,6 +367,62 @@
                 document.getElementById('resultDisplay').innerText = 'Error loading data.';
             });
 
+
+        // Fetch and parse the ENCHANT data on page load
+        fetch(enchantUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames3 = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData3 = dataRows.map(row => {
+                    let obj = {};
+                    headerNames3.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames3[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                let dropdown = document.getElementById('enchantMDropdown');
+                const firstColumnKey = headerNames3[0];
+
+                // Grab ALL the enchants
+                // At some point, we will make this parse out the Melee, Ranged, Armor, and maybe Shield enchants.
+                globalTableData3.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        // Check the Type and put it in a different dropdown accordingly
+                        switch (row[headerNames3[1]]) {
+                            case 'Melee':
+                                dropdown = document.getElementById('enchantMDropdown');
+                            break
+                            case 'Ranged':
+                                dropdown = document.getElementById('enchantRDropdown');
+                            break
+                            case 'Armor':
+                                dropdown = document.getElementById('enchantADropdown');
+                            break
+                            default:
+                                dropdown = document.getElementById('enchantMDropdown');
+                        }
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+        
 
         // Function triggered when dropdown selection changes
         function displayRowData() {
@@ -608,7 +757,180 @@
             // Call the update function for the other dropdown so it changes live
             displayRowData()
             displayRowData2()
+            updateEnchantCosts()
         }
+
+
+
+        // Display Melee enchant stuff
+        function displayRowData3() {
+            const selectedValue = document.getElementById('enchantMDropdown').value;
+            // const displayBox = document.getElementById('resultDisplay3');
+            const displayBox = document.getElementById('EBMCost');
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames3[0];
+            let firstColumnKey2 = headerNames[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData3.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+
+                // Figure out as much of our stuff here as we can
+
+                    // Figure out the province mult by checking the Magical Item mults
+                    let matchedRow2 = globalTableData.find(row => row[firstColumnKey2] === 'Magical Item');
+                    provMult = 1
+                    switch (selected_province) {
+                        case 'Enthan':
+                            provMult = provMult * matchedRow2[headerNames[10]] * 4
+                        break;
+                        case 'Taria':
+                            provMult = provMult * matchedRow2[headerNames[11]] * 4
+                        break;
+                        case 'Areth':
+                            provMult = provMult * matchedRow2[headerNames[12]] * 4
+                        break;
+                        case 'Gruss':
+                            provMult = provMult * matchedRow2[headerNames[13]]
+                        break;
+                        case 'Island':
+                            provMult = provMult * matchedRow2[headerNames[14]]
+                        break;
+                    }
+                    let enchantLvl = matchedRow[headerNames3[2]]
+
+                    // meleeCost = Math.round(((Number(enchantLvl) * 0.8) * (Number(enchantLvl) * 0.8) * 25 + Number(Number(existingLevel) * Number(existingLevel) * 30 * 0.8)) * Number(provMult) * Number(settlement_mult))
+                    meleeCost = Math.round(((Number(enchantLvl) * 1.2 * 50) + (50 * Number(existingLevel) * 1.2)) * Number(settlement_mult) * Number(provMult))
+
+                    displayBox.innerHTML = `<p><b>Enhancement Bonus Cost:</b> +${enchantLvl}</p>
+                    <p><b>Enchant Effect:</b> ${matchedRow[headerNames3[3]]}</p>
+                    <p><b>Enchant Effect if Boosted(By Arcanite or similar effect):</b> ${matchedRow[headerNames3[4]]}</p>
+                    <p><b>Monetary Cost:</b> ${meleeCost} ${currency}</p>
+                    `;
+            }
+        }
+
+
+        // Display Ranged enchant stuff
+        function displayRowData4() {
+            const selectedValue = document.getElementById('enchantRDropdown').value;
+            // const displayBox = document.getElementById('resultDisplay3');
+            const displayBox = document.getElementById('EBRCost');
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames3[0];
+            let firstColumnKey2 = headerNames[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData3.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+
+                // Figure out as much of our stuff here as we can
+
+                    // Figure out the province mult by checking the Magical Item mults
+                    let matchedRow2 = globalTableData.find(row => row[firstColumnKey2] === 'Magical Item');
+                    provMult = 1
+                    switch (selected_province) {
+                        case 'Enthan':
+                            provMult = provMult * matchedRow2[headerNames[10]] * 4
+                        break;
+                        case 'Taria':
+                            provMult = provMult * matchedRow2[headerNames[11]] * 4
+                        break;
+                        case 'Areth':
+                            provMult = provMult * matchedRow2[headerNames[12]] * 4
+                        break;
+                        case 'Gruss':
+                            provMult = provMult * matchedRow2[headerNames[13]]
+                        break;
+                        case 'Island':
+                            provMult = provMult * matchedRow2[headerNames[14]]
+                        break;
+                    }
+                    let enchantLvl = matchedRow[headerNames3[2]]
+
+                    rangedCost = Math.round(((Number(enchantLvl) * 1.2 * 50) + (50 * Number(existingLevel) * 1.2)) * Number(settlement_mult) * Number(provMult))
+
+                    displayBox.innerHTML = `<p><b>Enhancement Bonus Cost:</b> +${enchantLvl}</p>
+                    <p><b>Enchant Effect:</b> ${matchedRow[headerNames3[3]]}</p>
+                    <p><b>Enchant Effect if Boosted(By Arcanite or similar effect):</b> ${matchedRow[headerNames3[4]]}</p>
+                    <p><b>Monetary Cost:</b> ${rangedCost} ${currency}</p>
+                    `;
+            }
+        }
+
+
+        // Display Armor enchant stuff
+        function displayRowData5() {
+            const selectedValue = document.getElementById('enchantADropdown').value;
+            // const displayBox = document.getElementById('resultDisplay3');
+            const displayBox = document.getElementById('EBACost');
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames3[0];
+            let firstColumnKey2 = headerNames[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData3.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+
+                // Figure out as much of our stuff here as we can
+
+                    // Figure out the province mult by checking the Magical Item mults
+                    let matchedRow2 = globalTableData.find(row => row[firstColumnKey2] === 'Magical Item');
+                    provMult = 1
+                    switch (selected_province) {
+                        case 'Enthan':
+                            provMult = provMult * matchedRow2[headerNames[10]] * 4
+                        break;
+                        case 'Taria':
+                            provMult = provMult * matchedRow2[headerNames[11]] * 4
+                        break;
+                        case 'Areth':
+                            provMult = provMult * matchedRow2[headerNames[12]] * 4
+                        break;
+                        case 'Gruss':
+                            provMult = provMult * matchedRow2[headerNames[13]]
+                        break;
+                        case 'Island':
+                            provMult = provMult * matchedRow2[headerNames[14]]
+                        break;
+                    }
+                    let enchantLvl = matchedRow[headerNames3[2]]
+
+                    armorCost = Math.round(((Number(enchantLvl) * 1.2 * 50) + (50 * Number(existingLevel) * 1.2)) * Number(settlement_mult) * Number(provMult))
+
+                    displayBox.innerHTML = `<p><b>Enhancement Bonus Cost:</b> +${enchantLvl}</p>
+                    <p><b>Enchant Effect:</b> ${matchedRow[headerNames3[3]]}</p>
+                    <p><b>Enchant Effect if Boosted(By Arcanite or similar effect):</b> ${matchedRow[headerNames3[4]]}</p>
+                    <p><b>Monetary Cost:</b> ${armorCost} ${currency}</p>
+                    `;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // Two simple functions to handle the count buttons
         function increment(which_one) {
@@ -622,9 +944,14 @@
                 case 'tier':
                     tier_val = Number(document.getElementById('tier').value);
                 break
+                case 'existTier':
+                    existingLevel = Number(document.getElementById('existTier').value);
+                break
             }
              // Call the update function for the other dropdown so it changes live
             displayRowData()
+            displayRowData2()
+            updateEnchantCosts()
         }
 
         function decrement(which_one) {
@@ -638,9 +965,22 @@
                 case 'tier':
                     tier_val = Number(document.getElementById('tier').value);
                 break
+                case 'existTier':
+                    existingLevel = Number(document.getElementById('existTier').value);
+                break
             }
              // Call the update function for the other dropdown so it changes live
             displayRowData()
+            displayRowData2()
+            updateEnchantCosts()
+        }
+
+
+
+        function updateEnchantCosts() {
+            displayRowData3();
+            displayRowData4();
+            displayRowData5();
         }
     </script>
 
