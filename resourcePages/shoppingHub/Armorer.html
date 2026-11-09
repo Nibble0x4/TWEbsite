@@ -519,6 +519,9 @@
 
                         // Okay we apply the settlement multiplier
                         weapFullCost = Math.round(weapFullCost * settlement_mult)
+
+                        // Now that we have the calcs handled, increase the HP of the weapon according to enhancement
+                        weapHP = weapHP * (1 + (2 * tier_val))
                     }
                 
                 //  OKAY so I tried simplifying the logic let's just set everything
@@ -611,6 +614,9 @@
 
                         // Okay we apply the settlement multiplier
                         armFullCost = Math.round(armFullCost * settlement_mult)
+                        
+                        // Now that we have the calcs handled, increase the HP of the armor according to enhancement
+                        armHP = armHP * (1 + (2 * tier_val2))
                     }
                 
                 //  OKAY so I tried simplifying the logic let's just set everything

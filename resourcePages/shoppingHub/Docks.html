@@ -152,6 +152,27 @@
             Select a value from the dropdown to see details.
         </div> -->
 
+
+        <br><br>
+		<b class="header"> Sailing Stuff </b>
+		<br>
+		<br>
+		<hr>
+		</p>
+
+        <br><br><b class="subheader">Select Item</b>   |   <b id="sailing-prompt"> How many? </b><br><br>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="sailingDropdown" onchange="displayRowData7()">
+            <option value="">-- Choose an item --</option>
+        </select>
+        <input type="number" id="Sailing" value="1" min="1" max="5" step="1" onchange="displayRowData7()">
+        <button onclick="increment('Sailing')">+1</button>
+        <button onclick="decrement('Sailing')">-1</button>
+        <p id="resultDisplaySailing"></p>
+
+        <hr>
+
         <hr>
         <br><br><br><br><br>
 
@@ -221,6 +242,10 @@
         let globalTableData7 = [];
         let headerNames7 = [];
 
+        // for Sailing Stuff
+        let globalTableData8 = [];
+        let headerNames8 = [];
+
 
         let settlement_name = ''
         let settlement_class_val = 0
@@ -249,6 +274,9 @@
         let item6_total = 0
         let item6_val = 0
         let count6_val = 1
+        let item7_total = 0
+        let item7_val = 0
+        let count7_val = 1
 
         // Fetch and parse the sheet data on page load
         fetch(csvUrl)
@@ -276,10 +304,12 @@
 
                 globalTableData.forEach(row => {
                     if (row[firstColumnKey]) {
-                        const option = document.createElement('option');
-                        option.value = row[firstColumnKey];
-                        option.textContent = row[firstColumnKey];
-                        dropdown.appendChild(option);
+                        if (row[headerNames[1]] != 'Sailing') {
+                            const option = document.createElement('option');
+                            option.value = row[firstColumnKey];
+                            option.textContent = row[firstColumnKey];
+                            dropdown.appendChild(option);
+                        }
                     }
                 });
             })
@@ -314,10 +344,12 @@
 
                 globalTableData.forEach(row => {
                     if (row[firstColumnKey]) {
-                        const option = document.createElement('option');
-                        option.value = row[firstColumnKey];
-                        option.textContent = row[firstColumnKey];
-                        dropdown.appendChild(option);
+                        if (row[headerNames[1]] != 'Sailing') {
+                            const option = document.createElement('option');
+                            option.value = row[firstColumnKey];
+                            option.textContent = row[firstColumnKey];
+                            dropdown.appendChild(option);
+                        }
                     }
                 });
             })
@@ -352,10 +384,12 @@
 
                 globalTableData.forEach(row => {
                     if (row[firstColumnKey]) {
-                        const option = document.createElement('option');
-                        option.value = row[firstColumnKey];
-                        option.textContent = row[firstColumnKey];
-                        dropdown.appendChild(option);
+                        if (row[headerNames[1]] != 'Sailing') {
+                            const option = document.createElement('option');
+                            option.value = row[firstColumnKey];
+                            option.textContent = row[firstColumnKey];
+                            dropdown.appendChild(option);
+                        }
                     }
                 });
             })
@@ -390,10 +424,12 @@
 
                 globalTableData.forEach(row => {
                     if (row[firstColumnKey]) {
-                        const option = document.createElement('option');
-                        option.value = row[firstColumnKey];
-                        option.textContent = row[firstColumnKey];
-                        dropdown.appendChild(option);
+                        if (row[headerNames[1]] != 'Sailing') {
+                            const option = document.createElement('option');
+                            option.value = row[firstColumnKey];
+                            option.textContent = row[firstColumnKey];
+                            dropdown.appendChild(option);
+                        }
                     }
                 });
             })
@@ -428,10 +464,12 @@
 
                 globalTableData.forEach(row => {
                     if (row[firstColumnKey]) {
-                        const option = document.createElement('option');
-                        option.value = row[firstColumnKey];
-                        option.textContent = row[firstColumnKey];
-                        dropdown.appendChild(option);
+                        if (row[headerNames[1]] != 'Sailing') {
+                            const option = document.createElement('option');
+                            option.value = row[firstColumnKey];
+                            option.textContent = row[firstColumnKey];
+                            dropdown.appendChild(option);
+                        }
                     }
                 });
             })
@@ -466,10 +504,12 @@
 
                 globalTableData.forEach(row => {
                     if (row[firstColumnKey]) {
-                        const option = document.createElement('option');
-                        option.value = row[firstColumnKey];
-                        option.textContent = row[firstColumnKey];
-                        dropdown.appendChild(option);
+                        if (row[headerNames[1]] != 'Sailing') {
+                            const option = document.createElement('option');
+                            option.value = row[firstColumnKey];
+                            option.textContent = row[firstColumnKey];
+                            dropdown.appendChild(option);
+                        }
                     }
                 });
             })
@@ -505,10 +545,12 @@
 
                 globalTableData2.forEach(row => {
                     if (row[firstColumnKey]) {
-                        const option = document.createElement('option');
-                        option.value = row[firstColumnKey];
-                        option.textContent = row[firstColumnKey];
-                        dropdown.appendChild(option);
+                        if (row[headerNames[1]] != 'Sailing') {
+                            const option = document.createElement('option');
+                            option.value = row[firstColumnKey];
+                            option.textContent = row[firstColumnKey];
+                            dropdown.appendChild(option);
+                        }
                     }
                 });
             })
@@ -516,6 +558,66 @@
                 console.error('Error loading Google Sheet:', error);
                 document.getElementById('resultDisplay').innerText = 'Error loading data.';
             });
+
+
+        // Fetch for sailing stuff!
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData = dataRows.map(row => {
+                    let obj = {};
+                    headerNames.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('sailingDropdown');
+                const firstColumnKey = headerNames[0];
+
+                // Grab ALL the enchants
+                // This takes JUST the sailing stuff
+                globalTableData.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        // Check the Type and put it in a different dropdown accordingly
+                        // switch (row[headerNames[1]]) {
+                        //     case 'Sailing':
+                        //         dropdown = document.getElementById('sailingDropdown');
+                        //     break
+                        // }
+                        if (row[headerNames[1]] == 'Sailing') {
+                            const option = document.createElement('option');
+                            option.value = row[firstColumnKey];
+                            option.textContent = row[firstColumnKey];
+                            dropdown.appendChild(option);
+                        }
+                        
+                    }
+                    
+
+                // globalTableData.forEach(row => {
+                //     if (row[firstColumnKey]) {
+                //         const option = document.createElement('option');
+                //         option.value = row[firstColumnKey];
+                //         option.textContent = row[firstColumnKey];
+                //         dropdown.appendChild(option);
+                //     }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+            
 
 
         // Function triggered when dropdown selection changes
@@ -862,6 +964,84 @@
 
 
 
+        // Display Sailing
+        function displayRowData7() {
+            const selectedValue = document.getElementById('sailingDropdown').value;
+            const displayBox = document.getElementById('resultDisplaySailing');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'We are not getting a selected value!';
+                return;
+            }
+            else {
+                displayBox.innerHTML = `Value: ${selectedValue}`;
+            }
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames[0];
+
+            // Grab the rows matching the weapon and material we picked
+            let matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+
+                // Figure out as much of our stuff here as we can
+                    item7_total = 0
+                    item7_val = matchedRow[headerNames[3]]
+                    switch (selected_province) {
+                        case 'Enthan':
+                            item7_val = item7_val * matchedRow[headerNames[10]] * 4
+                        break;
+                        case 'Taria':
+                            item7_val = item7_val * matchedRow[headerNames[11]] * 4
+                        break;
+                        case 'Areth':
+                            item7_val = item7_val * matchedRow[headerNames[12]] * 4
+                        break;
+                        case 'Gruss':
+                            item7_val = item7_val * matchedRow[headerNames[13]]
+                        break;
+                        case 'Island':
+                            item7_val = item7_val * matchedRow[headerNames[14]]
+                        break;
+                        default:
+                            item7_val = item7_val
+                    }
+                    
+                    item7_total = 1
+
+                    // If we have selected boat purchasing stuff, change the prompts and maximums. If not, change back
+                    switch (selectedValue) {
+                        case 'Sea-Worthy Ship':
+                            document.getElementById('sailing-prompt').innerHTML = `What Tier?`
+                            document.getElementById('Sailing').max = 5
+                            item7_total = Math.round(item7_val * (count7_val * 1.2 * count7_val))
+                        break;
+                        case 'Riverboat':
+                            document.getElementById('sailing-prompt').innerHTML = `Only Tier 1s!`
+                            document.getElementById('Sailing').max = 1
+                            item7_total = Math.round(item7_val * count7_val)
+                        break;
+                        default:
+                            document.getElementById('sailing-prompt').innerHTML = `How Many?`
+                            document.getElementById('Sailing').max = 1000
+                            item7_total = Math.round(item7_val * count7_val)
+                        break;
+                    }
+                
+                //  OKAY so I tried simplifying the logic let's just set everything
+                    displayBox.innerHTML = `Market Value: <strong>${item7_total} ${currency}</strong>`;
+            }
+            else {
+                displayBox.innerHTML = `
+                                <p>AUR NAUR</p>
+                                `;
+            }
+            updateTotal()
+        }
+
+
+
 
 
 
@@ -942,6 +1122,7 @@
             displayRowData4()
             displayRowData5()
             displayRowData6()
+            displayRowData7()
             updateTotal()
         }
 
@@ -975,6 +1156,10 @@
                     count6_val = Number(document.getElementById('6').value);
                     displayRowData6()
                 break
+                case 'Sailing':
+                    count7_val = Number(document.getElementById('Sailing').value);
+                    displayRowData7()
+                break
             }
         }
 
@@ -1006,6 +1191,10 @@
                 case '6':
                     count6_val = Number(document.getElementById('6').value);
                     displayRowData6()
+                break
+                case 'Sailing':
+                    count7_val = Number(document.getElementById('Sailing').value);
+                    displayRowData7()
                 break
             }
         }

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Boutique </title>
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="icon" type="image/x-icon" href="../../images/TWEbsiteFavicon.png">
+
+
+</head>
+<body class="std">
+
+	<h1 class="page-header"> Boutique <button id="Picture-Button">Reroll Image</button></h1>
+		
+	<div id="page-select-box" class="option-box"> 
+		<h2> Pages: </h2>
+		<p class="option"> <u><a href="../../index.html" style="color:#aafff0">Intro Page</a></u></p>
+		<p style="font-style:underline; color:#ee0000; cursor:pointer">	<u><a href="../../TWEbsiteRulesetPage.html" style="font-style:underline; color:#ee0000;">Ruleset Page</a></u> </p>
+		<p style="font-style:underline; color:#eeee00; cursor:pointer">	<u><a href="../../TWEbsiteClassPage.html" style="font-style:underline; color:#eeee00; cursor:pointer">Classes Page</a></u> </p>
+		<p style="font-style:underline; color:#00dd00; cursor:pointer" > <a href="../../TWEbsiteRacesPage.html" style="font-style:underline; color:#00dd00;"><u>Races Page </u></a> </p>
+		<p style="font-style:underline; color:#0000dd; cursor:pointer">	<u><a href="../../TWEbsiteLorePage.html" style="font-style:underline; color:#0000dd;">Lore Page</a> </u> </p> 
+		<p style="font-style:underline; color:#440044; cursor:pointer">	<u><a href="../../TWEbsiteResourcesPage.html" style="font-style:underline; color:#440044;">Resources Page</a> </u> </p>
+
+	</div>
+
+	<a id="Picture-Link" target="_blank" href="images/Boutique.png">
+		<img id="Picture" src="images/Boutique.png" class="class-picture">
+	</a>
+
+	<br>
+	
+	<div class="weapontableDiv">
+		<b class="header"> Boutique </b>
+		<br>
+		<br>
+	<br> <p class="class-description"> Boutiques are stylish locales where adventurers are often outnumbered by normal citizens! Boutiques exist in some shape or form in any settlement, though the form they take can range from a lone needlewoman to a full-fledged fashion-forward establishment!
+		<br><br> Boutiques sell clothes. These clothes usually do nothing to protect you in combat, but they are comfortable and stylish and can provide social benefits in some situations! Use this page to see how to fill your wardrobe so you are ready with a matching set for any occasion!
+		<br><br> Don't forget to select your settlement to get adjusted prices and proper currencies!
+
+	</p></div>
+</p>
+	
+
+	<hr>
+
+
+    <div class="weapontableDiv">
+
+    
+        <br><br><b class="subheader">Where are you? </b><br><br>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="settlementDropdown" onchange="displaySettlementRowData()">
+            <option value="">-- Choose a name --</option>
+        </select>
+
+        <!-- Results Display -->
+        <div id="settlementDisplay">
+            This will help inform your shopping!
+        </div>
+        <br><br>
+
+
+
+        <br><br>
+		<b class="header"> Boutique Buys </b>
+		<br>
+		<br>
+		<hr>
+		</p>
+
+
+        <br><br><b class="subheader">Clothing</b><br><br>
+        
+        <!-- Dropdown populated dynamically -->
+        <select id="seriesDropdown" onchange="displayRowData()">
+            <option value="">-- Choose a Series --</option>
+        </select>
+
+        <!-- Dropdown populated dynamically -->
+        <select id="slotDropdown" onchange="setSlot()">
+            <option value="">-- Choose a Slot --</option>
+        </select>
+
+        <!-- Dropdown populated dynamically -->
+        <select id="matDropdown" onchange="setMaterial()">
+            <option value="">-- Choose a Material --</option>
+        </select>
+
+        <h3 id="tierPrompt"> What Tier?</h3>
+        <input type="number" id="tier" value="0" min="0" max="1" step="1" onchange="displayRowData()">
+        <button onclick="increment('tier')">+1</button>
+        <button onclick="decrement('tier')">-1</button>
+        <br>
+
+        <!-- Results Display -->
+        <div id="resultDisplay">
+            Select a value from the dropdown to see details.
+        </div>
+
+
+
+
+        <br><br><hr>
+        
+
+        <hr>
+        <br><br>
+        <br><br><br><br><br>
+
+
+        
+
+		
+
+	
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=1025166075&single=true&output=csv';
+        const settlementUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=117792388&single=true&output=csv';
+        const matUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQryd6Fs0MBfr3yMDMJSmaPw9C9HfB8tZzWmSLdrxXFQ1S7_Ro5XWS93ybimr-Ra6qBsuETP4jjFnoR/pub?gid=2130424858&single=true&output=csv';
+        
+        let globalTableData = [];
+        let headerNames = [];
+
+        let globalTableData2 = [];
+        let headerNames2 = [];
+
+
+        let globalTableData3 = [];
+        let headerNames3 = [];
+        let headerNames4 = [];
+        let headerNames5 = [];
+        let headerNames6 = [];
+
+        let settlement_name = ''
+        let settlement_class_val = 0
+        let settlement_mult = 1
+        let selected_province = ''
+        let provMult = 1
+        let province_string = ''
+        let province_mult_string = ''
+        let currency = 'GP'
+        let tier_val = 1
+
+        let series_name = ''
+        let slot_name = ''
+        let series_effect = ''
+        let matching_effect = ''
+        let series_cost = 0
+        let slot_mult = 1
+        let slot_HP = 0
+
+        let total_cost = 0
+
+        let mat_name = ''
+        let mat_max_eb = 1
+        let mat_cost = 0
+        let mat_match_effect = ''
+        let mat_desc = ''
+        let mat_hardness = 0
+
+        // Fetch and parse the sheet data on page load
+        fetch(csvUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData = dataRows.map(row => {
+                    let obj = {};
+                    headerNames.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                let dropdown = document.getElementById('seriesDropdown');
+                const firstColumnKey = headerNames[0];
+
+                // Grab JUST the wands
+                globalTableData.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        // Check the Type and put it in a different dropdown accordingly
+                        switch (row[headerNames[1]]) {
+                            case 'Series':
+                                dropdown = document.getElementById('seriesDropdown');
+                            break
+                            case 'Slot':
+                                dropdown = document.getElementById('slotDropdown');
+                            break
+                            default:
+                                dropdown = document.getElementById('slotDropdown');
+                        }
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+        // Fetch and parse again on the settlement table
+        fetch(settlementUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames2 = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData2 = dataRows.map(row => {
+                    let obj = {};
+                    headerNames2.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames2[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('settlementDropdown');
+                const firstColumnKey = headerNames2[0];
+
+                globalTableData2.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        const option = document.createElement('option');
+                        option.value = row[firstColumnKey];
+                        option.textContent = row[firstColumnKey];
+                        dropdown.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+
+        // Fetch and parse again on the Material table
+        fetch(matUrl)
+            .then(response => response.text())
+            .then(csvText => {
+                const rows = csvText.split('\n').map(row => 
+                    row.split(',').map(val => val.trim().replace(/^"|"$/g, ''))
+                );
+
+                headerNames3 = rows[0]; // First row contains your table headers
+                const dataRows = rows.slice(1); // The rest are data rows
+
+                // Convert rows into structured JavaScript objects
+                globalTableData3 = dataRows.map(row => {
+                    let obj = {};
+                    headerNames3.forEach((header, index) => {
+                        obj[header] = row[index] || '';
+                    });
+                    return obj;
+                }).filter(obj => obj[headerNames3[0]]); // Filter out completely empty rows
+
+                // Populate the Dropdown using the first column's headers
+                const dropdown = document.getElementById('matDropdown');
+                const firstColumnKey = headerNames3[0];
+
+                // Grab all the materials except for the gemstone stuff that can't be made into armor
+                globalTableData3.forEach(row => {
+                    if (row[firstColumnKey]) {
+                        if (row[headerNames3[1]] == 'Textile') {
+                            const option = document.createElement('option');
+                            option.value = row[firstColumnKey];
+                            option.textContent = row[firstColumnKey];
+                            dropdown.appendChild(option);
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading Google Sheet:', error);
+                document.getElementById('resultDisplay').innerText = 'Error loading data.';
+            });
+
+
+        
+        
+
+        // Function triggered when series or slot selection changes
+        function displayRowData() {
+            const selectedValue = document.getElementById('seriesDropdown').value;
+            const displayBox = document.getElementById('resultDisplay');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'Select an item to shop for.';
+                return;
+            }
+
+            // Grab the Item Name column
+            let firstColumnKey = headerNames[0];
+
+            // Grab the row matching the item we picked
+            let matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+                
+                
+                    // Keep the var we use for calculations up to date
+                    tier_val = Number(document.getElementById('tier').value);
+
+                    series_effect = matchedRow[headerNames[2]];
+                    matching_effect = matchedRow[headerNames[3]];
+
+
+                    series_cost = matchedRow[headerNames[4]]
+                    total_cost = Math.round((Number(Number(series_cost) + Number(mat_cost)) * Number(slot_mult) * Number(tier_val + 1) * Number(provMult) * Number(settlement_mult)))
+
+                    displayBox.innerHTML = `
+                                <p><strong> Total Price : ${total_cost} ${currency} </strong></p>
+                                <p>Wearing your <strong>${mat_name} ${series_name} ${slot_name} </strong> item grants <strong>${series_effect}</strong>.</p>
+                                <p> It has Hardness ${mat_hardness} and ${slot_HP} HP.</p>
+                                <br>
+                                <p>If this item is <strong>Matching (Same Material and Series for at least 4 slots)</strong>, then <strong>${matching_effect}</strong> and <strong>${mat_match_effect}</strong>
+                            `;
+                                                
+                                // <p><strong> Item HP : ${slot_HP} </p>
+                                // <p> Calculated by using (${series_cost} + ${mat_cost}) * ${slot_mult} * (${tier_val} + 1) * (${provMult}) * ${settlement_mult}
+                                // <p><strong> Material : ${mat_name}  </p>
+                                // <p><strong> Material_Max_EB : ${mat_max_eb}  </p>
+                                // <p><strong> Material Cost : ${mat_cost}  </p>
+                                // <p><strong> Material Desc : ${mat_desc}  </p>
+                                // <p><strong> Material Matching effect : ${mat_match_effect}  </p>
+            } else {
+                displayBox.innerHTML = 'No data found for this selection.';
+            }
+
+        }
+
+
+
+        // Function to handle the setting of material
+        function setSlot() {
+            const selectedValue = document.getElementById('slotDropdown').value;
+
+            // Grab the Mat Name column
+            const firstColumnKey = headerNames[0];
+
+            // Grab the row matching the item we picked
+            const matchedRow = globalTableData.find(row => row[firstColumnKey] === selectedValue);
+            let displayBox = document.getElementById('resultDisplay');
+
+            if (matchedRow) {
+                // assign the slot stuffs
+                tier_val = document.getElementById('tier').value
+
+                slot_name = matchedRow[headerNames[0]]
+                slot_mult = matchedRow[headerNames[4]]
+                slot_HP = matchedRow[headerNames[5]]
+                slot_HP = slot_HP * ((tier_val+1) * (tier_val+1))
+                
+            } else {
+                displayBox.innerHTML = `
+                    <p>Issue in Set Slot.</p>
+                `;
+            }
+            displayRowData()
+        }
+
+
+
+
+
+        // Function to handle the setting of material
+        function setMaterial() {
+            const selectedValue = document.getElementById('matDropdown').value;
+
+            // Grab the Mat Name column
+            const firstColumnKey = headerNames3[0];
+
+            // Grab the row matching the item we picked
+            const matchedRow = globalTableData3.find(row => row[firstColumnKey] === selectedValue);
+            let displayBox = document.getElementById('resultDisplay');
+
+            if (matchedRow) {
+                // assign the material stuffs
+                mat_name = matchedRow[headerNames3[0]];
+                mat_max_eb = matchedRow[headerNames3[2]];
+                mat_cost = matchedRow[headerNames3[3]];
+                mat_desc = matchedRow[headerNames3[15]];
+                mat_match_effect = matchedRow[headerNames3[16]];
+                mat_hardness = matchedRow[headerNames3[18]];
+                
+                changeMaxTier();
+
+
+                
+                if (selected_province == 'Enthan') {
+                    provMult = Number(matchedRow[headerNames3[10]]) * 4
+                    currency = 'EP'
+                }
+                else if (selected_province == 'Taria') {
+                    provMult = Number(matchedRow[headerNames3[11]]) * 4
+                    currency = 'TP'
+                }
+                else if (selected_province == 'Areth') {
+                    provMult = Number(matchedRow[headerNames3[12]]) * 4
+                    currency = 'AP'
+                }
+                else if (selected_province == 'Gruss') {
+                    provMult = Number(matchedRow[headerNames3[13]])
+                    currency = 'GP'
+                }
+                else if (selected_province == 'Island') {
+                    provMult = Number(matchedRow[headerNames3[14]])
+                    currency = 'GP'
+                }
+                else {
+                    provMult = 1
+                    currency = 'GP'
+                }
+            } else {
+                displayBox.innerHTML = `
+                    <p>Issue in Set Material.</p>
+                `;
+            }
+            displayRowData()
+        }
+
+
+        // Do it for Settlement
+        function displaySettlementRowData() {
+            const selectedValue = document.getElementById('settlementDropdown').value;
+            const displayBox = document.getElementById('settlementDisplay');
+
+            if (!selectedValue) {
+                displayBox.innerHTML = 'Where are you shopping?';
+                return;
+            }
+
+            // Grab the Item Name column
+            const firstColumnKey = headerNames2[0];
+
+            // Grab the row matching the item we picked
+            const matchedRow = globalTableData2.find(row => row[firstColumnKey] === selectedValue);
+
+            if (matchedRow) {
+                // CHANGE THESE to match your actual specific column header names
+                const province = headerNames2[1] || 'Province';
+                const class_val = headerNames2[2] || 'Class';
+                const class_name = headerNames2[3] || 'Class Name';
+                const specialty = headerNames2[4] || 'Specialty';
+                const set_mult = headerNames2[6] || 'Class Modifier'
+
+                // Assign the settlement info to the permanent variables for display
+                settlement_name = matchedRow[firstColumnKey];
+                settlement_class_val = matchedRow[class_val];
+                settlement_mult = matchedRow[set_mult];
+                selected_province = matchedRow[province];
+                province_string = selected_province + ' Price';
+                province_mult_string = selected_province + ' Multiplier';
+                if (selected_province == 'Enthan') {
+                    currency = 'EP'
+                }
+                else if (selected_province == 'Taria') {
+                    currency = 'TP'
+                }
+                else if (selected_province == 'Areth') {
+                    currency = 'AP'
+                }
+                else {
+                    currency = 'GP'
+                }
+
+
+                displayBox.innerHTML = `
+                    <p><strong>Settlement:</strong> ${matchedRow[firstColumnKey]}</p>
+                    <p><strong>${province}:</strong> ${matchedRow[province] || 'N/A'}</p>
+                    <p><strong>Size:</strong> ${matchedRow[class_name] || 'N/A'}</p>
+                `;
+            } else {
+                displayBox.innerHTML = 'No data found for this selection.';
+            }
+
+            // Call the update function for the other dropdown so it changes live
+            displayRowData()
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function changeMaxTier() {
+            document.getElementById('tier').max = mat_max_eb
+            document.getElementById('tier').value = 0
+        }
+
+
+
+        // Two simple functions to handle the count buttons
+        function increment(which_one) {
+            const input = document.getElementById(which_one);
+            input.stepUp();
+            // Keep the var we use for calculations up to date
+            switch (which_one) {
+                case 'tier':
+                    tier_val = Number(document.getElementById('tier').value);
+                break
+                case 'existTier':
+                    existingLevel = Number(document.getElementById('existTier').value);
+                break
+            }
+             // Call the update function for the other dropdown so it changes live
+            displayRowData()
+        }
+
+        function decrement(which_one) {
+            const input = document.getElementById(which_one);
+            input.stepDown();
+            // Keep the var we use for calculations up to date
+            switch (which_one) {
+                case 'tier':
+                    tier_val = Number(document.getElementById('tier').value);
+                break
+                case 'existTier':
+                    existingLevel = Number(document.getElementById('existTier').value);
+                break
+            }
+             // Call the update function for the other dropdown so it changes live
+            displayRowData()
+        }
+
+    </script>
+
+
+
+</html>
